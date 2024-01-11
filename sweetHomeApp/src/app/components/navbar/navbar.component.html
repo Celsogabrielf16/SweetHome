@@ -1,5 +1,18 @@
-<ul>
-  <li><a routerLink="">Home <i class="pi pi-check"></i></a></li>
-  <li><a routerLink="details/133">Details</a></li>
-  <li><a routerLink="search">Search</a></li>
-</ul>
+
+<section>
+  <header>
+    <div class="boxLogo">Sweet Home</div>
+      <nav>
+        <ul>
+          <li><a routerLink="/" routerLinkActive="active"  [routerLinkActiveOptions]="{exact: true}" >Home </a></li>
+          <li><a routerLink="details/133" routerLinkActive="active">Details</a></li>
+          <li><a routerLink="search" routerLinkActive="active">Search</a></li>
+        </ul>
+      </nav>
+      <div class="buttons">
+        <button class="user"><i class="pi pi-user"></i></button>
+        <button class="menu"><i class="pi pi-align-justify"></i></button>
+      </div>
+  </header>
+</section>
+<div class="headerResponsiveMenu"></div>
