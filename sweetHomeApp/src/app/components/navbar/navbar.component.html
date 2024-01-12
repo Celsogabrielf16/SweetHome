@@ -11,8 +11,14 @@
       </nav>
       <div class="buttons">
         <button class="user"><i class="pi pi-user"></i></button>
-        <button class="menu"><i class="pi pi-align-justify"></i></button>
+        <button class="menu" (click)="changeStatusMenu()"><i class="pi" [ngClass]="{'pi-align-justify': !statusMenu, 'pi-times': statusMenu}" style="margin-top: 2px;"></i></button>
       </div>
   </header>
 </section>
-<div class="headerResponsiveMenu"></div>
+<div class="headerResponsiveMenu" [ngClass]="{'active': statusMenu}">
+  <ul>
+    <li><a routerLink="/" routerLinkActive="active"  [routerLinkActiveOptions]="{exact: true}" (click)="changeStatusMenu()">Home </a></li>
+    <li><a routerLink="details/133" routerLinkActive="active" (click)="changeStatusMenu()">Details</a></li>
+    <li><a routerLink="search" routerLinkActive="active" (click)="changeStatusMenu()">Search</a></li>
+  </ul>
+</div>
