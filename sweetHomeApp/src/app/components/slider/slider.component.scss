@@ -1,0 +1,16 @@
+.slider {
+  width: 1400px;
+  margin: 30px auto;
+}
+
+.slider .title {
+  font-family: 'Poppins', Courier, monospace;
+  font-size: 18px;
+}
+
+.slider .slide {
+  margin: auto;
+  display: flex;
+  overflow: hidden;
+  padding: 10px 0;
+}

@@ -7,4 +7,5 @@ export interface Iproperty {
   area: number;
   bathroom: number;
   spot: number;
+  url: string;
 }
