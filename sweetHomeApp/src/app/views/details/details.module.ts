@@ -14,4 +14,4 @@ import { DetailsComponent } from './details.component';
     DetailsRoutingModule
   ]
 })
-export class DetailsModule { }
+export class DetailsModule {}
