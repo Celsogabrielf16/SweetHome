@@ -1,24 +1,24 @@
 <div class="card">
-  <img class="card__img" src="./../../../assets/Components/card/imgCard.jpg" alt="Foto de uma casa bonita e elegante">
-  <div class="card__detalhes">
-    <p class="preco">R$ 2.500 mês</p>
-    <p class="localizacao">Buri, Brasil</p>
-    <div class="detalhes">
-      <div class="informacao">
-        <img src="" alt="Icone">
-        <p>3 quartos</p>
+  <img class="card__img" [src]="imgProperty" alt="Foto de uma casa bonita e elegante">
+  <div class="card__info">
+    <p class="price">R$ {{ infoProperty.price }} mês</p>
+    <p class="location">{{ infoProperty.city }}, {{ infoProperty.country }}</p>
+    <div class="details">
+      <div class="information">
+        <img [src]="svgBedroom" alt="Icone de uma cama">
+        <p>{{ infoProperty.bedroom }} quartos</p>
       </div>
-      <div class="informacao">
-        <img src="" alt="Icone">
-        <p>72 m</p>
+      <div class="information">
+        <img [src]="svgArea" alt="Icone de dois quadrados">
+        <p>{{ infoProperty.area }} m²</p>
       </div>
-      <div class="informacao">
-        <img src="" alt="Icone">
-        <p>2 banheiros</p>
+      <div class="information">
+        <img [src]="svgBathroom" alt="Icone de um banheiro">
+        <p>{{ infoProperty.bathroom }} banheiros</p>
       </div>
-      <div class="informacao">
-        <img src="" alt="Icone">
-        <p>1 vaga</p>
+      <div class="information">
+        <img [src]="svgSpot" alt="Icone de uma garagem">
+        <p>{{ infoProperty.spot }} vaga</p>
       </div>
     </div>
   </div>
