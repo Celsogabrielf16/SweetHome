@@ -4,9 +4,8 @@
     <div class="boxLogo">Sweet Home</div>
       <nav>
         <ul>
-          <li><a routerLink="/" routerLinkActive="active"  [routerLinkActiveOptions]="{exact: true}" >Home </a></li>
-          <li><a routerLink="details/133" routerLinkActive="active">Details</a></li>  
-          <li><a routerLink="search" routerLinkActive="active">Search</a></li>
+          <li><a routerLink="/" routerLinkActive="active"  [routerLinkActiveOptions]="{exact: true}" >Home</a></li>
+          <li><a routerLink="search" routerLinkActive="active">Pesquisa</a></li>
         </ul>
       </nav>
       <div class="buttons">
@@ -17,8 +16,7 @@
 </section>
 <div class="headerResponsiveMenu" [ngClass]="{'active': statusMenu}">
   <ul>
-    <li><a routerLink="/" routerLinkActive="active"  [routerLinkActiveOptions]="{exact: true}" (click)="changeStatusMenu()">Home </a></li>
-    <li><a routerLink="details/133" routerLinkActive="active" (click)="changeStatusMenu()">Details</a></li>
-    <li><a routerLink="search" routerLinkActive="active" (click)="changeStatusMenu()">Search</a></li>
+    <li><a routerLink="/" routerLinkActive="active"  [routerLinkActiveOptions]="{exact: true}" (click)="changeStatusMenu()">Home</a></li>
+    <li><a routerLink="search" routerLinkActive="active" (click)="changeStatusMenu()">Pesquisa</a></li>
   </ul>
 </div>

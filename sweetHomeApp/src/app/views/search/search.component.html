@@ -1,1 +1,31 @@
-<p>search works!</p>
+<main>
+  <div class="filterInfo">
+    <p> 10 Imóveis encontrados </p>
+  </div>
+  <div class="infoImmobile" (click)="redirectDetails(property.id)" *ngFor="let property of infoProperty">
+    <img class="imgImmobile" [src]="property.url" alt="">
+    <div class="infos">
+        <h1>R$ {{ property.price }}</h1>
+        <p class="description">{{ property.description }}</p>
+        <p class="city">{{ property.city }} - {{ property.uf }}</p>
+        <div class="details">
+            <div class="detail">
+                <img [src]="svgArea" alt="">
+                <p>{{ property.area }}</p>
+            </div>
+            <div class="detail">
+                <img [src]="svgBedroom" alt="">
+                <p>{{ property.bedroom }}</p>
+            </div>
+            <div class="detail">
+                <img [src]="svgSpot" alt="">
+                <p>{{ property.spot }}</p>
+            </div>
+            <div class="detail">
+                <img [src]="svgBathroom" alt="">
+                <p>{{ property.bathroom }}</p>
+            </div>
+        </div>
+    </div>
+  </div>
+</main>

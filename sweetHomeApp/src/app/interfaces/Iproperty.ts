@@ -8,4 +8,6 @@ export interface Iproperty {
   bathroom: number;
   spot: number;
   url: string;
+  description: string;
+  uf: string;
 }

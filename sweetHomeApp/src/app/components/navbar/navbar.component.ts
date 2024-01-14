@@ -7,9 +7,9 @@ import { Component } from '@angular/core';
 })
 export class NavbarComponent {
 
-  statusMenu: boolean = true
+  statusMenu: boolean = false;
 
   changeStatusMenu(){
-    this.statusMenu = !this.statusMenu
+    this.statusMenu = !this.statusMenu;
   }
 }
