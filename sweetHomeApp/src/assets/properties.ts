@@ -3,6 +3,7 @@ import { Iproperty } from "src/app/interfaces/Iproperty";
 const properties: Array<Iproperty> = [
   {
     id: 1,
+    title: 'Apartamento de Luxo com Vista Panorâmica',
     price: 150,
     city: 'Rio de Janeiro',
     country: 'Brasil',
@@ -10,12 +11,16 @@ const properties: Array<Iproperty> = [
     area: 120,
     bathroom: 2,
     spot: 2,
+    street: 'Rua da Primavera',
+    number: 123,
+    neighborhood: 'Jardim Botânico',
     url: 'assets/Components/card/property01.jpg',
     description: 'Apartamento de luxo com vista panorâmica da cidade em condomínio exclusivo.',
     uf: 'SP'
   },
   {
     id: 2,
+    title: 'Casa Térrea com Jardim Exuberante',
     price: 200,
     city: 'Belo Horizonte',
     country: 'Brasil',
@@ -23,12 +28,16 @@ const properties: Array<Iproperty> = [
     area: 150,
     bathroom: 3,
     spot: 3,
+    street: 'Avenida das Flores',
+    number: 456,
+    neighborhood: 'Centro',
     url: 'assets/Components/card/property02.jpg',
     description: 'Casa térrea com jardim exuberante, oferecendo serenidade e privacidade.',
     uf: 'BA'
   },
   {
     id: 3,
+    title: 'Cobertura à Beira-mar com Terraço Privativo',
     price: 300,
     city: 'Porto Alegre',
     country: 'Brasil',
@@ -36,12 +45,16 @@ const properties: Array<Iproperty> = [
     area: 180,
     bathroom: 4,
     spot: 4,
+    street: 'Rua Beira Mar',
+    number: 789,
+    neighborhood: 'Praia de Belas',
     url: 'assets/Components/card/property04.jpg',
     description: 'Cobertura à beira-mar com terraço privativo e vistas deslumbrantes do oceano.',
     uf: 'SP'
   },
   {
     id: 4,
+    title: 'Aconchegante Apartamento de Um Quarto no Centro',
     price: 120,
     city: 'Fortaleza',
     country: 'Brasil',
@@ -49,12 +62,16 @@ const properties: Array<Iproperty> = [
     area: 100,
     bathroom: 2,
     spot: 1,
+    street: 'Rua dos Coqueiros',
+    number: 456,
+    neighborhood: 'Meireles',
     url: 'assets/Components/card/property05.jpg',
     description: 'Aconchegante apartamento de um quarto no centro, repleto de charme e elegância.',
     uf: 'PE'
   },
   {
     id: 5,
+    title: 'Chalé Rústico com Lareira',
     price: 180,
     city: 'Curitiba',
     country: 'Brasil',
@@ -62,12 +79,16 @@ const properties: Array<Iproperty> = [
     area: 140,
     bathroom: 3,
     spot: 2,
+    street: 'Alameda das Montanhas',
+    number: 789,
+    neighborhood: 'Alto da XV',
     url: 'assets/Components/card/property06.jpg',
     description: 'Chalé rústico com lareira, ideal para um retiro encantador nas montanhas.',
     uf: 'ES'
   },
   {
     id: 6,
+    title: 'Condomínio de Quatro Quartos com Design Sofisticado',
     price: 250,
     city: 'Recife',
     country: 'Brasil',
@@ -75,12 +96,16 @@ const properties: Array<Iproperty> = [
     area: 200,
     bathroom: 4,
     spot: 3,
+    street: 'Rua dos Girassóis',
+    number: 101,
+    neighborhood: 'Boa Viagem',
     url: 'assets/Components/card/property07.jpg',
     description: 'Condomínio de quatro quartos com design sofisticado e instalações de última geração.',
     uf: 'SP'
   },
   {
     id: 7,
+    title: 'Sobrado Histórico Meticulosamente Restaurado',
     price: 90,
     city: 'Brasília',
     country: 'Brasil',
@@ -88,12 +113,16 @@ const properties: Array<Iproperty> = [
     area: 80,
     bathroom: 1,
     spot: 1,
+    street: 'Quadra das Oliveiras',
+    number: 34,
+    neighborhood: 'Asa Sul',
     url: 'assets/Components/card/property08.jpg',
     description: 'Sobrado histórico meticulosamente restaurado, preservando detalhes originais.',
     uf: 'SP'
   },
   {
     id: 8,
+    title: 'Duplex Penthouse com Terraço e Vista Deslumbrante',
     price: 160,
     city: 'Florianópolis',
     country: 'Brasil',
@@ -101,10 +130,12 @@ const properties: Array<Iproperty> = [
     area: 120,
     bathroom: 2,
     spot: 2,
+    street: 'Rua das Palmeiras',
+    number: 567,
+    neighborhood: 'Centro',
     url: 'assets/Components/card/property02.jpg',
     description: 'Duplex penthouse com terraço e vista deslumbrante, oferecendo luxo exclusivo.',
     uf: 'MG'
   }
 ];
-
 export default properties;

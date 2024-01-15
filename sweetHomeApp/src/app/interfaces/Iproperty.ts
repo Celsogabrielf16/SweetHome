@@ -10,4 +10,8 @@ export interface Iproperty {
   url: string;
   description: string;
   uf: string;
+  street: string;
+  number: number;
+  neighborhood: string;
+  title: string
 }
