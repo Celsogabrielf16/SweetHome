@@ -1,8 +1,8 @@
 <main>
   <div class="filterInfo">
-    <p> 10 Imóveis encontrados </p>
+    <p> {{ numberOfProperties }} Imóveis encontrados </p>
   </div>
-  <div class="infoImmobile" (click)="redirectDetails(property.id)" *ngFor="let property of infoProperty">
+  <div class="infoImmobile" (click)="redirectDetails(property.id)" *ngFor="let property of properties">
     <img class="imgImmobile" [src]="property.url" alt="">
     <div class="infos">
         <h1>R$ {{ property.price }}</h1>
@@ -27,5 +27,10 @@
             </div>
         </div>
     </div>
+  </div>
+  <div class="infoImmobileStep">
+    <img #previous [src]="svgArrow" class="previous active" alt="" (click)="previousCardSet(1)">
+    <div class="step" [ngClass]="{'active': i === propertiesStep }" *ngFor="let infoImovel of propertiesSeparated; let i = index" (click)="changeStep(i)"><h4>{{ i + 1 }}</h4></div>
+    <img #next [src]="svgArrow" class="active" alt="" (click)="nextCardSet(1)">
   </div>
 </main>
