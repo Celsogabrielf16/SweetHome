@@ -25,6 +25,32 @@ export class SliderComponent {
         perView: 4.5,
         spacing: 50
       },
+      breakpoints: {
+        '(max-width: 1500px)': {
+          slides: {
+            perView: 3.5,
+            spacing: 50
+          },
+        },
+        '(max-width: 1150px)': {
+          slides: {
+            perView: 2.5,
+            spacing: 50
+          },
+        },
+        '(max-width: 800px)': {
+          slides: {
+            perView: 1.5,
+            spacing: 30
+          },
+        },
+        '(max-width: 500px)': {
+          slides: {
+            perView: 1,
+            spacing: 30
+          },
+        },
+      },
     })
   }
 
