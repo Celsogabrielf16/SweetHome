@@ -34,23 +34,27 @@ main {
     justify-content: space-between;
 
     h1 {
+      font-size: 1.8rem;
       font-weight: 400;
     }
 
-    .description,
+    .description {
+      font-size: 1.4rem;
+      font-weight: 300;
+    }
+
     .city {
-      font-size: 1.2em;
+      font-size: 1.2rem;
       font-weight: 300;
     }
 
     .details {
       display: flex;
-      justify-content: space-around;
+      justify-content: space-between;
 
       div {
         width: 100px;
         display: flex;
-        justify-content: space-around;
       }
 
       img {
@@ -58,7 +62,8 @@ main {
       }
 
       p {
-        font-size: 1.2em;
+        margin-left: 10px;
+        font-size: 1.2rem;
         font-weight: 300;
       }
     }
@@ -104,5 +109,52 @@ main {
 
   img.active {
     opacity: 1;
+  }
+}
+
+@media (max-width: 1000px) {
+  .filterInfo {
+    width: 600px;
+
+    p {
+      margin-left: 20px;
+    }
+  }
+
+  .infoImmobile {
+    width: 600px;
+    height: 220px;
+    margin: 15px auto;
+
+    .imgImmobile {
+      width: 250px;
+    }
+
+    .infos {
+      width: 350px;
+      padding: 10px 15px;
+
+      h1 {
+        font-size: 1.6rem;
+      }
+
+      .description {
+        font-size: 1rem;
+      }
+
+      .city {
+        font-size: 1rem;
+      }
+
+      .details {
+        img {
+          width: 25px;
+        }
+
+        p {
+          font-size: 1em;
+        }
+      }
+    }
   }
 }
