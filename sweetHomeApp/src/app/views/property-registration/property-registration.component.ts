@@ -20,8 +20,7 @@ export class PropertyRegistrationComponent {
     steps[index].classList.remove('active');
     stepsProgress[index].classList.remove('current-item');
 
-    if (button === 'next')
-    {
+    if (button === 'next') {
       steps[index    ].style.left = "-450px"
       steps[index    ].style.opacity = "0"
       steps[index + 1].style.left = "0px"
@@ -29,8 +28,7 @@ export class PropertyRegistrationComponent {
 
       index++;
 
-    } else if (button === 'prev')
-    {
+    } else if (button === 'prev') {
       steps[index - 1].style.left = "0px"
       steps[index - 1].style.opacity = "1"
       steps[index    ].style.left = "450px"
