@@ -1,1 +1,288 @@
-<p>property-registration works!</p>
+<main>
+
+  <section class="step-bar">
+    <ul class="step__list">
+
+      <li class="step__item current-item">
+        <span class="progress__label">Endereço</span>
+        <span class="progress__count">
+          <p>1</p>
+        </span>
+      </li>
+
+      <li class="step__item">
+        <span class="progress__label">Imóvel</span>
+        <span class="progress__count">
+          <p>2</p>
+        </span>
+      </li>
+
+      <li class="step__item">
+        <span class="progress__label">Preço</span>
+        <span class="progress__count">
+          <p>3</p>
+        </span>
+      </li>
+
+      <li class="step__item">
+        <span class="progress__label">Foto</span>
+        <span class="progress__count">
+          <p>4</p>
+        </span>
+      </li>
+
+    </ul>
+  </section>
+
+  <form>
+
+    <div class="form__step form__step-1 active">
+
+      <h2 class="form__title"><b>I</b>móvel</h2>
+
+      <div class="form__input">
+
+        <div class="form__svg">
+          <img src="../../../assets/icons/street.png" alt="">
+        </div>
+
+        <input type="text" maxlength="50" placeholder="Rua" name="rua"/>
+
+      </div>
+
+      <div class="form__input">
+
+        <div class="form__svg">
+          <img src="./../../../assets/icons/number.png" alt="">
+        </div>
+
+        <input type="text" maxlength="10" placeholder="Numero" name="numero"/>
+
+      </div>
+
+      <div class="form__input">
+
+        <div class="form__svg">
+          <img src="./../../../assets/icons/neighborhood.png" alt="">
+        </div>
+
+        <input type="text" maxlength="25" placeholder="Bairro" name="bairro"/>
+
+      </div>
+
+      <div class="form__input">
+
+        <div class="form__svg">
+          <img src="./../../../assets/icons/city.png" alt="">
+        </div>
+
+        <input type="text" maxlength="50" placeholder="Cidade" name="cidade"/>
+
+      </div>
+
+      <div class="form__input">
+
+        <div class="form__svg">
+          <img src="../../../assets/icons/uf.png" alt="">
+        </div>
+
+        <input type="text" maxlength="20" placeholder="Estado" name="uf"/>
+
+      </div>
+
+      <div class="form__input">
+
+        <div class="form__svg">
+          <img src="./../../../assets/icons/country.png" alt="">
+        </div>
+
+        <input type="text" maxlength="20" placeholder="Pais" name="uf"/>
+
+      </div>
+
+      <div class="form__buttons">
+
+        <button type="button" class="solid next-btn" (click)="changeStep('next')">Continuar</button>
+
+      </div>
+
+    </div>
+
+    <div class="form__step form__step-2 ">
+
+      <h2 class="form__title"><b>I</b>móvel</h2>
+
+      <div class="form__input">
+
+        <div class="form__svg">
+          <img src="./../../../assets/icons/bedroom.png" alt="">
+        </div>
+
+        <input type="number" maxlength="2" placeholder="Número de quartos" name="quartos"/>
+
+      </div>
+
+      <div class="form__input">
+
+        <div class="form__svg">
+          <img src="./../../../assets/icons/bathroom.png" alt="">
+        </div>
+
+        <input type="number" maxlength="2" placeholder="Número de banheiros" name="Banheiros"/>
+
+      </div>
+
+      <div class="form__input">
+
+        <div class="form__svg">
+          <img src="./../../../assets/icons/kitchen.png" alt="">
+        </div>
+
+        <input type="number" maxlength="2" placeholder="Número de cozinhas" name="cozinhas"/>
+
+      </div>
+
+      <div class="form__input">
+
+        <div class="form__svg">
+          <img src="./../../../assets/icons/spot.png" alt="">
+        </div>
+
+        <input type="number" maxlength="2" placeholder="Número de Vagas" name="vagas"/>
+
+      </div>
+
+      <div class="form__input">
+
+        <div class="form__svg">
+          <img src="./../../../assets/icons/number.png" alt="">
+        </div>
+
+        <input type="number" placeholder="Área Interna" name="construida"/>
+
+      </div>
+
+      <div class="form__input">
+
+        <div class="form__svg">
+          <img src="./../../../assets/icons/outside.png" alt="">
+        </div>
+
+        <input type="number"  placeholder="Área Externa" name="terreno"/>
+
+      </div>
+
+      <div class="form__buttons">
+
+        <button type="button" class="transparent" (click)="changeStep('prev')">Voltar</button>
+        <button type="button" class="solid" (click)="changeStep('next')">Continuar</button>
+
+      </div>
+
+    </div>
+
+    <div class="form__step form__step-3 ">
+
+      <h2 class="form__title"><b>I</b>móvel</h2>
+
+      <div class="form__input">
+
+        <div class="form__svg">
+          <img src="./../../../assets/icons/money.png" alt="">
+        </div>
+
+        <input type="number" placeholder="Valor do Aluguel" name="preco_venda"/>
+
+      </div>
+
+      <div class="form__input">
+
+        <div class="form__svg">
+          <img src="./../../../assets/icons/title.png" alt="">
+        </div>
+
+        <input type="number" placeholder="Titulo do Anuncio" name="preco_aluguel"/>
+
+      </div>
+
+      <div class="form__input">
+
+        <div class="form__svg">
+          <img src="./../../../assets/icons/description.png" alt="">
+        </div>
+
+        <input type="text"  placeholder="Descrição" name="descricao"/>
+
+      </div>
+
+      <div class="form__input">
+
+        <div class="form__svg">
+          <img src="./../../../assets/icons/phoneNumber.png" alt="">
+        </div>
+
+        <input type="text"  placeholder="Número de Contato" name="descricao"/>
+
+      </div>
+
+      <div class="form__input">
+
+        <div class="form__svg">
+          <img src="./../../../assets/icons/email.png" alt="">
+        </div>
+
+        <input type="text"  placeholder="Email de Contato" name="descricao"/>
+
+      </div>
+
+      <div class="form__buttons">
+
+        <button type="button" class="transparent" (click)="changeStep('prev')">Voltar</button>
+        <button type="button" class="solid" (click)="changeStep('next')">Continuar</button>
+
+      </div>
+
+    </div>
+
+    <div class="form__step form__step-4 ">
+
+      <h2 class="form__title"><b>I</b>móvel</h2>
+
+      <div class="form__label">
+        <p>Agora, é só seguir as instruçõs para enviar uma foto do seu imóvel</p>
+      </div>
+
+      <div class="form__label">
+        <p>Fotografe seu imóvel de um ângulo que o valorize.</p>
+      </div>
+
+      <div class="form__divider"></div>
+
+      <div class="form__label">
+        <p>Upload da foto do imóvel</p>
+      </div>
+
+      <div class="form__label">
+        <p>Tamanho do arquivo: <b>máximo 100MB</b></p>
+        <p>Formatos: <b>JPG</b> ou <b>PNG</b></p>
+      </div>
+
+      <div class="form__upload">
+        <svg width="65" height="54" viewBox="0 0 65 54" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M43.1663 32.9259L32.4997 22.2593L21.833 32.9259L23.7293 34.5852L31.3145 27V53.074H33.6849V27L41.27 34.5852L43.1663 32.9259Z" fill="url(#paint0_linear_131_65)"/><path d="M57.1519 18.4665C55.9668 12.5407 50.5148 8.03689 44.3519 8.03689C42.2185 8.03689 40.3222 8.51097 38.663 9.45912C35.8187 4.2443 30.3668 0.925781 24.2038 0.925781C14.9594 0.925781 7.61124 8.27399 7.61124 17.5184C7.61124 17.7555 7.61124 18.2294 7.61124 18.4665C3.34444 20.3629 0.5 24.3925 0.5 29.3702C0.5 36.0073 5.71482 41.2221 12.3519 41.2221H28.9444V38.8517H12.3519C7.13704 38.8517 2.87037 34.585 2.87037 29.3702C2.87037 24.8666 5.95179 21.0739 10.2186 20.1258C9.98148 19.1777 9.98148 18.4665 9.98148 17.5184C9.98148 9.69621 16.3815 3.29615 24.2037 3.29615C30.3667 3.29615 35.5815 7.32584 37.7149 12.7776C39.6112 11.3554 41.9815 10.4073 44.3519 10.4073C50.0408 10.4073 54.5444 14.6739 55.0185 20.1258C59.0482 21.074 62.1296 24.8666 62.1296 29.3702C62.1296 34.585 57.863 38.8517 52.6481 38.8517H36.0556V41.2221H52.6481C59.2852 41.2221 64.5 36.0073 64.5 29.3702C64.5 24.3925 61.4186 20.1258 57.1519 18.4665Z" fill="url(#paint1_linear_131_65)"/><defs><linearGradient id="paint0_linear_131_65" x1="32.4997" y1="22.2593" x2="32.4997" y2="53.074" gradientUnits="userSpaceOnUse"><stop stop-color="#FF2E00"/><stop offset="1" stop-color="#EA580C"/></linearGradient><linearGradient id="paint1_linear_131_65" x1="32.5" y1="0.925781" x2="32.5" y2="41.2221" gradientUnits="userSpaceOnUse"><stop stop-color="#FF2E00"/><stop offset="1" stop-color="#EA580C"/></linearGradient></defs>
+        </svg>
+        <label>Enviar</label>
+      </div>
+
+      <div class="form__buttons">
+
+        <button type="button" class="transparent" (click)="changeStep('prev')">Voltar</button>
+        <button type="submit" class="solid" (click)="save()">Enviar</button>
+
+      </div>
+
+    </div>
+
+  </form>
+
+</main>
