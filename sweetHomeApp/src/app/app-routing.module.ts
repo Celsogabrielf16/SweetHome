@@ -13,6 +13,10 @@ const routes: Routes = [
   {
     path: 'search',
     loadChildren: () => import("./views/search/search.module").then(m => m.SearchModule)
+  },
+  {
+    path: 'property-registration',
+    loadChildren: () => import("./views/property-registration/property-registration.module").then(m => m.PropertyRegistrationModule)
   }
 ];
 

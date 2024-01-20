@@ -1,12 +1,16 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { RouterModule, Routes } from '@angular/router';
+import { PropertyRegistrationComponent } from './property-registration.component';
 
-
+const routes: Routes = [
+  {
+    path: '',
+    component: PropertyRegistrationComponent
+  }
+];
 
 @NgModule({
-  declarations: [],
-  imports: [
-    CommonModule
-  ]
+  imports: [RouterModule.forChild(routes)],
+  exports: [RouterModule]
 })
 export class PropertyRegistrationModule { }

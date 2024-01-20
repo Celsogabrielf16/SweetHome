@@ -36,7 +36,7 @@ export class SearchComponent implements OnInit {
     let aux = 0;
     this.numberOfProperties = this.properties.length;
 
-    while (aux < this.numberOfProperties) {
+    while (aux < this.properties.length) {
       newArray.push(this.properties.slice(aux, aux += lenghtNewArray));
     }
 
@@ -70,10 +70,11 @@ export class SearchComponent implements OnInit {
   }
 
   hideArrow() {
+
     let next = this.nextRef.nativeElement.classList;
     let previous = this.previousRef.nativeElement.classList;
     this.propertiesStep === 0 ? previous.remove('active') : previous.add('active');
-    this.propertiesStep === this.numberOfProperties - 1 ? next.remove('active') : next.add('active');
+    this.propertiesStep === this.propertiesSeparated.length - 1 ? next.remove('active') : next.add('active');
   }
 
   ngOnInit(): void {
