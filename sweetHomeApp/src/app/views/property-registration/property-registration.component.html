@@ -43,47 +43,47 @@
       <div class="form__input">
 
         <div class="form__svg">
-          <img src="../../../assets/icons/street.png" alt="">
+          <img [src]="iconsInputs.street" alt="Rua do Imóvel">
         </div>
 
-        <input type="text" maxlength="50" placeholder="Rua" name="rua"/>
+        <input type="text" maxlength="50" placeholder="Rua" name="street"/>
 
       </div>
 
       <div class="form__input">
 
         <div class="form__svg">
-          <img src="./../../../assets/icons/number.png" alt="">
+          <img [src]="iconsInputs.number" alt="Número do Imóvel">
         </div>
 
-        <input type="text" maxlength="10" placeholder="Numero" name="numero"/>
+        <input type="number" maxlength="10" placeholder="Numero" name="number"/>
 
       </div>
 
       <div class="form__input">
 
         <div class="form__svg">
-          <img src="./../../../assets/icons/neighborhood.png" alt="">
+          <img [src]="iconsInputs.neighborhood" alt="Bairro do Imóvel">
         </div>
 
-        <input type="text" maxlength="25" placeholder="Bairro" name="bairro"/>
+        <input type="text" maxlength="25" placeholder="Bairro" name="neighborhood"/>
 
       </div>
 
       <div class="form__input">
 
         <div class="form__svg">
-          <img src="./../../../assets/icons/city.png" alt="">
+          <img [src]="iconsInputs.city" alt="Cidade do Imóvel">
         </div>
 
-        <input type="text" maxlength="50" placeholder="Cidade" name="cidade"/>
+        <input type="text" maxlength="50" placeholder="Cidade" name="city"/>
 
       </div>
 
       <div class="form__input">
 
         <div class="form__svg">
-          <img src="../../../assets/icons/uf.png" alt="">
+          <img [src]="iconsInputs.uf" alt="Estado do Imóvel">
         </div>
 
         <input type="text" maxlength="20" placeholder="Estado" name="uf"/>
@@ -93,7 +93,7 @@
       <div class="form__input">
 
         <div class="form__svg">
-          <img src="./../../../assets/icons/country.png" alt="">
+          <img [src]="iconsInputs.country" alt="País do Imóvel">
         </div>
 
         <input type="text" maxlength="20" placeholder="Pais" name="uf"/>
@@ -108,67 +108,67 @@
 
     </div>
 
-    <div class="form__step form__step-2 ">
+    <div class="form__step form__step-2">
 
       <h2 class="form__title"><b>I</b>móvel</h2>
 
       <div class="form__input">
 
         <div class="form__svg">
-          <img src="./../../../assets/icons/bedroom.png" alt="">
+          <img [src]="iconsInputs.bedroom" alt="Número de Quartos do Imóvel">
         </div>
 
-        <input type="number" maxlength="2" placeholder="Número de quartos" name="quartos"/>
+        <input type="number" maxlength="2" placeholder="Número de quartos" name="bedroom"/>
 
       </div>
 
       <div class="form__input">
 
         <div class="form__svg">
-          <img src="./../../../assets/icons/bathroom.png" alt="">
+          <img [src]="iconsInputs.bathroom" alt="Número de Banheiros do Imóvel">
         </div>
 
-        <input type="number" maxlength="2" placeholder="Número de banheiros" name="Banheiros"/>
+        <input type="number" maxlength="2" placeholder="Número de banheiros" name="bathroom"/>
 
       </div>
 
       <div class="form__input">
 
         <div class="form__svg">
-          <img src="./../../../assets/icons/kitchen.png" alt="">
+          <img [src]="iconsInputs.kitchen" alt="Número de Cozinhas do Imóvel">
         </div>
 
-        <input type="number" maxlength="2" placeholder="Número de cozinhas" name="cozinhas"/>
+        <input type="number" maxlength="2" placeholder="Número de cozinhas" name="kitchen"/>
 
       </div>
 
       <div class="form__input">
 
         <div class="form__svg">
-          <img src="./../../../assets/icons/spot.png" alt="">
+          <img [src]="iconsInputs.spot" alt="Número de Vagas do Imóvel">
         </div>
 
-        <input type="number" maxlength="2" placeholder="Número de Vagas" name="vagas"/>
+        <input type="number" maxlength="2" placeholder="Número de Vagas" name="spot"/>
 
       </div>
 
       <div class="form__input">
 
         <div class="form__svg">
-          <img src="./../../../assets/icons/number.png" alt="">
+          <img [src]="iconsInputs.number" alt="Área Interna do Imóvel">
         </div>
 
-        <input type="number" placeholder="Área Interna" name="construida"/>
+        <input type="number" maxlength="10" placeholder="Área Interna" name="area"/>
 
       </div>
 
       <div class="form__input">
 
         <div class="form__svg">
-          <img src="./../../../assets/icons/outside.png" alt="">
+          <img [src]="iconsInputs.externalArea" alt="área Externa do Imóvel">
         </div>
 
-        <input type="number"  placeholder="Área Externa" name="terreno"/>
+        <input type="number"  placeholder="Área Externa" name="externalArea"/>
 
       </div>
 
@@ -181,57 +181,57 @@
 
     </div>
 
-    <div class="form__step form__step-3 ">
+    <div class="form__step form__step-3">
 
       <h2 class="form__title"><b>I</b>móvel</h2>
 
       <div class="form__input">
 
         <div class="form__svg">
-          <img src="./../../../assets/icons/money.png" alt="">
+          <img [src]="iconsInputs.price" alt="Valor do Aluguel do Imóvel">
         </div>
 
-        <input type="number" placeholder="Valor do Aluguel" name="preco_venda"/>
+        <input type="number" maxlength="10" placeholder="Valor do Aluguel" name="price"/>
 
       </div>
 
       <div class="form__input">
 
         <div class="form__svg">
-          <img src="./../../../assets/icons/title.png" alt="">
+          <img [src]="iconsInputs.title" alt="Título do Anúncio do Imóvel">
         </div>
 
-        <input type="number" placeholder="Titulo do Anuncio" name="preco_aluguel"/>
+        <input type="number" placeholder="Título do Anúncio" name="title"/>
 
       </div>
 
       <div class="form__input">
 
         <div class="form__svg">
-          <img src="./../../../assets/icons/description.png" alt="">
+          <img [src]="iconsInputs.description" alt="Descrição do Imóvel">
         </div>
 
-        <input type="text"  placeholder="Descrição" name="descricao"/>
+        <input type="text" maxlength="150"  placeholder="Descrição do Imóvel" name="description"/>
 
       </div>
 
       <div class="form__input">
 
         <div class="form__svg">
-          <img src="./../../../assets/icons/phoneNumber.png" alt="">
+          <img [src]="iconsInputs.contactNumber" alt="Número de Contato do Anunciante">
         </div>
 
-        <input type="text"  placeholder="Número de Contato" name="descricao"/>
+        <input type="text" maxlength="20" placeholder="Número de Contato" name="contactNumber"/>
 
       </div>
 
       <div class="form__input">
 
         <div class="form__svg">
-          <img src="./../../../assets/icons/email.png" alt="">
+          <img [src]="iconsInputs.contactEmail" alt="Email de Contato do Anunciante">
         </div>
 
-        <input type="text"  placeholder="Email de Contato" name="descricao"/>
+        <input type="text"  placeholder="Email de Contato" name="contactEmail"/>
 
       </div>
 
@@ -244,7 +244,7 @@
 
     </div>
 
-    <div class="form__step form__step-4 ">
+    <div class="form__step form__step-4">
 
       <h2 class="form__title"><b>I</b>móvel</h2>
 
@@ -267,10 +267,8 @@
         <p>Formatos: <b>JPG</b> ou <b>PNG</b></p>
       </div>
 
-      <div class="form__upload">
-        <svg width="65" height="54" viewBox="0 0 65 54" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M43.1663 32.9259L32.4997 22.2593L21.833 32.9259L23.7293 34.5852L31.3145 27V53.074H33.6849V27L41.27 34.5852L43.1663 32.9259Z" fill="url(#paint0_linear_131_65)"/><path d="M57.1519 18.4665C55.9668 12.5407 50.5148 8.03689 44.3519 8.03689C42.2185 8.03689 40.3222 8.51097 38.663 9.45912C35.8187 4.2443 30.3668 0.925781 24.2038 0.925781C14.9594 0.925781 7.61124 8.27399 7.61124 17.5184C7.61124 17.7555 7.61124 18.2294 7.61124 18.4665C3.34444 20.3629 0.5 24.3925 0.5 29.3702C0.5 36.0073 5.71482 41.2221 12.3519 41.2221H28.9444V38.8517H12.3519C7.13704 38.8517 2.87037 34.585 2.87037 29.3702C2.87037 24.8666 5.95179 21.0739 10.2186 20.1258C9.98148 19.1777 9.98148 18.4665 9.98148 17.5184C9.98148 9.69621 16.3815 3.29615 24.2037 3.29615C30.3667 3.29615 35.5815 7.32584 37.7149 12.7776C39.6112 11.3554 41.9815 10.4073 44.3519 10.4073C50.0408 10.4073 54.5444 14.6739 55.0185 20.1258C59.0482 21.074 62.1296 24.8666 62.1296 29.3702C62.1296 34.585 57.863 38.8517 52.6481 38.8517H36.0556V41.2221H52.6481C59.2852 41.2221 64.5 36.0073 64.5 29.3702C64.5 24.3925 61.4186 20.1258 57.1519 18.4665Z" fill="url(#paint1_linear_131_65)"/><defs><linearGradient id="paint0_linear_131_65" x1="32.4997" y1="22.2593" x2="32.4997" y2="53.074" gradientUnits="userSpaceOnUse"><stop stop-color="#FF2E00"/><stop offset="1" stop-color="#EA580C"/></linearGradient><linearGradient id="paint1_linear_131_65" x1="32.5" y1="0.925781" x2="32.5" y2="41.2221" gradientUnits="userSpaceOnUse"><stop stop-color="#FF2E00"/><stop offset="1" stop-color="#EA580C"/></linearGradient></defs>
-        </svg>
+      <div class="form__upload" (click)="changeModal()">
+        <img src="./../../../assets/icons/cloud.svg" alt="">
         <label>Enviar</label>
       </div>
 
@@ -285,16 +283,18 @@
 
   </form>
 
-  <section class="modal">
+  <section class="modal" [ngClass]="{'active': openModal, '': !openModal}" >
+    <div class="background" (click)="changeModal()"></div>
     <div class="modal__content">
+      <img class="close__button" (click)="changeModal()" src="../../../assets/icons/close.png" alt="">
       <h1>Escolha a imagem do seu imóvel</h1>
       <div class="grid">
-        <img src="./../../../assets/Components/card/property01.jpg" alt="">
-        <img src="./../../../assets/Components/card/property02.jpg" alt="">
-        <img src="./../../../assets/Components/card/property07.jpg" alt="">
-        <img src="./../../../assets/Components/card/property04.jpg" alt="">
-        <img src="./../../../assets/Components/card/property05.jpg" alt="">
-        <img src="./../../../assets/Components/card/property06.jpg" alt="">
+        <img (click)="chosenProperty(0)" [src]="properties[0].url" [alt]="properties[0].description">
+        <img (click)="chosenProperty(1)" [src]="properties[1].url" [alt]="properties[1].description">
+        <img (click)="chosenProperty(2)" [src]="properties[2].url" [alt]="properties[2].description">
+        <img (click)="chosenProperty(3)" [src]="properties[3].url" [alt]="properties[3].description">
+        <img (click)="chosenProperty(4)" [src]="properties[4].url" [alt]="properties[4].description">
+        <img (click)="chosenProperty(5)" [src]="properties[5].url" [alt]="properties[5].description">
       </div>
     </div>
   </section>
