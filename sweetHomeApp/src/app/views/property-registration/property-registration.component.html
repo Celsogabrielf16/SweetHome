@@ -46,7 +46,7 @@
           <img [src]="iconsInputs.street" alt="Rua do Imóvel">
         </div>
 
-        <input type="text" maxlength="50" placeholder="Rua" name="street"/>
+        <input [(ngModel)]="newProperty.street" type="text" maxlength="50" placeholder="Rua" name="street"/>
 
       </div>
 
@@ -56,7 +56,7 @@
           <img [src]="iconsInputs.number" alt="Número do Imóvel">
         </div>
 
-        <input type="number" maxlength="10" placeholder="Numero" name="number"/>
+        <input [(ngModel)]="newProperty.number" type="number" maxlength="10" placeholder="Numero" name="number"/>
 
       </div>
 
@@ -66,7 +66,7 @@
           <img [src]="iconsInputs.neighborhood" alt="Bairro do Imóvel">
         </div>
 
-        <input type="text" maxlength="25" placeholder="Bairro" name="neighborhood"/>
+        <input [(ngModel)]="newProperty.neighborhood" type="text" maxlength="25" placeholder="Bairro" name="neighborhood"/>
 
       </div>
 
@@ -76,7 +76,7 @@
           <img [src]="iconsInputs.city" alt="Cidade do Imóvel">
         </div>
 
-        <input type="text" maxlength="50" placeholder="Cidade" name="city"/>
+        <input [(ngModel)]="newProperty.city" type="text" maxlength="50" placeholder="Cidade" name="city"/>
 
       </div>
 
@@ -86,7 +86,7 @@
           <img [src]="iconsInputs.uf" alt="Estado do Imóvel">
         </div>
 
-        <input type="text" maxlength="20" placeholder="Estado" name="uf"/>
+        <input [(ngModel)]="newProperty.uf" type="text" maxlength="20" placeholder="Estado" name="uf"/>
 
       </div>
 
@@ -96,7 +96,7 @@
           <img [src]="iconsInputs.country" alt="País do Imóvel">
         </div>
 
-        <input type="text" maxlength="20" placeholder="Pais" name="uf"/>
+        <input [(ngModel)]="newProperty.country" type="text" maxlength="20" placeholder="Pais" name="country"/>
 
       </div>
 
@@ -118,7 +118,7 @@
           <img [src]="iconsInputs.bedroom" alt="Número de Quartos do Imóvel">
         </div>
 
-        <input type="number" maxlength="2" placeholder="Número de quartos" name="bedroom"/>
+        <input [(ngModel)]="newProperty.bedroom" type="number" maxlength="2" placeholder="Número de quartos" name="bedroom"/>
 
       </div>
 
@@ -128,7 +128,7 @@
           <img [src]="iconsInputs.bathroom" alt="Número de Banheiros do Imóvel">
         </div>
 
-        <input type="number" maxlength="2" placeholder="Número de banheiros" name="bathroom"/>
+        <input [(ngModel)]="newProperty.bathroom" type="number" maxlength="2" placeholder="Número de banheiros" name="bathroom"/>
 
       </div>
 
@@ -138,7 +138,7 @@
           <img [src]="iconsInputs.kitchen" alt="Número de Cozinhas do Imóvel">
         </div>
 
-        <input type="number" maxlength="2" placeholder="Número de cozinhas" name="kitchen"/>
+        <input [(ngModel)]="newProperty.kitchen" type="number" maxlength="2" placeholder="Número de cozinhas" name="kitchen"/>
 
       </div>
 
@@ -148,7 +148,7 @@
           <img [src]="iconsInputs.spot" alt="Número de Vagas do Imóvel">
         </div>
 
-        <input type="number" maxlength="2" placeholder="Número de Vagas" name="spot"/>
+        <input [(ngModel)]="newProperty.spot" type="number" maxlength="2" placeholder="Número de Vagas" name="spot"/>
 
       </div>
 
@@ -158,7 +158,7 @@
           <img [src]="iconsInputs.number" alt="Área Interna do Imóvel">
         </div>
 
-        <input type="number" maxlength="10" placeholder="Área Interna" name="area"/>
+        <input [(ngModel)]="newProperty.area" type="number" maxlength="10" placeholder="Área Interna" name="area"/>
 
       </div>
 
@@ -168,7 +168,7 @@
           <img [src]="iconsInputs.externalArea" alt="área Externa do Imóvel">
         </div>
 
-        <input type="number"  placeholder="Área Externa" name="externalArea"/>
+        <input [(ngModel)]="newProperty.externalArea" type="number"  placeholder="Área Externa" name="externalArea"/>
 
       </div>
 
@@ -191,7 +191,7 @@
           <img [src]="iconsInputs.price" alt="Valor do Aluguel do Imóvel">
         </div>
 
-        <input type="number" maxlength="10" placeholder="Valor do Aluguel" name="price"/>
+        <input [(ngModel)]="newProperty.price" type="number" maxlength="10" placeholder="Valor do Aluguel" name="price"/>
 
       </div>
 
@@ -201,7 +201,7 @@
           <img [src]="iconsInputs.title" alt="Título do Anúncio do Imóvel">
         </div>
 
-        <input type="number" placeholder="Título do Anúncio" name="title"/>
+        <input [(ngModel)]="newProperty.title" type="text" maxlength="100" placeholder="Título do Anúncio" name="title"/>
 
       </div>
 
@@ -211,7 +211,7 @@
           <img [src]="iconsInputs.description" alt="Descrição do Imóvel">
         </div>
 
-        <input type="text" maxlength="150"  placeholder="Descrição do Imóvel" name="description"/>
+        <input [(ngModel)]="newProperty.description" type="text" maxlength="150"  placeholder="Descrição do Imóvel" name="description"/>
 
       </div>
 
@@ -221,7 +221,7 @@
           <img [src]="iconsInputs.contactNumber" alt="Número de Contato do Anunciante">
         </div>
 
-        <input type="text" maxlength="20" placeholder="Número de Contato" name="contactNumber"/>
+        <input [(ngModel)]="newProperty.contactNumber" type="text" maxlength="20" placeholder="Número de Contato" name="contactNumber"/>
 
       </div>
 
@@ -231,7 +231,7 @@
           <img [src]="iconsInputs.contactEmail" alt="Email de Contato do Anunciante">
         </div>
 
-        <input type="text"  placeholder="Email de Contato" name="contactEmail"/>
+        <input [(ngModel)]="newProperty.contactEmail" type="text"  placeholder="Email de Contato" name="contactEmail"/>
 
       </div>
 
