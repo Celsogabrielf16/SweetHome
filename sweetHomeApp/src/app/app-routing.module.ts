@@ -17,6 +17,10 @@ const routes: Routes = [
   {
     path: 'property-registration',
     loadChildren: () => import("./views/property-registration/property-registration.module").then(m => m.PropertyRegistrationModule)
+  },
+  {
+    path: 'login',
+    loadChildren: () => import("./views/login/login.module").then(m => m.LoginModule)
   }
 ];
 
