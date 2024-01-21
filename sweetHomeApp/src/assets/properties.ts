@@ -144,7 +144,7 @@ const properties: Array<Iproperty> = [
     neighborhood: 'Asa Sul',
     contactNumber: 'ex',
     contactEmail: 'ex',
-    url: 'assets/properties/property08.jpg',
+    url: 'assets/properties/property01.jpg',
     description: 'Sobrado histórico meticulosamente restaurado, preservando detalhes originais.',
     uf: 'SP'
   },

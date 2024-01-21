@@ -17,4 +17,8 @@ export class HomeService {
   getProperty(): Array<Iproperty> {
     return this.property;
   }
+
+  postProperty(newProperty: Iproperty) {
+    this.property.push(newProperty);
+  }
 }

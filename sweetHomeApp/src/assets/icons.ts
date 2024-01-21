@@ -16,7 +16,8 @@ const icons: Object = {
   description: 'assets/icons/description.png',
   contactNumber: 'assets/icons/phoneNumber.png',
   contactEmail: 'assets/icons/email.png',
-  url: 'assets/icons/cloud.svg'
+  url: 'assets/icons/cloud.svg',
+  close: 'assets/icons/close.png'
 }
 
 export default icons;

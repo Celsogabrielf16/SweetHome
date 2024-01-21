@@ -286,7 +286,7 @@
   <section class="modal" [ngClass]="{'active': openModal, '': !openModal}" >
     <div class="background" (click)="changeModal()"></div>
     <div class="modal__content">
-      <img class="close__button" (click)="changeModal()" src="../../../assets/icons/close.png" alt="">
+      <img class="close__button" (click)="changeModal()" [src]="iconsInputs.close" alt="">
       <h1>Escolha a imagem do seu imóvel</h1>
       <div class="grid">
         <img (click)="chosenProperty(0)" [src]="properties[0].url" [alt]="properties[0].description">

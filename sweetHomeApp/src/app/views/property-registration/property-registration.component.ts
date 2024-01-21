@@ -20,13 +20,9 @@ export class PropertyRegistrationComponent {
 
   constructor(private homeService: HomeService) {
     this.properties = homeService.getProperty();
-    console.log(this.newProperty);
-
   }
 
   changeStep(button: string) {
-    console.log(this.newProperty);
-
     let stepsProgress = Array.from(document.querySelectorAll<HTMLElement>(".step__item"));
     let steps = Array.from(document.querySelectorAll<HTMLElement>(".form__step"));
 
@@ -59,7 +55,8 @@ export class PropertyRegistrationComponent {
   }
 
   save() {
-    console.log(this.newProperty);
+    this.newProperty.id = this.properties.length + 1;
+    this.homeService.postProperty(this.newProperty);
   }
 
   changeModal() {
