@@ -1,1 +1,302 @@
-<p>property-registration works!</p>
+<main>
+
+  <section class="step-bar">
+    <ul class="step__list">
+
+      <li class="step__item current-item">
+        <span class="progress__label">Endereço</span>
+        <span class="progress__count">
+          <p>1</p>
+        </span>
+      </li>
+
+      <li class="step__item">
+        <span class="progress__label">Imóvel</span>
+        <span class="progress__count">
+          <p>2</p>
+        </span>
+      </li>
+
+      <li class="step__item">
+        <span class="progress__label">Preço</span>
+        <span class="progress__count">
+          <p>3</p>
+        </span>
+      </li>
+
+      <li class="step__item">
+        <span class="progress__label">Foto</span>
+        <span class="progress__count">
+          <p>4</p>
+        </span>
+      </li>
+
+    </ul>
+  </section>
+
+  <form>
+
+    <div class="form__step form__step-1 active">
+
+      <h2 class="form__title"><b>I</b>móvel</h2>
+
+      <div class="form__input">
+
+        <div class="form__svg">
+          <img [src]="iconsInputs.street" alt="Rua do Imóvel">
+        </div>
+
+        <input [(ngModel)]="newProperty.street" type="text" maxlength="50" placeholder="Rua" name="street"/>
+
+      </div>
+
+      <div class="form__input">
+
+        <div class="form__svg">
+          <img [src]="iconsInputs.number" alt="Número do Imóvel">
+        </div>
+
+        <input [(ngModel)]="newProperty.number" type="number" maxlength="10" placeholder="Numero" name="number"/>
+
+      </div>
+
+      <div class="form__input">
+
+        <div class="form__svg">
+          <img [src]="iconsInputs.neighborhood" alt="Bairro do Imóvel">
+        </div>
+
+        <input [(ngModel)]="newProperty.neighborhood" type="text" maxlength="25" placeholder="Bairro" name="neighborhood"/>
+
+      </div>
+
+      <div class="form__input">
+
+        <div class="form__svg">
+          <img [src]="iconsInputs.city" alt="Cidade do Imóvel">
+        </div>
+
+        <input [(ngModel)]="newProperty.city" type="text" maxlength="50" placeholder="Cidade" name="city"/>
+
+      </div>
+
+      <div class="form__input">
+
+        <div class="form__svg">
+          <img [src]="iconsInputs.uf" alt="Estado do Imóvel">
+        </div>
+
+        <input [(ngModel)]="newProperty.uf" type="text" maxlength="20" placeholder="Estado" name="uf"/>
+
+      </div>
+
+      <div class="form__input">
+
+        <div class="form__svg">
+          <img [src]="iconsInputs.country" alt="País do Imóvel">
+        </div>
+
+        <input [(ngModel)]="newProperty.country" type="text" maxlength="20" placeholder="Pais" name="country"/>
+
+      </div>
+
+      <div class="form__buttons">
+
+        <button type="button" class="solid next-btn" (click)="changeStep('next')">Continuar</button>
+
+      </div>
+
+    </div>
+
+    <div class="form__step form__step-2">
+
+      <h2 class="form__title"><b>I</b>móvel</h2>
+
+      <div class="form__input">
+
+        <div class="form__svg">
+          <img [src]="iconsInputs.bedroom" alt="Número de Quartos do Imóvel">
+        </div>
+
+        <input [(ngModel)]="newProperty.bedroom" type="number" maxlength="2" placeholder="Número de quartos" name="bedroom"/>
+
+      </div>
+
+      <div class="form__input">
+
+        <div class="form__svg">
+          <img [src]="iconsInputs.bathroom" alt="Número de Banheiros do Imóvel">
+        </div>
+
+        <input [(ngModel)]="newProperty.bathroom" type="number" maxlength="2" placeholder="Número de banheiros" name="bathroom"/>
+
+      </div>
+
+      <div class="form__input">
+
+        <div class="form__svg">
+          <img [src]="iconsInputs.kitchen" alt="Número de Cozinhas do Imóvel">
+        </div>
+
+        <input [(ngModel)]="newProperty.kitchen" type="number" maxlength="2" placeholder="Número de cozinhas" name="kitchen"/>
+
+      </div>
+
+      <div class="form__input">
+
+        <div class="form__svg">
+          <img [src]="iconsInputs.spot" alt="Número de Vagas do Imóvel">
+        </div>
+
+        <input [(ngModel)]="newProperty.spot" type="number" maxlength="2" placeholder="Número de Vagas" name="spot"/>
+
+      </div>
+
+      <div class="form__input">
+
+        <div class="form__svg">
+          <img [src]="iconsInputs.number" alt="Área Interna do Imóvel">
+        </div>
+
+        <input [(ngModel)]="newProperty.area" type="number" maxlength="10" placeholder="Área Interna" name="area"/>
+
+      </div>
+
+      <div class="form__input">
+
+        <div class="form__svg">
+          <img [src]="iconsInputs.externalArea" alt="área Externa do Imóvel">
+        </div>
+
+        <input [(ngModel)]="newProperty.externalArea" type="number"  placeholder="Área Externa" name="externalArea"/>
+
+      </div>
+
+      <div class="form__buttons">
+
+        <button type="button" class="transparent" (click)="changeStep('prev')">Voltar</button>
+        <button type="button" class="solid" (click)="changeStep('next')">Continuar</button>
+
+      </div>
+
+    </div>
+
+    <div class="form__step form__step-3">
+
+      <h2 class="form__title"><b>I</b>móvel</h2>
+
+      <div class="form__input">
+
+        <div class="form__svg">
+          <img [src]="iconsInputs.price" alt="Valor do Aluguel do Imóvel">
+        </div>
+
+        <input [(ngModel)]="newProperty.price" type="number" maxlength="10" placeholder="Valor do Aluguel" name="price"/>
+
+      </div>
+
+      <div class="form__input">
+
+        <div class="form__svg">
+          <img [src]="iconsInputs.title" alt="Título do Anúncio do Imóvel">
+        </div>
+
+        <input [(ngModel)]="newProperty.title" type="text" maxlength="100" placeholder="Título do Anúncio" name="title"/>
+
+      </div>
+
+      <div class="form__input">
+
+        <div class="form__svg">
+          <img [src]="iconsInputs.description" alt="Descrição do Imóvel">
+        </div>
+
+        <input [(ngModel)]="newProperty.description" type="text" maxlength="150"  placeholder="Descrição do Imóvel" name="description"/>
+
+      </div>
+
+      <div class="form__input">
+
+        <div class="form__svg">
+          <img [src]="iconsInputs.contactNumber" alt="Número de Contato do Anunciante">
+        </div>
+
+        <input [(ngModel)]="newProperty.contactNumber" type="text" maxlength="20" placeholder="Número de Contato" name="contactNumber"/>
+
+      </div>
+
+      <div class="form__input">
+
+        <div class="form__svg">
+          <img [src]="iconsInputs.contactEmail" alt="Email de Contato do Anunciante">
+        </div>
+
+        <input [(ngModel)]="newProperty.contactEmail" type="text"  placeholder="Email de Contato" name="contactEmail"/>
+
+      </div>
+
+      <div class="form__buttons">
+
+        <button type="button" class="transparent" (click)="changeStep('prev')">Voltar</button>
+        <button type="button" class="solid" (click)="changeStep('next')">Continuar</button>
+
+      </div>
+
+    </div>
+
+    <div class="form__step form__step-4">
+
+      <h2 class="form__title"><b>I</b>móvel</h2>
+
+      <div class="form__label">
+        <p>Agora, é só seguir as instruçõs para enviar uma foto do seu imóvel</p>
+      </div>
+
+      <div class="form__label">
+        <p>Fotografe seu imóvel de um ângulo que o valorize.</p>
+      </div>
+
+      <div class="form__divider"></div>
+
+      <div class="form__label">
+        <p>Upload da foto do imóvel</p>
+      </div>
+
+      <div class="form__label">
+        <p>Tamanho do arquivo: <b>máximo 100MB</b></p>
+        <p>Formatos: <b>JPG</b> ou <b>PNG</b></p>
+      </div>
+
+      <div class="form__upload" (click)="changeModal()">
+        <img src="./../../../assets/icons/cloud.svg" alt="">
+        <label>Enviar</label>
+      </div>
+
+      <div class="form__buttons">
+
+        <button type="button" class="transparent" (click)="changeStep('prev')">Voltar</button>
+        <button type="submit" class="solid" (click)="save()">Enviar</button>
+
+      </div>
+
+    </div>
+
+  </form>
+
+  <section class="modal" [ngClass]="{'active': openModal, '': !openModal}" >
+    <div class="background" (click)="changeModal()"></div>
+    <div class="modal__content">
+      <img class="close__button" (click)="changeModal()" src="../../../assets/icons/close.png" alt="">
+      <h1>Escolha a imagem do seu imóvel</h1>
+      <div class="grid">
+        <img (click)="chosenProperty(0)" [src]="properties[0].url" [alt]="properties[0].description">
+        <img (click)="chosenProperty(1)" [src]="properties[1].url" [alt]="properties[1].description">
+        <img (click)="chosenProperty(2)" [src]="properties[2].url" [alt]="properties[2].description">
+        <img (click)="chosenProperty(3)" [src]="properties[3].url" [alt]="properties[3].description">
+        <img (click)="chosenProperty(4)" [src]="properties[4].url" [alt]="properties[4].description">
+        <img (click)="chosenProperty(5)" [src]="properties[5].url" [alt]="properties[5].description">
+      </div>
+    </div>
+  </section>
+
+</main>
