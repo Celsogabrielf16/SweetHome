@@ -17,7 +17,10 @@ const icons: Object = {
   contactNumber: 'assets/icons/phoneNumber.png',
   contactEmail: 'assets/icons/email.png',
   url: 'assets/icons/cloud.svg',
-  close: 'assets/icons/close.png'
+  close: 'assets/icons/close.png',
+  password: 'assets/icons/password.png',
+  facebook: 'assets/icons/google.png',
+  google: 'assets/icons/facebook.png'
 }
 
 export default icons;

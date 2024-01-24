@@ -1,1 +1,50 @@
-<p>login works!</p>
+<main>
+  <form>
+    <h2 class="form__title"><b>L</b>ogin</h2>
+
+    <div class="form__input">
+
+      <div class="form__svg">
+        <img [src]="iconsInputs.contactEmail" alt="Email de Contato do Anunciante">
+      </div>
+
+      <input [(ngModel)]="newProperty.contactEmail" type="text"  placeholder="Email de Contato" name="contactEmail"/>
+
+    </div>
+
+    <div class="form__input">
+
+      <div class="form__svg">
+        <img [src]="iconsInputs.password" alt="Número de Contato do Anunciante">
+      </div>
+
+      <input [(ngModel)]="newProperty.contactNumber" type="password" maxlength="20" placeholder="Senha" name="password"/>
+
+    </div>
+
+    <div class="form__buttons">
+
+      <button type="button" class="solid">Entrar</button>
+
+    </div>
+
+  </form>
+
+  <div>
+    <h4><b>Esqueci minha senha</b></h4>
+    <h4>Não tem uma conta? <b>Cadastre-se</b></h4>
+    <div>
+      <div class="divider"></div>
+      <h5>Ou</h5>
+      <div class="divider"></div>
+    </div>
+    <div class="icons">
+      <div>
+        <img [src]="iconsInputs.google" alt="Logo do Google">
+      </div>
+      <div>
+        <img [src]="iconsInputs.facebook" alt="Logo do Facebook">
+      </div>
+    </div>
+  </div>
+</main>

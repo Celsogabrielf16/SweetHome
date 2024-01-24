@@ -1,0 +1,203 @@
+@import '../../styles/colors.scss';
+
+main {
+  font-family: 'Poppins', serif, sans-serif;
+  height: calc(100vh - 50px);
+  background-color: $aliceBlue-color;
+  user-select: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow-x: hidden;
+}
+
+form {
+  width: 400px;
+  padding: 0 10px;
+  position: relative;
+}
+
+.form__title {
+  font-size: 3rem;
+  color: $onyx-color;
+  margin-bottom: 50px;
+  width: 100%;
+  text-align: center;
+}
+
+.form__title b {
+  color: $scarlet-color;
+  font-weight: 900;
+}
+
+.form__input {
+  max-width: 400px;
+  width: 100%;
+  height: 55px;
+  background-color: $white-color;
+  margin-bottom: 20px;
+  border-radius: 24px;
+  display: grid;
+  grid-template-columns: 15% 85%;
+  transition: 0.2s ease-in-out;
+}
+
+.form__svg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $sonicSilver-color;
+
+  img {
+    max-width: 30px;
+  }
+}
+
+.inputs {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 0 15px;
+}
+
+.form__input input {
+  padding-right: 10px;
+  background: none;
+  outline: none;
+  border: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: $onyx-color;
+  border-top-right-radius: 24px;
+  border-bottom-right-radius: 24px;
+}
+
+.form__input input::placeholder {
+  color: $silverChalice-color;
+}
+
+.form__input:hover {
+  background-color: $cultured-color;
+}
+
+.form__buttons {
+  width: 100%;
+  gap: 10px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.form__divider{
+  width: 300px;
+  height: 2px;
+  background: linear-gradient(to left, $persimmon-color, $scarlet-color);
+  margin-bottom: 15px;
+}
+
+button {
+  text-align: center;
+  width: 100%;
+  height: 50px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border-radius: 48px;
+  cursor: pointer;
+  text-transform: uppercase;
+  margin-top: 10px;
+  transition: 0.5s;
+}
+
+button.solid {
+  background: linear-gradient(135deg, $persimmon-color, $scarlet-color);
+  color: $white-color;
+  border: none;
+}
+
+button.solid:hover {
+  box-shadow: 3px 3px 10px -3px $onyx-color;
+}
+
+button.transparent {
+  border: 2px solid $spaceCadet-color;
+  background-color: $aliceBlue-color;
+  color: $spaceCadet-color;
+}
+
+button.transparent:hover {
+  box-shadow: 3px 3px 10px -3px $onyx-color;
+}
+
+.modal {
+  width: 100%;
+  height: calc(100% - 50px);
+  position: absolute;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal.active {
+  display: flex;
+}
+
+.modal .modal__content {
+  width: 1200px;
+  background-color: $cultured-color;
+  border-radius: 24px;
+  margin: 0 20px;
+  position: relative;
+  z-index: 100;
+}
+
+.modal .background {
+  width: 100%;
+  height: 100%;
+  background-color: rgba($color: #000000, $alpha: 0.5);
+  position: absolute;
+  z-index: 11;
+}
+
+.modal .modal__content .close__button {
+  width: 24px;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}
+
+.modal .modal__content h1 {
+  width: 100%;
+  text-align: center;
+  padding: 15px 0 5px 0;
+  color: $onyx-color;
+}
+
+.modal .modal__content .grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  padding: 10px;
+  gap: 10px;
+}
+
+.modal .modal__content img {
+  width: 100%;
+  cursor: pointer;
+}
+
+.modal .modal__content .grid img:first-child {
+  border-radius: 12px 0 0 0;
+}
+
+.modal .modal__content .grid img:nth-child(3) {
+  border-radius: 0 12px 0 0;
+}
+
+.modal .modal__content .grid img:nth-child(4) {
+  border-radius: 0 0 0 12px;
+}
+
+.modal .modal__content .grid img:last-child {
+  border-radius: 0 0 12px 0;
+}
