@@ -19,8 +19,8 @@ const icons: Object = {
   url: 'assets/icons/cloud.svg',
   close: 'assets/icons/close.png',
   password: 'assets/icons/password.png',
-  facebook: 'assets/icons/google.png',
-  google: 'assets/icons/facebook.png'
+  facebook: 'assets/icons/facebook.png',
+  google: 'assets/icons/google.png'
 }
 
 export default icons;
