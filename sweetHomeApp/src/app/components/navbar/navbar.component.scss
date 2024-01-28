@@ -46,23 +46,24 @@ section{
       font-size: 1.4rem;
       width: 150px;
       color: #fff;
+      cursor: pointer;
     }
 
     .buttons{
-      width: 100px;
+      width: 50px;
       display: flex;
       justify-content: flex-end;
 
       button, a{
-        width: 30px;
-        height: 30px;
-        border-radius: 100%;
+        width: 40px;
+        height: 40px;
         display: flex;
         justify-content: center;
         align-items: center;
-        border: 1px solid #fff;
         color: #fff;
+        border: none;
         background-color: transparent;
+        cursor: pointer;
       }
 
       .menu{
@@ -99,7 +100,6 @@ section{
     transition: .7s;
     transform: translateX(-200px);
     border-radius: 0 0 20px 0;
-    border: 1px solid #FF2E00;
     border-top: none;
     border-left: none;
 

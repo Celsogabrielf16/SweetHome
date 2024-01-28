@@ -8,23 +8,28 @@
         <img [src]="iconsInputs.contactEmail" alt="Email de Contato do Anunciante">
       </div>
 
-      <input [(ngModel)]="newProperty.contactEmail" type="text"  placeholder="Email de Contato" name="contactEmail"/>
+      <input #emailInputRef [(ngModel)]="user.contactEmail" (change)="checkMandatoryFieldError($event.target)" type="text"  placeholder="Email de Contato" name="contactEmail"/>
 
     </div>
 
-    <div class="form__input">
+    <div class="form__input password">
 
       <div class="form__svg">
         <img [src]="iconsInputs.password" alt="Número de Contato do Anunciante">
       </div>
 
-      <input [(ngModel)]="newProperty.contactNumber" type="password" maxlength="20" placeholder="Senha" name="password"/>
+      <input #passwordInputRef [(ngModel)]="user.password" (change)="checkMandatoryFieldError($event.target)" type="password" maxlength="20" placeholder="Senha" name="password"/>
+
+      <div class="form__svg seePassword" (click)="seePassword()">
+        <img [ngClass]="{'active': !visiblePassword}" [src]="iconsInputs.invisible" alt="Icone de Invisivel">
+        <img [ngClass]="{'active': visiblePassword}" [src]="iconsInputs.visible" alt="Icone de Visivel">
+      </div>
 
     </div>
 
     <div class="form__buttons">
 
-      <button type="button" class="solid">Entrar</button>
+      <button type="button" class="solid" (click)="login()">Entrar</button>
 
     </div>
 

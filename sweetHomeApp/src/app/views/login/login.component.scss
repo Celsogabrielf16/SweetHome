@@ -43,6 +43,32 @@ form {
   transition: 0.2s ease-in-out;
 }
 
+.form__input.password {
+  grid-template-columns: 15% 70% 15%;
+  transition: 0.2s ease-in-out;
+
+  .seePassword img {
+    display: none;
+  }
+
+  .seePassword img.active {
+    display: block;
+  }
+}
+
+.mandatoryFieldError {
+  border: 1px solid $scarlet-color;
+  margin-bottom: 40px;
+}
+
+.mandatoryFieldError::after {
+  content: 'Este campo é obrigatório';
+  position: absolute;
+  margin-top: 60px;
+  margin-left: 10px;
+  color: $scarlet-color;
+}
+
 .form__svg {
   display: flex;
   align-items: center;

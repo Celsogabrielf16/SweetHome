@@ -23,18 +23,17 @@ export class RegisterComponent {
 
   visiblePassword: boolean = false;
   differentPasswordsError: boolean = false;
-  mandatoryFieldError: boolean = false;
 
   constructor(private router: Router) {}
 
   register() {
-    this.checkMandatoryFieldError(this.nameInputRef.nativeElement);
-    this.checkMandatoryFieldError(this.emailInputRef.nativeElement);
-    this.checkMandatoryFieldError(this.passwordInputRef.nativeElement);
-    this.checkMandatoryFieldError(this.passwordConfirmationInputRef.nativeElement);
+    const nameError = this.checkMandatoryFieldError(this.nameInputRef.nativeElement);
+    const emailError = this.checkMandatoryFieldError(this.emailInputRef.nativeElement);
+    const passwordError = this.checkMandatoryFieldError(this.passwordInputRef.nativeElement);
+    const passwordConfirmationError = this.checkMandatoryFieldError(this.passwordConfirmationInputRef.nativeElement);
     this.checkDifferentPasswordsError();
 
-    if (!this.mandatoryFieldError && !this.differentPasswordsError) {
+    if (!nameError && !emailError && !passwordError && !passwordConfirmationError && !this.differentPasswordsError) {
       console.log(this.newUser);
       this.router.navigate(['/']);
     }
@@ -51,13 +50,13 @@ export class RegisterComponent {
     this.differentPasswordsError = this.newUser.password != this.passwordConfirmation ? true : false;
   }
 
-  checkMandatoryFieldError(element: any) {
+  checkMandatoryFieldError(element: any): boolean {
     if (element.value.length == 0) {
       element.parentElement.classList.add('mandatoryFieldError');
-      this.mandatoryFieldError = true;
+      return true;
     } else {
       element.parentElement.classList.remove('mandatoryFieldError');
-      this.mandatoryFieldError = false;
+      return false;
     }
   }
 }

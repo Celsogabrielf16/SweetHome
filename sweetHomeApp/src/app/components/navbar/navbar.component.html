@@ -1,7 +1,7 @@
 
 <section>
   <header>
-    <div class="boxLogo">Sweet Home</div>
+    <div routerLink="/" class="boxLogo">Sweet Home</div>
       <nav>
         <ul>
           <li><a routerLink="/" routerLinkActive="active"  [routerLinkActiveOptions]="{exact: true}" >Home</a></li>
@@ -10,8 +10,12 @@
         </ul>
       </nav>
       <div class="buttons">
-        <a class="user" routerLink="login"><i class="pi pi-user"></i></a>
-        <button class="menu" (click)="changeStatusMenu()"><i class="pi" [ngClass]="{'pi-align-justify': !statusMenu, 'pi-times': statusMenu}" style="margin-top: 2px;"></i></button>
+        <ul>
+          <li><a routerLink="login" class="user">Entrar</a></li>
+        </ul>
+        <button class="menu" (click)="changeStatusMenu()">
+          <i class="pi" [ngClass]="{'pi-align-justify': !statusMenu, 'pi-times': statusMenu}" style="margin-top: 2px;"></i>
+        </button>
       </div>
   </header>
 </section>
