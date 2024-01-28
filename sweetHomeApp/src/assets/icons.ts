@@ -20,7 +20,11 @@ const icons: Object = {
   close: 'assets/icons/close.png',
   password: 'assets/icons/password.png',
   facebook: 'assets/icons/facebook.png',
-  google: 'assets/icons/google.png'
+  google: 'assets/icons/google.png',
+  personWhite: 'assets/icons/personWhite.png',
+  personBlack: 'assets/icons/personBlack.png',
+  visible: 'assets/icons/visible.png',
+  invisible: 'assets/icons/invisible.png'
 }
 
 export default icons;
