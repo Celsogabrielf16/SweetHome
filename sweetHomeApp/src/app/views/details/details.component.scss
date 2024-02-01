@@ -76,7 +76,7 @@ section{
           display: flex;
 
           img{
-            color: #000;
+            margin-right: 5px;
           }
         }
       }
@@ -153,6 +153,17 @@ section{
   }
 }
 
+@media (max-width: 750px) {
+  section{
+    .description{
+      .details{
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 20px;
+      }
+    }
+  }
+}
+
 
 @media (max-width: 450px) {
   section{
@@ -170,6 +181,13 @@ section{
         display: none;
       }
 
+    }
+
+    .description{
+      .details{
+        grid-template-columns: repeat(1, 1fr) !important;
+        gap: 20px;
+      }
     }
   }
 }

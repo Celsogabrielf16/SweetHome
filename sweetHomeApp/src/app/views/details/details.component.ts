@@ -14,10 +14,10 @@ export class DetailsComponent implements OnInit {
   userId: number;
   infoProperty: Iproperty | undefined;
 
-  svgBedroom = '../../../assets/Components/card/svgBedroom.svg';
-  svgArea = '../../../assets/Components/card/svgArea.svg';
-  svgBathroom = '../../../assets/Components/card/svgBathroom.svg';
-  svgSpot = '../../../assets/Components/card/svgSpot.svg';
+  svgBedroom = '../../../assets/icons/bedroom.png';
+  svgArea = '../../../assets/icons/uf.png';
+  svgBathroom = '../../../assets/icons/bathroom.png';
+  svgSpot = '../../../assets/icons/spot.png';
 
   constructor(private router: ActivatedRoute, private homeService: HomeService) {
     this.userId = this.router.snapshot.params["id"]
