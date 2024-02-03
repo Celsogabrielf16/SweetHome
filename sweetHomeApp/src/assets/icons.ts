@@ -24,7 +24,8 @@ const icons: Object = {
   personWhite: 'assets/icons/personWhite.png',
   personBlack: 'assets/icons/personBlack.png',
   visible: 'assets/icons/visible.png',
-  invisible: 'assets/icons/invisible.png'
+  invisible: 'assets/icons/invisible.png',
+  search: 'assets/icons/search.png'
 }
 
 export default icons;

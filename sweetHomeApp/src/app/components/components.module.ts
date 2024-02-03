@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { CardComponent } from './card/card.component';
 import { SliderComponent } from './slider/slider.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -11,11 +12,13 @@ import { SearchBarComponent } from './search-bar/search-bar.component';
     SearchBarComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule
   ],
   exports: [
     CardComponent,
-    SliderComponent
+    SliderComponent,
+    SearchBarComponent
   ]
 })
 export class ComponentsModule { }

@@ -1,1 +1,29 @@
-<p>search-bar works!</p>
+<div class="search-bar">
+  <div class="search-bar__input">
+    <label for="location">
+      <div>Onde?</div>
+      <input [(ngModel)]="infoInputs.location" type="text" id="location" placeholder="Buscar destinos">
+    </label>
+  </div>
+  <div class="search-bar__input">
+    <label for="price">
+      <div>Valor?</div>
+      <input [(ngModel)]="infoInputs.price" type="number" id="price" placeholder="Insira orçamento">
+    </label>
+  </div>
+  <div class="search-bar__input">
+    <label for="bedroom">
+      <div>Quartos?</div>
+      <input [(ngModel)]="infoInputs.bedroom" type="number" id="bedroom" placeholder="Quantidade de quartos">
+    </label>
+  </div>
+  <div class="search-bar__input">
+    <label for="spot">
+      <div>Carros?</div>
+      <input [(ngModel)]="infoInputs.spot" type="number" id="spot" placeholder="Quantidade de vagas">
+    </label>
+  </div>
+  <div class="search-bar__svg" (click)="search()">
+    <img [src]="icons.search" alt="Pesquisar">
+  </div>
+</div>
