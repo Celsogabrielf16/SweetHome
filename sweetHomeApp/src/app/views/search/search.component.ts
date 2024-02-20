@@ -1,6 +1,6 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
-import { HomeService } from 'src/app/service/home.service';
+import { HomeService } from 'src/app/services/home.service';
 
 @Component({
   selector: 'app-search',
@@ -24,7 +24,7 @@ export class SearchComponent implements OnInit {
   numberOfProperties: number;
 
   constructor(private homeService: HomeService, private router: Router) {
-    this.properties = homeService.getProperty();
+    this.properties = homeService.getAllProperties();
   }
 
   redirectDetails(id: number) {

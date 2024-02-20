@@ -1,8 +1,8 @@
 import { Iproperty } from 'src/app/interfaces/Iproperty';
 import { Component } from '@angular/core';
-import { HomeService } from 'src/app/service/home.service';
+import { HomeService } from 'src/app/services/home.service';
 import icons from 'src/assets/icons';
-import { Property } from 'src/app/classes/Property';
+import { Property } from 'src/app/shared/models/Property';
 
 @Component({
   selector: 'app-property-registration',
@@ -19,7 +19,7 @@ export class PropertyRegistrationComponent {
   iconsInputs: Object | any = icons;
 
   constructor(private homeService: HomeService) {
-    this.properties = homeService.getProperty();
+    this.properties = homeService.getAllProperties();
   }
 
   changeStep(button: string) {

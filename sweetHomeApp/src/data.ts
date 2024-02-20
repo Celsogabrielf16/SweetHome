@@ -1,6 +1,6 @@
-import { Iproperty } from "src/app/interfaces/Iproperty";
+import { Property } from "./app/shared/models/Property";
 
-const properties: Array<Iproperty> = [
+const properties: Property[] = [
   {
     id: 1,
     street: 'Rua da Primavera',
@@ -170,4 +170,5 @@ const properties: Array<Iproperty> = [
     uf: 'MG'
   }
 ];
+
 export default properties;

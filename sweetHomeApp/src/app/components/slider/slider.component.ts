@@ -1,6 +1,7 @@
 import { Component, ElementRef, ViewChild, Input } from '@angular/core';
 import KeenSlider, { KeenSliderInstance } from "keen-slider"
-import { HomeService } from 'src/app/service/home.service';
+import { HomeService } from 'src/app/services/home.service';
+import { Property } from 'src/app/shared/models/Property';
 
 @Component({
   selector: 'app-slider',
@@ -58,9 +59,9 @@ export class SliderComponent {
     if (this.slider) this.slider.destroy()
   }
 
-  infoProperty: any = [];
+  properties: Property[] = [];
 
   constructor(private homeService: HomeService) {
-    this.infoProperty = homeService.getProperty();
+    this.properties = homeService.getAllProperties();
   }
 }
