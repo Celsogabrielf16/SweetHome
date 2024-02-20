@@ -1,6 +1,6 @@
 import { Component, ElementRef, ViewChild, Input } from '@angular/core';
 import KeenSlider, { KeenSliderInstance } from "keen-slider"
-import { HomeService } from 'src/app/services/home.service';
+import { HomeService } from 'src/app/services/property.service';
 import { Property } from 'src/app/shared/models/Property';
 
 @Component({

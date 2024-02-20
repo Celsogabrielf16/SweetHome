@@ -1,6 +1,6 @@
 import { Iproperty } from 'src/app/interfaces/Iproperty';
 import { Component } from '@angular/core';
-import { HomeService } from 'src/app/services/home.service';
+import { HomeService } from 'src/app/services/property.service';
 import icons from 'src/assets/icons';
 import { Property } from 'src/app/shared/models/Property';
 

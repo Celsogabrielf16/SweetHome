@@ -1,6 +1,6 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
-import { HomeService } from 'src/app/services/home.service';
+import { HomeService } from 'src/app/services/property.service';
 
 @Component({
   selector: 'app-search',
