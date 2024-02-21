@@ -11,7 +11,7 @@ const routes: Routes = [
     loadChildren: () => import("./views/details/details.module").then(m => m.DetailsModule)
   },
   {
-    path: 'search',
+    path: 'search/:citySearched',
     loadChildren: () => import("./views/search/search.module").then(m => m.SearchModule)
   },
   {

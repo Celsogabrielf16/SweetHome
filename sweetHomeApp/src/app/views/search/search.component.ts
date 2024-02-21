@@ -1,5 +1,5 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { HomeService } from 'src/app/services/property.service';
 
 @Component({
@@ -23,8 +23,16 @@ export class SearchComponent implements OnInit {
   propertiesStep: number = 0;
   numberOfProperties: number;
 
-  constructor(private homeService: HomeService, private router: Router) {
-    this.properties = homeService.getAllProperties();
+  constructor(private homeService: HomeService, private router: Router, activatedRoute: ActivatedRoute) {
+    activatedRoute.params.subscribe((params) => {
+      console.log(params.citySearched);
+
+      if(params.citySearched) {
+        this.properties = this.homeService.getPropertyByCity(params.citySearched);
+      } else {
+        this.properties = this.homeService.getAllProperties();
+      }
+    })
   }
 
   redirectDetails(id: number) {

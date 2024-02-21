@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import icons from 'src/assets/icons';
 
 @Component({
@@ -9,14 +9,22 @@ import icons from 'src/assets/icons';
 })
 export class SearchBarComponent {
   icons: Object | any = icons;
+  citySearched: string = '';
 
-  infoInputs: any = [];
+  infoInputs: any = {};
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, activatedRoute: ActivatedRoute) {
+    activatedRoute.params.subscribe((params) => {
+      if(params.citySearched) {
+        this.citySearched = params.citySearched;
+      }
+    });
+    this.infoInputs.location = this.citySearched;
+  }
 
   search() {
     console.log(this.infoInputs);
-    this.router.navigate(['/search']);
+    this.router.navigate(['/search/', this.infoInputs.location]);
   }
 
 }

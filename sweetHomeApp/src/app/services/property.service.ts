@@ -19,9 +19,7 @@ export class HomeService {
   }
 
   getPropertyByCity(citySearched: string): Property[] {
-    return this.getAllProperties().filter(property => {
-      property.city.toLowerCase().includes(citySearched.toLowerCase());
-    });
+    return this.getAllProperties().filter(property => property.city.toLowerCase().includes(citySearched.toLowerCase()));
   }
 
   postProperty(newProperty: Property) {

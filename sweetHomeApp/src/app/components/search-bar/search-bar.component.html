@@ -1,26 +1,27 @@
+
 <div class="search-bar">
   <div class="search-bar__input">
     <label for="location">
       <div>Onde?</div>
-      <input [(ngModel)]="infoInputs.location" type="text" id="location" placeholder="Buscar destinos">
+      <input [(ngModel)]="infoInputs.location" type="text" id="location" placeholder="Buscar destinos" (keyup.enter)="search()" [value]="citySearched">
     </label>
   </div>
   <div class="search-bar__input">
     <label for="price">
       <div>Valor?</div>
-      <input [(ngModel)]="infoInputs.price" type="number" id="price" placeholder="Insira orçamento">
+      <input [(ngModel)]="infoInputs.price" type="number" id="price" placeholder="Insira orçamento" (keyup.enter)="search()">
     </label>
   </div>
   <div class="search-bar__input">
     <label for="bedroom">
       <div>Quartos?</div>
-      <input [(ngModel)]="infoInputs.bedroom" type="number" id="bedroom" placeholder="Quantidade de quartos">
+      <input [(ngModel)]="infoInputs.bedroom" type="number" id="bedroom" placeholder="Quantidade de quartos" (keyup.enter)="search()">
     </label>
   </div>
   <div class="search-bar__input">
     <label for="spot">
       <div>Carros?</div>
-      <input [(ngModel)]="infoInputs.spot" type="number" id="spot" placeholder="Quantidade de vagas">
+      <input [(ngModel)]="infoInputs.spot" type="number" id="spot" placeholder="Quantidade de vagas" (keyup.enter)="search()">
     </label>
   </div>
   <div class="search-bar__svg" (click)="search()">
