@@ -1,0 +1,6 @@
+<main *ngIf="tags">
+  <a *ngFor="let tag of tags" (click)="clicked(tag)">
+    <img [src]="svgBedroom">
+    <p>{{ tag.name }}</p>
+  </a>
+</main>

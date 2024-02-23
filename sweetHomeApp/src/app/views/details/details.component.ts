@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Iproperty } from 'src/app/interfaces/Iproperty';
 import { HomeService } from 'src/app/services/property.service';
@@ -9,9 +9,8 @@ import { HomeService } from 'src/app/services/property.service';
   styleUrls: ['./details.component.scss']
 })
 
-export class DetailsComponent implements OnInit {
+export class DetailsComponent {
 
-  userId: number;
   infoProperty: Iproperty | undefined;
 
   svgBedroom = '../../../assets/icons/bedroom.png';
@@ -19,11 +18,11 @@ export class DetailsComponent implements OnInit {
   svgBathroom = '../../../assets/icons/bathroom.png';
   svgSpot = '../../../assets/icons/spot.png';
 
-  constructor(private router: ActivatedRoute, private homeService: HomeService) {
-    this.userId = this.router.snapshot.params["id"]
-  }
-
-  ngOnInit(): void {
-    this.infoProperty =  this.homeService.getPropertyByID(this.userId);
+  constructor(activatedRoute: ActivatedRoute, homeService: HomeService) {
+    activatedRoute.params.subscribe((params) => {
+      if(params.id) {
+        this.infoProperty = homeService.getPropertyByID(params.id);
+      }
+    })
   }
 }

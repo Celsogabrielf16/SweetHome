@@ -1,6 +1,7 @@
 import { Property } from "./app/shared/models/Property";
+import { Tag } from "./app/shared/models/Tag";
 
-const properties: Property[] = [
+export const properties: Property[] = [
   {
     id: 1,
     street: 'Rua da Primavera',
@@ -21,6 +22,7 @@ const properties: Property[] = [
     contactNumber: 'ex',
     contactEmail: 'ex',
     url: 'assets/properties/property01.jpg',
+    tags: ['Casa', 'Em frente a praia'],
   },
   {
     id: 2,
@@ -41,7 +43,8 @@ const properties: Property[] = [
     contactEmail: 'ex',
     url: 'assets/properties/property02.jpg',
     description: 'Casa térrea com jardim exuberante, oferecendo serenidade e privacidade.',
-    uf: 'BA'
+    uf: 'BA',
+    tags: ['Apartamento', 'Em frente a praia'],
   },
   {
     id: 3,
@@ -62,7 +65,8 @@ const properties: Property[] = [
     contactEmail: 'ex',
     url: 'assets/properties/property04.jpg',
     description: 'Cobertura à beira-mar com terraço privativo e vistas deslumbrantes do oceano.',
-    uf: 'SP'
+    uf: 'SP',
+    tags: ['Apartamento', 'Em frente a praia'],
   },
   {
     id: 4,
@@ -83,7 +87,8 @@ const properties: Property[] = [
     contactEmail: 'ex',
     url: 'assets/properties/property05.jpg',
     description: 'Aconchegante apartamento de um quarto no centro, repleto de charme e elegância.',
-    uf: 'PE'
+    uf: 'PE',
+    tags: ['Apartamento', 'No interior'],
   },
   {
     id: 5,
@@ -104,7 +109,8 @@ const properties: Property[] = [
     contactEmail: 'ex',
     url: 'assets/properties/property06.jpg',
     description: 'Chalé rústico com lareira, ideal para um retiro encantador nas montanhas.',
-    uf: 'ES'
+    uf: 'ES',
+    tags: ['Casa', 'No interior'],
   },
   {
     id: 6,
@@ -125,7 +131,8 @@ const properties: Property[] = [
     contactEmail: 'ex',
     url: 'assets/properties/property07.jpg',
     description: 'Condomínio de quatro quartos com design sofisticado e instalações de última geração.',
-    uf: 'SP'
+    uf: 'SP',
+    tags: ['Apartamento', 'Com Piscina'],
   },
   {
     id: 7,
@@ -146,7 +153,8 @@ const properties: Property[] = [
     contactEmail: 'ex',
     url: 'assets/properties/property01.jpg',
     description: 'Sobrado histórico meticulosamente restaurado, preservando detalhes originais.',
-    uf: 'SP'
+    uf: 'SP',
+    tags: ['Casa', 'Com Piscina'],
   },
   {
     id: 8,
@@ -167,8 +175,16 @@ const properties: Property[] = [
     contactEmail: 'ex',
     url: 'assets/properties/property02.jpg',
     description: 'Duplex penthouse com terraço e vista deslumbrante, oferecendo luxo exclusivo.',
-    uf: 'MG'
+    uf: 'MG',
+    tags: ['Casa', 'Em frente a praia'],
   }
 ];
 
-export default properties;
+export const tags: Tag[] = [
+  { name: 'Todos', count: 8 },
+  { name: 'Casa', count: 4 },
+  { name: 'Apartamento', count: 4 },
+  { name: 'Com Piscina', count: 2 },
+  { name: 'No interior', count: 2 },
+  { name: 'Na praia', count: 4 },
+]

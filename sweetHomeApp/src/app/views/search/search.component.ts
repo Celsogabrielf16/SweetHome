@@ -22,13 +22,19 @@ export class SearchComponent implements OnInit {
   propertiesSeparated: Array<any>;
   propertiesStep: number = 0;
   numberOfProperties: number;
+  stringInfo: string = '';
 
   constructor(private homeService: HomeService, private router: Router, activatedRoute: ActivatedRoute) {
     activatedRoute.params.subscribe((params) => {
-      console.log(params.citySearched);
+      const city = params['citySearched'];
+      const tag = params['tagSearched'];
 
-      if(params.citySearched) {
-        this.properties = this.homeService.getPropertyByCity(params.citySearched);
+      if(city) {
+        this.properties = this.homeService.getPropertyByCity(city);
+        this.stringInfo = 'em ' + this.capitalizeWords(city);
+      } else if(tag) {
+        this.properties = this.homeService.getAllPropertiesByTag(tag);
+        this.stringInfo = '';
       } else {
         this.properties = this.homeService.getAllProperties();
       }
@@ -83,6 +89,12 @@ export class SearchComponent implements OnInit {
     let previous = this.previousRef.nativeElement.classList;
     this.propertiesStep === 0 ? previous.remove('active') : previous.add('active');
     this.propertiesStep === this.propertiesSeparated.length - 1 ? next.remove('active') : next.add('active');
+  }
+
+  capitalizeWords(string: string) {
+    return string.toLowerCase().replace(/\b\w/g, function(char) {
+      return char.toUpperCase();
+    });
   }
 
   ngOnInit(): void {

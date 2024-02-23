@@ -1,8 +1,10 @@
 <main>
   <app-search-bar></app-search-bar>
 
+  <app-tags></app-tags>
+
   <div class="filterInfo">
-    <p> {{ numberOfProperties }} Imóveis encontrados </p>
+    <p> {{ numberOfProperties }} Imóveis encontrados {{ stringInfo }}</p>
   </div>
 
   <div class="infoImmobile" (click)="redirectDetails(property.id)" *ngFor="let property of properties">

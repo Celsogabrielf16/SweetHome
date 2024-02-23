@@ -4,12 +4,14 @@ import { CardComponent } from './card/card.component';
 import { SliderComponent } from './slider/slider.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
 import { FormsModule } from '@angular/forms';
+import { TagsComponent } from './tags/tags.component';
 
 @NgModule({
   declarations: [
     CardComponent,
     SliderComponent,
-    SearchBarComponent
+    SearchBarComponent,
+    TagsComponent
   ],
   imports: [
     CommonModule,
@@ -18,7 +20,8 @@ import { FormsModule } from '@angular/forms';
   exports: [
     CardComponent,
     SliderComponent,
-    SearchBarComponent
+    SearchBarComponent,
+    TagsComponent
   ]
 })
 export class ComponentsModule { }
