@@ -22,7 +22,7 @@ export const properties: Property[] = [
     contactNumber: 'ex',
     contactEmail: 'ex',
     url: 'assets/properties/property01.jpg',
-    tags: ['Casa', 'Em frente a praia'],
+    tags: ['Casas Modernas', 'Na praia'],
   },
   {
     id: 2,
@@ -44,7 +44,7 @@ export const properties: Property[] = [
     url: 'assets/properties/property02.jpg',
     description: 'Casa térrea com jardim exuberante, oferecendo serenidade e privacidade.',
     uf: 'BA',
-    tags: ['Acampamento', 'Em frente a praia'],
+    tags: ['Casas Modernas', 'Na praia'],
   },
   {
     id: 3,
@@ -66,7 +66,7 @@ export const properties: Property[] = [
     url: 'assets/properties/property04.jpg',
     description: 'Cobertura à beira-mar com terraço privativo e vistas deslumbrantes do oceano.',
     uf: 'SP',
-    tags: ['Acampamento', 'Em frente a praia'],
+    tags: ['Acampamento', 'No Interior'],
   },
   {
     id: 4,
@@ -88,7 +88,7 @@ export const properties: Property[] = [
     url: 'assets/properties/property05.jpg',
     description: 'Aconchegante Acampamento de um quarto no centro, repleto de charme e elegância.',
     uf: 'PE',
-    tags: ['Acampamento', 'No interior'],
+    tags: ['Acampamento', 'No Interior'],
   },
   {
     id: 5,
@@ -110,7 +110,7 @@ export const properties: Property[] = [
     url: 'assets/properties/property06.jpg',
     description: 'Chalé rústico com lareira, ideal para um retiro encantador nas montanhas.',
     uf: 'ES',
-    tags: ['Casa', 'No interior'],
+    tags: ['Com Piscina', 'Nas Montanhas'],
   },
   {
     id: 6,
@@ -132,7 +132,7 @@ export const properties: Property[] = [
     url: 'assets/properties/property07.jpg',
     description: 'Condomínio de quatro quartos com design sofisticado e instalações de última geração.',
     uf: 'SP',
-    tags: ['Acampamento', 'Com Piscina'],
+    tags: ['Com Piscina', 'Nas Montanhas'],
   },
   {
     id: 7,
@@ -154,7 +154,7 @@ export const properties: Property[] = [
     url: 'assets/properties/property01.jpg',
     description: 'Sobrado histórico meticulosamente restaurado, preservando detalhes originais.',
     uf: 'SP',
-    tags: ['Casa', 'Com Piscina'],
+    tags: ['Casas Modernas', 'Com Piscina'],
   },
   {
     id: 8,
@@ -176,14 +176,14 @@ export const properties: Property[] = [
     url: 'assets/properties/property02.jpg',
     description: 'Duplex penthouse com terraço e vista deslumbrante, oferecendo luxo exclusivo.',
     uf: 'MG',
-    tags: ['Casa', 'Em frente a praia'],
+    tags: ['Casas Modernas', 'Na praia'],
   }
 ];
 
 export const tags: Tag[] = [
   { name: 'Na praia', src: 'assets/icons/beach.jpg', active: false },
   { name: 'Acampamento', src: 'assets/icons/camping.jpg', active: false },
-  { name: 'No interior', src: 'assets/icons/countryHouse.jpg', active: false },
+  { name: 'No Interior', src: 'assets/icons/countryHouse.jpg', active: false },
   { name: 'Casas Modernas', src: 'assets/icons/house.jpg', active: false },
   { name: 'Nas Montanhas', src: 'assets/icons/mountains.jpg', active: false },
   { name: 'Com Piscina', src: 'assets/icons/pool.jpg', active: false },

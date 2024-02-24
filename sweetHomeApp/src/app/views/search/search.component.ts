@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { HomeService } from 'src/app/services/property.service';
 
@@ -7,7 +7,7 @@ import { HomeService } from 'src/app/services/property.service';
   templateUrl: './search.component.html',
   styleUrls: ['./search.component.scss']
 })
-export class SearchComponent implements OnInit {
+export class SearchComponent {
 
   svgBedroom = 'assets/Components/card/svgBedroom.svg';
   svgArea = 'assets/Components/card/svgArea.svg';
@@ -38,7 +38,14 @@ export class SearchComponent implements OnInit {
       } else {
         this.properties = this.homeService.getAllProperties();
       }
+
+      setTimeout(() => {
+        this.arrayChunk(5);
+        this.properties = this.propertiesSeparated[this.propertiesStep];
+        this.hideArrow();
+      }, 100);
     })
+
   }
 
   redirectDetails(id: number) {
@@ -46,8 +53,7 @@ export class SearchComponent implements OnInit {
   }
 
   arrayChunk(lenghtNewArray: number) {
-    let newArray = [];
-    let aux = 0;
+    let newArray = [], aux = 0;
     this.numberOfProperties = this.properties.length;
 
     while (aux < this.properties.length) {
@@ -84,7 +90,6 @@ export class SearchComponent implements OnInit {
   }
 
   hideArrow() {
-
     let next = this.nextRef.nativeElement.classList;
     let previous = this.previousRef.nativeElement.classList;
     this.propertiesStep === 0 ? previous.remove('active') : previous.add('active');
@@ -95,13 +100,5 @@ export class SearchComponent implements OnInit {
     return string.toLowerCase().replace(/\b\w/g, function(char) {
       return char.toUpperCase();
     });
-  }
-
-  ngOnInit(): void {
-    setTimeout(() => {
-      this.arrayChunk(5);
-      this.properties = this.propertiesSeparated[this.propertiesStep];
-      this.hideArrow();
-    }, 100);
   }
 }
