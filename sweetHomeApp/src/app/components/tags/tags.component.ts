@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { HomeService } from 'src/app/services/property.service';
 import { Tag } from 'src/app/shared/models/Tag';
-import icons from 'src/assets/icons';
 
 @Component({
   selector: 'app-tags',
@@ -12,14 +11,33 @@ import icons from 'src/assets/icons';
 export class TagsComponent {
   svgBedroom = 'assets/Components/card/svgBedroom.svg';
 
-  tags?: Tag[];
-  icons: Object | any = icons;
+  tags: Tag[];
+  tagSearched: string = '';
 
-  constructor(private homeService: HomeService, private router: Router) {
+  constructor(private router: Router, homeService: HomeService, private activatedRoute: ActivatedRoute) {
     this.tags = homeService.getAllPropertiesTags();
+    this.getParams();
+    this.setActive();
   }
 
-  clicked(tag: any){
-    this.router.navigate(['search/tag/', tag.name]);
+  clicked(tagClicked: any){
+    this.tagSearched = tagClicked.name;
+    this.router.navigate(['search/tag/', tagClicked.name]);
+    this.setActive();
+  }
+
+  getParams() {
+    this.activatedRoute.params.subscribe((params) => {
+      this.tagSearched = params.tagSearched;
+    })
+  }
+
+  setActive() {
+    this.tags.map((tag) => {
+      tag.active = false;
+      if (tag.name == this.tagSearched) {
+        tag.active = true;
+      }
+    })
   }
 }

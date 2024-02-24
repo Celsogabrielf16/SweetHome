@@ -17,8 +17,8 @@ export const properties: Property[] = [
     area: 120,
     externalArea: 100,
     price: 150,
-    title: 'Apartamento de Luxo com Vista Panorâmica',
-    description: 'Apartamento de luxo com vista panorâmica da cidade em condomínio exclusivo.',
+    title: 'Acampamento de Luxo com Vista Panorâmica',
+    description: 'Acampamento de luxo com vista panorâmica da cidade em condomínio exclusivo.',
     contactNumber: 'ex',
     contactEmail: 'ex',
     url: 'assets/properties/property01.jpg',
@@ -44,7 +44,7 @@ export const properties: Property[] = [
     url: 'assets/properties/property02.jpg',
     description: 'Casa térrea com jardim exuberante, oferecendo serenidade e privacidade.',
     uf: 'BA',
-    tags: ['Apartamento', 'Em frente a praia'],
+    tags: ['Acampamento', 'Em frente a praia'],
   },
   {
     id: 3,
@@ -66,11 +66,11 @@ export const properties: Property[] = [
     url: 'assets/properties/property04.jpg',
     description: 'Cobertura à beira-mar com terraço privativo e vistas deslumbrantes do oceano.',
     uf: 'SP',
-    tags: ['Apartamento', 'Em frente a praia'],
+    tags: ['Acampamento', 'Em frente a praia'],
   },
   {
     id: 4,
-    title: 'Aconchegante Apartamento de Um Quarto no Centro',
+    title: 'Aconchegante Acampamento de Um Quarto no Centro',
     price: 120,
     city: 'Fortaleza',
     country: 'Brasil',
@@ -86,9 +86,9 @@ export const properties: Property[] = [
     contactNumber: 'ex',
     contactEmail: 'ex',
     url: 'assets/properties/property05.jpg',
-    description: 'Aconchegante apartamento de um quarto no centro, repleto de charme e elegância.',
+    description: 'Aconchegante Acampamento de um quarto no centro, repleto de charme e elegância.',
     uf: 'PE',
-    tags: ['Apartamento', 'No interior'],
+    tags: ['Acampamento', 'No interior'],
   },
   {
     id: 5,
@@ -132,7 +132,7 @@ export const properties: Property[] = [
     url: 'assets/properties/property07.jpg',
     description: 'Condomínio de quatro quartos com design sofisticado e instalações de última geração.',
     uf: 'SP',
-    tags: ['Apartamento', 'Com Piscina'],
+    tags: ['Acampamento', 'Com Piscina'],
   },
   {
     id: 7,
@@ -181,10 +181,10 @@ export const properties: Property[] = [
 ];
 
 export const tags: Tag[] = [
-  { name: 'Todos', count: 8 },
-  { name: 'Casa', count: 4 },
-  { name: 'Apartamento', count: 4 },
-  { name: 'Com Piscina', count: 2 },
-  { name: 'No interior', count: 2 },
-  { name: 'Na praia', count: 4 },
+  { name: 'Na praia', src: 'assets/icons/beach.jpg', active: false },
+  { name: 'Acampamento', src: 'assets/icons/camping.jpg', active: false },
+  { name: 'No interior', src: 'assets/icons/countryHouse.jpg', active: false },
+  { name: 'Casas Modernas', src: 'assets/icons/house.jpg', active: false },
+  { name: 'Nas Montanhas', src: 'assets/icons/mountains.jpg', active: false },
+  { name: 'Com Piscina', src: 'assets/icons/pool.jpg', active: false },
 ]

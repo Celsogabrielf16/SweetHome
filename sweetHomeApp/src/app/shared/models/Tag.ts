@@ -1,4 +1,5 @@
 export class Tag {
   name!: string;
-  count!: number;
+  src!: string;
+  active!: boolean;
 }

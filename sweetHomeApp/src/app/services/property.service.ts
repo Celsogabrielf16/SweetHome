@@ -28,9 +28,7 @@ export class HomeService {
   }
 
   getAllPropertiesByTag(tag: string): Property[] {
-    return tag === 'Todos' ?
-      this.getAllProperties() :
-      this.getAllProperties().filter(property => property.tags?.includes(tag));
+    return this.getAllProperties().filter(property => property.tags?.includes(tag));
   }
 
   postProperty(newProperty: Property) {

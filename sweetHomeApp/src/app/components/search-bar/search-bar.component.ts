@@ -23,8 +23,7 @@ export class SearchBarComponent {
   }
 
   search() {
-    console.log(this.infoInputs);
-    this.router.navigate(['/search/tag/', this.infoInputs.location]);
+    this.router.navigate(['/search/city/', this.infoInputs.location]);
   }
 
 }

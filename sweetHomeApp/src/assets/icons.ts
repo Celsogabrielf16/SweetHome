@@ -25,7 +25,13 @@ const icons: Object = {
   personBlack: 'assets/icons/personBlack.png',
   visible: 'assets/icons/visible.png',
   invisible: 'assets/icons/invisible.png',
-  search: 'assets/icons/search.png'
+  search: 'assets/icons/search.png',
+  beach: 'assets/icons/beach.jpg',
+  camping: 'assets/icons/camping.jpg',
+  countryHouse: 'assets/icons/countryHouse.jpg',
+  house: 'assets/icons/house.jpg',
+  mountains: 'assets/icons/mountains.jpg',
+  pool: 'assets/icons/pool.jpg',
 }
 
 export default icons;
