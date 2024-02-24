@@ -7,21 +7,21 @@
     </label>
   </div>
   <div class="search-bar__input">
-    <label for="price">
-      <div>Valor?</div>
-      <input [(ngModel)]="infoInputs.price" type="text" id="price" placeholder="Insira orçamento" (keyup.enter)="search()">
+    <label for="minValue">
+      <div>Valor Mínimo</div>
+      <input [(ngModel)]="infoInputs.minValue" type="number" id="minValue" placeholder="Valor mínimo por diaria" (keyup.enter)="search()">
+    </label>
+  </div>
+  <div class="search-bar__input">
+    <label for="maxValue">
+      <div>Valor máximo</div>
+      <input [(ngModel)]="infoInputs.maxValue" type="number" id="maxValue" placeholder="Valor máximo por diaria" (keyup.enter)="search()">
     </label>
   </div>
   <div class="search-bar__input">
     <label for="bedroom">
       <div>Quartos?</div>
       <input [(ngModel)]="infoInputs.bedroom" type="number" id="bedroom" placeholder="Quantidade de quartos" (keyup.enter)="search()">
-    </label>
-  </div>
-  <div class="search-bar__input">
-    <label for="spot">
-      <div>Carros?</div>
-      <input [(ngModel)]="infoInputs.spot" type="number" id="spot" placeholder="Quantidade de vagas" (keyup.enter)="search()">
     </label>
   </div>
   <div class="search-bar__svg" (click)="search()">

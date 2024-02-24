@@ -16,7 +16,7 @@ body{
 
 input:-webkit-autofill {
   transition: 0.2s ease-in-out;
-  -webkit-box-shadow: 0 0 0 30px white inset;
+  -webkit-box-shadow: 0 0 0 30px $white-color inset;
 }
 
 input:-webkit-autofill {
