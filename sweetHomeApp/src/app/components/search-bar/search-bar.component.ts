@@ -9,9 +9,9 @@ import icons from 'src/assets/icons';
 })
 export class SearchBarComponent {
   icons: Object | any = icons;
-  citySearched: string = '';
-
   infoInputs: any = {};
+  citySearched: string;
+  tagSearched: string;
 
   constructor(private router: Router, activatedRoute: ActivatedRoute) {
     activatedRoute.params.subscribe((params) => {
@@ -23,7 +23,22 @@ export class SearchBarComponent {
   }
 
   search() {
-    this.router.navigate(['/search/city/', this.infoInputs.location]);
+    this.citySearched = this.infoInputs.location;
+
+    if (this.tagSearched && this.citySearched) {
+      this.router.navigate(['/search/city', this.citySearched, 'tag', this.tagSearched]);
+    } else if (this.citySearched) {
+      this.router.navigate(['/search/city', this.citySearched]);
+    } else if (this.tagSearched) {
+      this.router.navigate(['/search/tag', this.tagSearched]);
+    } else {
+      this.router.navigate(['/search']);
+    }
+  }
+
+  tagClicked(tag: string) {
+    this.tagSearched = tag;
+    this.search();
   }
 
 }

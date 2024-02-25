@@ -15,20 +15,24 @@ export class HomeService {
     return this.property;
   }
 
-  getPropertyByID(id: number): Property {
-    return this.property.find(item => item.id == id) ?? new Property;
-  }
-
-  getPropertyByCity(citySearched: string): Property[] {
-    return this.getAllProperties().filter(property => property.city.toLowerCase().includes(citySearched.toLowerCase()));
-  }
-
   getAllPropertiesTags(): Tag[] {
     return tags;
   }
 
-  getAllPropertiesByTag(tag: string): Property[] {
+  getPropertyByID(id: number): Property {
+    return this.property.find(item => item.id == id) ?? new Property;
+  }
+
+  getPropertiesByCity(city: string): Property[] {
+    return this.getAllProperties().filter(property => property.city.toLowerCase().includes(city.toLowerCase()));
+  }
+
+  getPropertiesByTag(tag: string): Property[] {
     return this.getAllProperties().filter(property => property.tags?.includes(tag));
+  }
+
+  getPropertiesByCityAndTag(city: string, tag: string): Property[] {
+    return this.getAllProperties().filter(property => property.city.toLowerCase().includes(city.toLowerCase())).filter(property => property.tags?.includes(tag));
   }
 
   postProperty(newProperty: Property) {

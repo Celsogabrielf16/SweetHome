@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { HomeService } from 'src/app/services/property.service';
 import { Tag } from 'src/app/shared/models/Tag';
@@ -9,6 +9,8 @@ import { Tag } from 'src/app/shared/models/Tag';
   styleUrls: ['./tags.component.scss']
 })
 export class TagsComponent {
+  @Output() tagClicked = new EventEmitter<string>();
+
   svgBedroom = 'assets/Components/card/svgBedroom.svg';
 
   tags: Tag[];
@@ -20,9 +22,9 @@ export class TagsComponent {
     this.setActive();
   }
 
-  clicked(tagClicked: any){
-    this.tagSearched = tagClicked.name;
-    this.router.navigate(['search/tag/', tagClicked.name]);
+  clicked(tag: any){
+    this.tagSearched = tag.name;
+    this.tagClicked.emit(this.tagSearched);
     this.setActive();
   }
 

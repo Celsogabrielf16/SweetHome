@@ -2,6 +2,26 @@ main {
   font-family: 'Poppins', Courier, monospace;
 }
 
+.searchResult {
+  display: block;
+}
+
+.searchResult.propertiesNotFound {
+  display: none;
+}
+
+.propertiesNotFoundText {
+  display: none;
+  width: 100%;
+  margin: 60px 0;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.propertiesNotFoundText.propertiesNotFound {
+  display: block;
+}
+
 .filterInfo {
   transition: 0.5s ease-in-out;
   width: 900px;

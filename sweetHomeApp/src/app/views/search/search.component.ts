@@ -29,11 +29,14 @@ export class SearchComponent {
       const city = params['citySearched'];
       const tag = params['tagSearched'];
 
-      if(city) {
-        this.properties = this.homeService.getPropertyByCity(city);
+      if(city && tag) {
+        this.properties = this.homeService.getPropertiesByCityAndTag(city, tag);
+        this.stringInfo = '';
+      } else if(city) {
+        this.properties = this.homeService.getPropertiesByCity(city);
         this.stringInfo = 'em ' + this.capitalizeWords(city);
       } else if(tag) {
-        this.properties = this.homeService.getAllPropertiesByTag(tag);
+        this.properties = this.homeService.getPropertiesByTag(tag);
         this.stringInfo = '';
       } else {
         this.properties = this.homeService.getAllProperties();
