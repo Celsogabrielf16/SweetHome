@@ -62,6 +62,8 @@ export class SliderComponent {
   properties: Property[] = [];
 
   constructor(private homeService: HomeService) {
-    this.properties = homeService.getAllProperties();
+    homeService.getAllProperties().subscribe((serverProperty) => {
+      this.properties = serverProperty;
+    });
   }
 }

@@ -1,7 +1,9 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+
 import { Property } from "../shared/models/Property";
-import { properties, tags } from '../../data';
 import { Tag } from '../shared/models/Tag';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -9,33 +11,31 @@ import { Tag } from '../shared/models/Tag';
 
 export class HomeService {
 
-  private property: Property[] = properties;
+  private readonly URL = "http://localhost:3000/property";
 
-  getAllProperties(): Property[] {
-    return this.property;
+  constructor(private httpClient: HttpClient) { }
+
+  getAllProperties(): Observable<Property[]> {
+    return this.httpClient.get<Property[]>(`${this.URL}`);
   }
 
-  getAllPropertiesTags(): Tag[] {
-    return tags;
+  getAllPropertiesTags(): Observable<Tag[]> {
+    return this.httpClient.get<Tag[]>(`${this.URL}/tags`);
   }
 
-  getPropertyByID(id: number): Property {
-    return this.property.find(item => item.id == id) ?? new Property;
+  getPropertyByID(idSearched: number): Observable<Property> {
+    return this.httpClient.get<Property>(`${this.URL}/id/${idSearched}`);
   }
 
-  getPropertiesByCity(city: string): Property[] {
-    return this.getAllProperties().filter(property => property.city.toLowerCase().includes(city.toLowerCase()));
+  getPropertiesByCity(citySearched: string): Observable<Property[]> {
+    return this.httpClient.get<Property[]>(`${this.URL}/city/${citySearched}`);
   }
 
-  getPropertiesByTag(tag: string): Property[] {
-    return this.getAllProperties().filter(property => property.tags?.includes(tag));
+  getPropertiesByTag(tagSearched: string): Observable<Property[]> {
+    return this.httpClient.get<Property[]>(`${this.URL}/tag/${tagSearched}`);
   }
 
-  getPropertiesByCityAndTag(city: string, tag: string): Property[] {
-    return this.getAllProperties().filter(property => property.city.toLowerCase().includes(city.toLowerCase())).filter(property => property.tags?.includes(tag));
-  }
-
-  postProperty(newProperty: Property) {
-    this.property.push(newProperty);
+  getPropertiesByCityAndTag(citySearched: string, tagSearched: string): Observable<Property[]> {
+    return this.httpClient.get<Property[]>(`${this.URL}/city/${citySearched}/tag/${tagSearched}`);
   }
 }

@@ -1,7 +1,4 @@
-import { Property } from "./app/shared/models/Property";
-import { Tag } from "./app/shared/models/Tag";
-
-export const properties: Property[] = [
+export const properties: any[] = [
   {
     id: 1,
     street: 'Rua da Primavera',
@@ -180,7 +177,7 @@ export const properties: Property[] = [
   }
 ];
 
-export const tags: Tag[] = [
+export const tags: any[] = [
   { name: 'Na praia', src: 'assets/icons/beach.jpg', active: false },
   { name: 'Acampamento', src: 'assets/icons/camping.jpg', active: false },
   { name: 'No Interior', src: 'assets/icons/countryHouse.jpg', active: false },

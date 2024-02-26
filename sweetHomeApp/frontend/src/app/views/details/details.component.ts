@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Iproperty } from 'src/app/interfaces/Iproperty';
+import { Observable } from 'rxjs';
 import { HomeService } from 'src/app/services/property.service';
+import { Property } from 'src/app/shared/models/Property';
 
 @Component({
   selector: 'app-details',
@@ -11,7 +12,7 @@ import { HomeService } from 'src/app/services/property.service';
 
 export class DetailsComponent {
 
-  infoProperty: Iproperty | undefined;
+  property: Property = new Property;
 
   svgBedroom = '../../../assets/icons/bedroom.png';
   svgArea = '../../../assets/icons/uf.png';
@@ -19,9 +20,12 @@ export class DetailsComponent {
   svgSpot = '../../../assets/icons/spot.png';
 
   constructor(activatedRoute: ActivatedRoute, homeService: HomeService) {
+    let propertyObservable: Observable<Property>;
     activatedRoute.params.subscribe((params) => {
       if(params.id) {
-        this.infoProperty = homeService.getPropertyByID(params.id);
+        homeService.getPropertyByID(params.id).subscribe((serverProperty) => {
+          this.property = serverProperty;
+        });
       }
     })
   }

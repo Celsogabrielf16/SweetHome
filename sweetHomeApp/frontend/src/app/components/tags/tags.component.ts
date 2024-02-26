@@ -13,11 +13,14 @@ export class TagsComponent {
 
   svgBedroom = 'assets/Components/card/svgBedroom.svg';
 
-  tags: Tag[];
+  tags: Tag[] = [];
   tagSearched: string = '';
 
   constructor(private router: Router, homeService: HomeService, private activatedRoute: ActivatedRoute) {
-    this.tags = homeService.getAllPropertiesTags();
+    homeService.getAllPropertiesTags().subscribe((serverTags) => {
+      this.tags = serverTags;
+    });
+
     this.getParams();
     this.setActive();
   }

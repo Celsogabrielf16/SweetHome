@@ -1,6 +1,8 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Observable } from 'rxjs';
 import { HomeService } from 'src/app/services/property.service';
+import { Property } from 'src/app/shared/models/Property';
 
 @Component({
   selector: 'app-search',
@@ -26,21 +28,26 @@ export class SearchComponent {
 
   constructor(private homeService: HomeService, private router: Router, activatedRoute: ActivatedRoute) {
     activatedRoute.params.subscribe((params) => {
+      let propertiesObservable: Observable<Property[]>
       const city = params['citySearched'];
       const tag = params['tagSearched'];
 
       if(city && tag) {
-        this.properties = this.homeService.getPropertiesByCityAndTag(city, tag);
+        propertiesObservable = this.homeService.getPropertiesByCityAndTag(city, tag);
         this.stringInfo = '';
       } else if(city) {
-        this.properties = this.homeService.getPropertiesByCity(city);
+        propertiesObservable = this.homeService.getPropertiesByCity(city);
         this.stringInfo = 'em ' + this.capitalizeWords(city);
       } else if(tag) {
-        this.properties = this.homeService.getPropertiesByTag(tag);
+        propertiesObservable = this.homeService.getPropertiesByTag(tag);
         this.stringInfo = '';
       } else {
-        this.properties = this.homeService.getAllProperties();
+        propertiesObservable = this.homeService.getAllProperties();
       }
+
+      propertiesObservable.subscribe((serverProperty) => {
+        this.properties = serverProperty;
+      })
 
       setTimeout(() => {
         this.arrayChunk(5);

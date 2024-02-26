@@ -1,4 +1,3 @@
-import { Iproperty } from 'src/app/interfaces/Iproperty';
 import { Component } from '@angular/core';
 import { HomeService } from 'src/app/services/property.service';
 import icons from 'src/assets/icons';
@@ -11,15 +10,15 @@ import { Property } from 'src/app/shared/models/Property';
 })
 
 export class PropertyRegistrationComponent {
-  properties: Array<any>;
-
-  newProperty: Iproperty = new Property;
-
+  properties: Array<Property> = [];
+  newProperty: Property = new Property;
   openModal: boolean = false;
   iconsInputs: Object | any = icons;
 
   constructor(private homeService: HomeService) {
-    this.properties = homeService.getAllProperties();
+    homeService.getAllProperties().subscribe((serverProperties) => {
+      this.properties = serverProperties;
+    });
   }
 
   changeStep(button: string) {
@@ -55,8 +54,8 @@ export class PropertyRegistrationComponent {
   }
 
   save() {
-    this.newProperty.id = this.properties.length + 1;
-    this.homeService.postProperty(this.newProperty);
+/*     this.newProperty.id = this.properties.length + 1;
+    this.homeService.postProperty(this.newProperty); */
   }
 
   changeModal() {
@@ -64,7 +63,7 @@ export class PropertyRegistrationComponent {
   }
 
   chosenProperty(numberProperty: number) {
-    this.newProperty.url = this.properties[numberProperty].url;
+/*     this.newProperty.url = this.properties[numberProperty].url; */
     this.changeModal();
   }
 }
