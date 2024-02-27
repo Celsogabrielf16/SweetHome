@@ -8,7 +8,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { FormsModule } from '@angular/forms';
 import { ComponentsModule } from './components/components.module';
-import { LoadingInterceptor } from './shared/interceptors/loading.interceptor';
+import { LoadingInterceptor } from './shared/interceptor/loading.interceptor';
 @NgModule({
   declarations: [
     AppComponent,

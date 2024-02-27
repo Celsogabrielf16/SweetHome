@@ -1,14 +1,14 @@
-<main>
+ <main>
   <form>
     <h2 class="form__title"><b>E</b>ntrar</h2>
 
     <div class="form__input">
 
       <div class="form__svg">
-        <img [src]="iconsInputs.contactEmail" alt="Email de Contato do Anunciante">
+        <img [src]="iconsInputs.email" alt="Email de Contato do Anunciante">
       </div>
 
-      <input #emailInputRef [(ngModel)]="user.contactEmail" (change)="checkMandatoryFieldError($event.target)" type="text"  placeholder="Email de Contato" name="contactEmail"/>
+      <input #emailInputRef [(ngModel)]="user.email" (change)="checkMandatoryFieldError($event.target)" type="text"  placeholder="Email de Contato" name="email"/>
 
     </div>
 

@@ -17,7 +17,7 @@ export const properties: any[] = [
     title: 'Acampamento de Luxo com Vista Panorâmica',
     description: 'Acampamento de luxo com vista panorâmica da cidade em condomínio exclusivo.',
     contactNumber: 'ex',
-    contactEmail: 'ex',
+    email: 'ex',
     url: 'assets/properties/property01.jpg',
     tags: ['Casas Modernas', 'Na praia'],
   },
@@ -37,7 +37,7 @@ export const properties: any[] = [
     number: 456,
     neighborhood: 'Centro',
     contactNumber: 'ex',
-    contactEmail: 'ex',
+    email: 'ex',
     url: 'assets/properties/property02.jpg',
     description: 'Casa térrea com jardim exuberante, oferecendo serenidade e privacidade.',
     uf: 'BA',
@@ -59,7 +59,7 @@ export const properties: any[] = [
     number: 789,
     neighborhood: 'Praia de Belas',
     contactNumber: 'ex',
-    contactEmail: 'ex',
+    email: 'ex',
     url: 'assets/properties/property04.jpg',
     description: 'Cobertura à beira-mar com terraço privativo e vistas deslumbrantes do oceano.',
     uf: 'SP',
@@ -81,7 +81,7 @@ export const properties: any[] = [
     number: 456,
     neighborhood: 'Meireles',
     contactNumber: 'ex',
-    contactEmail: 'ex',
+    email: 'ex',
     url: 'assets/properties/property05.jpg',
     description: 'Aconchegante Acampamento de um quarto no centro, repleto de charme e elegância.',
     uf: 'PE',
@@ -103,7 +103,7 @@ export const properties: any[] = [
     number: 789,
     neighborhood: 'Alto da XV',
     contactNumber: 'ex',
-    contactEmail: 'ex',
+    email: 'ex',
     url: 'assets/properties/property06.jpg',
     description: 'Chalé rústico com lareira, ideal para um retiro encantador nas montanhas.',
     uf: 'ES',
@@ -125,7 +125,7 @@ export const properties: any[] = [
     number: 101,
     neighborhood: 'Boa Viagem',
     contactNumber: 'ex',
-    contactEmail: 'ex',
+    email: 'ex',
     url: 'assets/properties/property07.jpg',
     description: 'Condomínio de quatro quartos com design sofisticado e instalações de última geração.',
     uf: 'SP',
@@ -147,7 +147,7 @@ export const properties: any[] = [
     number: 34,
     neighborhood: 'Asa Sul',
     contactNumber: 'ex',
-    contactEmail: 'ex',
+    email: 'ex',
     url: 'assets/properties/property01.jpg',
     description: 'Sobrado histórico meticulosamente restaurado, preservando detalhes originais.',
     uf: 'SP',
@@ -169,7 +169,7 @@ export const properties: any[] = [
     number: 567,
     neighborhood: 'Centro',
     contactNumber: 'ex',
-    contactEmail: 'ex',
+    email: 'ex',
     url: 'assets/properties/property02.jpg',
     description: 'Duplex penthouse com terraço e vista deslumbrante, oferecendo luxo exclusivo.',
     uf: 'MG',
@@ -184,4 +184,19 @@ export const tags: any[] = [
   { name: 'Casas Modernas', src: 'assets/icons/house.jpg', active: false },
   { name: 'Nas Montanhas', src: 'assets/icons/mountains.jpg', active: false },
   { name: 'Com Piscina', src: 'assets/icons/pool.jpg', active: false },
+]
+
+export const users: any[] = [
+  {
+    id: 0,
+    name: "Celso Prado",
+    email: "cp@gmail.com",
+    password: "123"
+  },
+  {
+    id: 1,
+    name: "Gabriel Ferreira Marçal",
+    email: "gfm@gmail.com",
+    password: "321"
+  }
 ]

@@ -15,10 +15,10 @@
     <div class="form__input">
 
       <div class="form__svg">
-        <img [src]="iconsInputs.contactEmail" alt="Email de Contato do Anunciante">
+        <img [src]="iconsInputs.email" alt="Email de Contato do Anunciante">
       </div>
 
-      <input #emailInputRef (change)="checkMandatoryFieldError($event.target)" [(ngModel)]="newUser.contactEmail" type="text"  placeholder="Email de Contato" name="contactEmail"/>
+      <input #emailInputRef (change)="checkMandatoryFieldError($event.target)" [(ngModel)]="newUser.email" type="text"  placeholder="Email de Contato" name="email"/>
 
     </div>
 

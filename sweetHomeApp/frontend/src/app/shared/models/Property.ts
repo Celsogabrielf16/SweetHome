@@ -16,7 +16,7 @@ export class Property {
   title!: string;
   description!: string;
   contactNumber!: string;
-  contactEmail!: string;
+  email!: string;
   url!: string;
   tags?: string[];
 }

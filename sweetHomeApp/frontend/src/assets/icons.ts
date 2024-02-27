@@ -15,7 +15,7 @@ const icons: Object = {
   title: 'assets/icons/title.png',
   description: 'assets/icons/description.png',
   contactNumber: 'assets/icons/phoneNumber.png',
-  contactEmail: 'assets/icons/email.png',
+  email: 'assets/icons/email.png',
   url: 'assets/icons/cloud.svg',
   close: 'assets/icons/close.png',
   password: 'assets/icons/password.png',

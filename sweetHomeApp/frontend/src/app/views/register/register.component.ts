@@ -2,7 +2,6 @@ import { Component, ElementRef, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { User } from 'src/app/shared/models/User';
-import { Iuser } from 'src/app/interfaces/Iuser';
 import icons from 'src/assets/icons';
 
 @Component({
@@ -19,7 +18,7 @@ export class RegisterComponent {
 
   iconsInputs: Object | any = icons;
   passwordConfirmation: string;
-  newUser: Iuser = new User;
+  newUser: User = new User;
 
   visiblePassword: boolean = false;
   differentPasswordsError: boolean = false;

@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
-import { Iproperty } from 'src/app/interfaces/Iproperty';
+import { Property } from 'src/app/shared/models/Property';
 
 @Component({
   selector: 'app-card',
@@ -13,7 +13,7 @@ export class CardComponent {
   svgBathroom = '../../../assets/Components/card/svgBathroom.svg';
   svgSpot = '../../../assets/Components/card/svgSpot.svg';
 
-  @Input() infoCard: Iproperty;
+  @Input() infoCard: Property;
 
   constructor(private router: Router) {
 

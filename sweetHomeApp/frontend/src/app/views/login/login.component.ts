@@ -1,7 +1,7 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { UserService } from 'src/app/services/user.service';
 import { User } from 'src/app/shared/models/User';
-import { Iuser } from 'src/app/interfaces/Iuser';
 import icons from 'src/assets/icons';
 
 @Component({
@@ -10,16 +10,24 @@ import icons from 'src/assets/icons';
   styleUrls: ['./login.component.scss']
 })
 
-export class LoginComponent {
+export class LoginComponent implements OnInit {
   @ViewChild('passwordInputRef') passwordInputRef: ElementRef;
   @ViewChild('emailInputRef') emailInputRef: ElementRef;
 
   iconsInputs: Object | any = icons;
-  user: Iuser = new User;
-
+  user: User = new User;
   visiblePassword: boolean = false;
+  returnURL = '';
 
-  constructor(private router: Router) {}
+  constructor(
+    private router: Router,
+    private userService: UserService,
+    private activatedRoute: ActivatedRoute
+  ) {}
+
+  ngOnInit(): void {
+      this.returnURL = this.activatedRoute.snapshot.queryParams.returnURL;
+  }
 
   login() {
     const emailError = this.checkMandatoryFieldError(this.emailInputRef.nativeElement);
@@ -27,7 +35,13 @@ export class LoginComponent {
 
     if (!emailError && !passwordError) {
       console.log(this.user);
-      this.router.navigate(['/']);
+
+      this.userService.login({
+        email: this.user.email,
+        password: this.user.password
+      }).subscribe(() => {
+        this.router.navigateByUrl(this.returnURL);
+      });
     }
 
   }
