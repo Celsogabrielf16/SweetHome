@@ -5,13 +5,15 @@ import { SliderComponent } from './slider/slider.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
 import { FormsModule } from '@angular/forms';
 import { TagsComponent } from './tags/tags.component';
+import { LoadingComponent } from './loading/loading.component';
 
 @NgModule({
   declarations: [
     CardComponent,
     SliderComponent,
     SearchBarComponent,
-    TagsComponent
+    TagsComponent,
+    LoadingComponent
   ],
   imports: [
     CommonModule,
@@ -21,7 +23,8 @@ import { TagsComponent } from './tags/tags.component';
     CardComponent,
     SliderComponent,
     SearchBarComponent,
-    TagsComponent
+    TagsComponent,
+    LoadingComponent
   ]
 })
 export class ComponentsModule { }

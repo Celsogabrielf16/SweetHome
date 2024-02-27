@@ -63,7 +63,7 @@ export class SearchComponent {
   }
 
   arrayChunk(lenghtNewArray: number) {
-    let newArray = [], aux = 0;
+    let newArray: any[] = [], aux = 0;
     this.numberOfProperties = this.properties.length;
 
     while (aux < this.properties.length) {
