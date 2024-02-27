@@ -10,7 +10,7 @@ import { HttpClient } from '@angular/common/http';
 export class UserService {
   private readonly URL = "http://localhost:3000/users";
   private userSubject = new BehaviorSubject<User>(this.getUserToLocalStorage());
-  public userObservable: Observable<User>
+  public userObservable: Observable<User>;
 
   constructor(private httpClient: HttpClient) {
     this.userObservable = this.userSubject.asObservable();
@@ -29,6 +29,12 @@ export class UserService {
         }
       })
     );
+  }
+
+  logout() {
+    this.userSubject.next(new User());
+    localStorage.removeItem('User');
+    window.location.reload();
   }
 
   private setUserToLocalStorage(user: User) {

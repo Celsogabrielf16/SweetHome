@@ -189,13 +189,13 @@ export const tags: any[] = [
 export const users: any[] = [
   {
     id: 0,
-    name: "Celso Prado",
+    name: "Celso",
     email: "cp@gmail.com",
     password: "123"
   },
   {
     id: 1,
-    name: "Gabriel Ferreira Marçal",
+    name: "Gabriel",
     email: "gfm@gmail.com",
     password: "321"
   }

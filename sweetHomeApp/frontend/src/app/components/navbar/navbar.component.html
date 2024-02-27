@@ -11,7 +11,8 @@
       </nav>
       <div class="buttons">
         <ul>
-          <li><a routerLink="login" class="user">Entrar</a></li>
+          <li *ngIf="!isAuth"><a routerLink="login" class="user">Entrar</a></li>
+          <li *ngIf="isAuth"><a routerLink="/" class="user" (click)="logout()">{{ user.name }}</a></li>
         </ul>
         <button class="menu" (click)="changeStatusMenu()">
           <i class="pi" [ngClass]="{'pi-align-justify': !statusMenu, 'pi-times': statusMenu}" style="margin-top: 2px;"></i>
