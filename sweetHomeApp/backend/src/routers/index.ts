@@ -2,7 +2,7 @@ import cors from "cors";
 
 const propertyRoute = require("./propertyRoute")
 
-module.exports = (server) => {
+export default (server: any) => {
     server.use((req, res, next) => {
         res.header("Access-Control-Allow-Origin", "*");
         res.header("Access-Control-Allow-Methods", "GET, POST, PATCH, DELETE");

@@ -8,7 +8,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class UserService {
-  private readonly URL = "http://localhost:3000/users";
+  private readonly URL = "http://localhost:3000/user";
   private userSubject = new BehaviorSubject<User>(this.getUserToLocalStorage());
   public userObservable: Observable<User>;
 
