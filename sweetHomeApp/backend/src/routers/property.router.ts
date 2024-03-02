@@ -3,6 +3,10 @@ import { PropertyController } from '../controllers/property.controller';
 
 const router = Router();
 
+router.get("/seed", (req, res) => {
+    PropertyController.propertySeed(req, res);
+});
+
 router.get("/", (req, res) => {
     PropertyController.getAllProperties(req, res);
 });

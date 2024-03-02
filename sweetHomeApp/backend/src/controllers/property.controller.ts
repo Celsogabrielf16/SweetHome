@@ -1,7 +1,20 @@
 import { Request, Response } from 'express';
 import { properties, tags } from '../data';
+import { PropertyModel } from '../models/property.model';
 
 export class PropertyController {
+    public static async propertySeed(req: Request, res: Response) {
+        const propertiesCount = await PropertyModel.countDocuments();
+
+        if (propertiesCount > 0) {
+            res.send("Seed is already done!");
+            return;
+        } 
+
+        await PropertyModel.create(properties);
+        res.send("Seed is done!")
+    }
+
     public static async getAllProperties(req: Request, res: Response) {
         res.send(properties);
     }

@@ -1,8 +1,21 @@
 import { Request, Response } from "express";
 import jwt from "jsonwebtoken";
 import { users } from "../data";
+import { UserModel } from "../models/user.model";
 
 export class UserController {
+    public static async userSeed(req: Request, res: Response) {
+        const usersCount = await UserModel.countDocuments();
+
+        if (usersCount > 0) {
+            res.send("Seed is already done!");
+            return;
+        } 
+
+        await UserModel.create(users);
+        res.send("Seed is done!")
+    }
+
     public static async login(req: Request, res: Response) {
         const { email, password } = req.body;
         const user = users.find((user) => {
