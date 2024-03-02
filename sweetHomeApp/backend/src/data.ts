@@ -1,4 +1,4 @@
-export const properties: any[] = [
+export const propertiesData: any[] = [
   {
     id: 1,
     street: 'Rua da Primavera',

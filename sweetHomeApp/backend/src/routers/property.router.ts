@@ -12,7 +12,7 @@ router.get("/", (req, res) => {
 });
 
 router.get("/tags", (req, res) => {
-    PropertyController.getAllPropertiesTags(req, res);
+    PropertyController.getAllTags(req, res);
 })
 
 router.get("/id/:idSearched", (req, res) => {

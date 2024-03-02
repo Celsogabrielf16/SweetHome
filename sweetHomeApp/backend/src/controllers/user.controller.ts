@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 import jwt from "jsonwebtoken";
 import { users } from "../data";
-import { UserModel } from "../models/user.model";
+import { IUser, UserModel } from "../models/user.model";
 
 export class UserController {
     public static async userSeed(req: Request, res: Response) {
@@ -18,13 +18,12 @@ export class UserController {
 
     public static async login(req: Request, res: Response) {
         const { email, password } = req.body;
-        const user = users.find((user) => {
-            return user.email === email && user.password === password;
-        })
+
+        const user: IUser | null = await UserModel.findOne({email, password});
     
         if(user) {
             const token = jwt.sign({
-                email:user.email
+                email: user.email
             }, "SomeRandomText", {
                 expiresIn: "30d"
             });
