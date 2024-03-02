@@ -1,8 +1,14 @@
-import express from "express";
-import cors from "cors";
+import dotenv from 'dotenv';
+dotenv.config();
 
-import propertyRouter from './routers/property.router'
-import userRouter from './routers/user.router'
+import express from 'express';
+import cors from 'cors';
+
+import propertyRouter from './routers/property.router';
+import userRouter from './routers/user.router';
+
+import { databaseConnect } from './configs/database.config';
+databaseConnect();
 
 const server = express();
 const port = 3000;
