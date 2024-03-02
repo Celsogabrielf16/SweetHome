@@ -191,12 +191,12 @@ export const users: any[] = [
     id: 0,
     name: "Celso",
     email: "cp@gmail.com",
-    password: "123"
+    password: "$2a$10$gw55KLfO1/MaMq30YKBqY.TDY9t2mTkg6MyM61Kw9oZ5qZTcZ9xmO"
   },
   {
     id: 1,
     name: "Gabriel",
     email: "gfm@gmail.com",
-    password: "321"
+    password: "$2a$10$v1bn8.rieF/Bap1eCJY5O.q8gXzAttnaqDocx2W1MHZ8wKppAJl5e"
   }
 ]

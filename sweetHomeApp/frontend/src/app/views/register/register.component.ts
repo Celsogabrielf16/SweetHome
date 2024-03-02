@@ -1,5 +1,7 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { UserService } from 'src/app/services/user.service';
+import { IUserRegister } from 'src/app/shared/interfaces/IUserRegister';
 
 import { User } from 'src/app/shared/models/User';
 import icons from 'src/assets/icons';
@@ -10,7 +12,7 @@ import icons from 'src/assets/icons';
   styleUrls: ['./register.component.scss']
 })
 
-export class RegisterComponent {
+export class RegisterComponent implements OnInit {
   @ViewChild("nameInputRef") nameInputRef : ElementRef;
   @ViewChild("emailInputRef") emailInputRef : ElementRef;
   @ViewChild("passwordInputRef") passwordInputRef : ElementRef;
@@ -19,11 +21,20 @@ export class RegisterComponent {
   iconsInputs: Object | any = icons;
   passwordConfirmation: string;
   newUser: User = new User;
+  returnUrl = '';
 
   visiblePassword: boolean = false;
   differentPasswordsError: boolean = false;
 
-  constructor(private router: Router) {}
+  constructor(
+      private router: Router,
+      private userService: UserService,
+      private activatedRoute: ActivatedRoute
+  ) {}
+
+  ngOnInit(): void {
+    this.returnUrl = this.activatedRoute.snapshot.queryParams.returnUrl;
+  }
 
   register() {
     const nameError = this.checkMandatoryFieldError(this.nameInputRef.nativeElement);
@@ -33,8 +44,18 @@ export class RegisterComponent {
     this.checkDifferentPasswordsError();
 
     if (!nameError && !emailError && !passwordError && !passwordConfirmationError && !this.differentPasswordsError) {
-      console.log(this.newUser);
-      this.router.navigate(['/']);
+      const { name, email, password } = this.newUser;
+
+      const user: IUserRegister = {
+        name,
+        email,
+        password
+      };
+
+      this.userService.register(user).subscribe( _ => {
+        this.router.navigateByUrl(this.returnUrl);
+      })
+
     }
   }
 

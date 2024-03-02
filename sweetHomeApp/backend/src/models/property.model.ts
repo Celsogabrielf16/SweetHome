@@ -1,7 +1,7 @@
 import { Schema, model } from "mongoose";
 
 export interface Property {
-    id: number;
+    id: string;
     street: string;
     number: number;
     neighborhood: string;

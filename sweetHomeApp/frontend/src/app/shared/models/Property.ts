@@ -1,5 +1,5 @@
 export class Property {
-  id!: number;
+  id!: string;
   street!: string;
   number!: number;
   neighborhood!: string;

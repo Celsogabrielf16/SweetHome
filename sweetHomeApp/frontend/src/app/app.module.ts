@@ -9,6 +9,8 @@ import { FooterComponent } from './components/footer/footer.component';
 import { FormsModule } from '@angular/forms';
 import { ComponentsModule } from './components/components.module';
 import { LoadingInterceptor } from './shared/interceptor/loading.interceptor';
+import { NavigationService } from './services/navigation.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,6 +25,7 @@ import { LoadingInterceptor } from './shared/interceptor/loading.interceptor';
     ComponentsModule
   ],
   providers: [
+    NavigationService,
     { provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true }
   ],
   bootstrap: [AppComponent]

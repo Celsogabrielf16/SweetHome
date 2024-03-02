@@ -3,6 +3,7 @@ import { BehaviorSubject, Observable, tap } from 'rxjs';
 import { User } from '../shared/models/User';
 import { IUserLogin } from '../shared/interfaces/IUserLogin';
 import { HttpClient } from '@angular/common/http';
+import { IUserRegister } from '../shared/interfaces/IUserRegister';
 
 @Injectable({
   providedIn: 'root'
@@ -29,6 +30,21 @@ export class UserService {
         }
       })
     );
+  }
+
+  register(UserRegister: IUserRegister): Observable<User> {
+    return this.httpClient.post<User>(`${this.URL}/register`, UserRegister).pipe(
+      tap({
+        next: (user) => {
+          console.log("Deu bom o registro");
+          this.setUserToLocalStorage(user);
+          this.userSubject.next(user);
+        },
+        error: (errorResponse) => {
+          console.log("Deu Ruim o registro");
+        }
+      })
+    )
   }
 
   logout() {

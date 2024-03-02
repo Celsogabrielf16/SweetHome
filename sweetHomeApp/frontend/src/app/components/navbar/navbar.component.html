@@ -11,7 +11,7 @@
       </nav>
       <div class="buttons">
         <ul>
-          <li *ngIf="!isAuth"><a routerLink="login" class="user">Entrar</a></li>
+          <li *ngIf="!isAuth"><a (click)="login()" class="user">Entrar</a></li>
           <li *ngIf="isAuth"><a routerLink="/" class="user" (click)="logout()">{{ user.name }}</a></li>
         </ul>
         <button class="menu" (click)="changeStatusMenu()">

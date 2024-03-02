@@ -17,16 +17,16 @@ export class LoginComponent implements OnInit {
   iconsInputs: Object | any = icons;
   user: User = new User;
   visiblePassword: boolean = false;
-  returnURL = '';
+  returnUrl = '';
 
   constructor(
-    private router: Router,
     private userService: UserService,
+    private router: Router,
     private activatedRoute: ActivatedRoute
   ) {}
 
   ngOnInit(): void {
-      this.returnURL = this.activatedRoute.snapshot.queryParams.returnURL;
+    this.returnUrl = this.activatedRoute.snapshot.queryParams.returnUrl;
   }
 
   login() {
@@ -40,7 +40,7 @@ export class LoginComponent implements OnInit {
         email: this.user.email,
         password: this.user.password
       }).subscribe(() => {
-        this.router.navigateByUrl(this.returnURL);
+        this.router.navigateByUrl(this.returnUrl);
       });
     }
 
