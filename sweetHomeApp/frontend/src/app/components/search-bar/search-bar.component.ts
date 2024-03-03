@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { TagService } from 'src/app/services/tag.service';
+import Search from 'src/app/shared/models/Search';
 import icons from 'src/assets/icons';
 
 @Component({
@@ -9,8 +11,7 @@ import icons from 'src/assets/icons';
 })
 export class SearchBarComponent {
   icons: Object | any = icons;
-  infoInputs: any = {};
-  tagActive: string;
+  infoInputs: Search = new Search;
 
   citySearched: string;
   tagSearched: string;
@@ -18,13 +19,13 @@ export class SearchBarComponent {
   maximunPrice: number;
   numberOfBedrooms: number;
 
-  constructor(private router: Router, activatedRoute: ActivatedRoute) {
+  constructor(private router: Router, private tagService: TagService, activatedRoute: ActivatedRoute) {
     activatedRoute.params.subscribe((params) => {
       params.citySearched ? this.citySearched = params.citySearched : null;
+      params.tagSearched ? this.tagService.updateTagActive(params.tagSearched) : null;
       params.minimunPrice ? this.minimunPrice = params.minimunPrice : null;
       params.maximunPrice ? this.maximunPrice = params.maximunPrice : null;
       params.numberOfBedrooms ? this.numberOfBedrooms = params.numberOfBedrooms : null;
-      params.tagSearched ? this.tagActive = params.tagSearched : null;
     });
 
     this.infoInputs.location = this.citySearched;
@@ -38,6 +39,7 @@ export class SearchBarComponent {
     this.minimunPrice = this.infoInputs.minValue;
     this.maximunPrice = this.infoInputs.maxValue;
     this.numberOfBedrooms = this.infoInputs.bedroom;
+    this.tagSearched = this.tagService.tagActive;
 
     this.redirectRoute();
   }

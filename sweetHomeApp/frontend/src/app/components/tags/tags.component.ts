@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { HomeService } from 'src/app/services/property.service';
+import { TagService } from 'src/app/services/tag.service';
 import { Tag } from 'src/app/shared/models/Tag';
 
 @Component({
@@ -10,28 +11,29 @@ import { Tag } from 'src/app/shared/models/Tag';
 })
 export class TagsComponent {
   @Output() tagClicked: EventEmitter<string> = new EventEmitter<string>();
-  @Input() tagActive: string;
 
   svgBedroom = 'assets/Components/card/svgBedroom.svg';
 
   tags: Tag[] = [];
+  tagActive: string;
 
-  constructor(private router: Router, homeService: HomeService, activatedRoute: ActivatedRoute) {
+  constructor(homeService: HomeService, private tagService: TagService) {
     homeService.getAllPropertiesTags().subscribe((serverTags) => {
       this.tags = serverTags;
-      this.setActive(this.tagActive);
+      this.setActive();
     });
   }
 
   clicked(tag: any){
+    this.tagService.updateTagActive(tag.name);
     this.tagClicked.emit(tag.name);
-    this.setActive(tag.name);
+    this.setActive();
   }
 
-  setActive(tagSearched: string) {
+  setActive() {
     this.tags.map((tag) => {
       tag.active = false;
-      if (tag.name == tagSearched) {
+      if (tag.name == this.tagService.tagActive) {
         tag.active = true;
       }
     })
