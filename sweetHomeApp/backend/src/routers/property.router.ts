@@ -40,7 +40,7 @@ router.get("/numberOfBedrooms/:numberOfBedrooms", (req, res) => {
     PropertyController.getPropertiesByBedrooms(req, res);
 });
 
-// 2 Inputs - 5/10 rotas
+// 2 Inputs - 6/10 rotas
 router.get("/city/:citySearched/tag/:tagSearched", (req, res) => {
     PropertyController.getPropertiesByCityAndTag(req, res);
 });
@@ -55,6 +55,10 @@ router.get("/city/:citySearched/maximunPrice/:maximunPrice", (req, res) => {
 
 router.get("/city/:citySearched/numberOfBedrooms/:numberOfBedrooms", (req, res) => {
     PropertyController.getPropertiesByCityAndBedrooms(req, res);
+});
+
+router.get("/tag/:tagSearched/minimunPrice/:minimunPrice", (req, res) => {
+    PropertyController.getPropertiesByTagAndMinimunPrice(req, res);
 });
 
 router.get("/minimunPrice/:minimunPrice/maximunPrice/:maximunPrice", (req, res) => {

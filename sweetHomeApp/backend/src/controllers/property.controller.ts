@@ -98,6 +98,16 @@ export class PropertyController {
         );
         res.send(properties);
     }
+
+    public static async getPropertiesByTagAndMinimunPrice(req: Request, res: Response) {
+        const properties = await PropertyModel.find(
+            {
+                tags: req.params.tagSearched,
+                price: { $gte: req.params.minimunPrice }
+            }
+        );
+        res.send(properties);
+    }
         
     public static async getPropertiesByPriceRange(req: Request, res: Response) {
         const properties = await PropertyModel.find({price: { $gte: req.params.minimunPrice, $lte: req.params.maximunPrice }});
