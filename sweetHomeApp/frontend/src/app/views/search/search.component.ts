@@ -32,7 +32,6 @@ export class SearchComponent {
     private activatedRoute: ActivatedRoute
   ) {
     this.activatedRoute.params.subscribe((params) => {
-      let propertiesObservable: Observable<Property[]>
 
       const city: string = params['citySearched'];
       const tag: string = params['tagSearched'];
@@ -40,101 +39,7 @@ export class SearchComponent {
       const minimunPrice: number = params['minimunPrice'];
       const numberOfBedrooms: number = params['numberOfBedrooms'];
 
-      if(city && tag && minimunPrice && maximunPrice && numberOfBedrooms) {
-        propertiesObservable = this.homeService.getPropertiesByCityTagPriceRangeAndBedrooms(city, tag, minimunPrice, maximunPrice, numberOfBedrooms);
-        this.stringInfo = '';
-      } else if(city && tag && minimunPrice && maximunPrice) {
-        propertiesObservable = this.homeService.getPropertiesByCityTagAndPriceRange(city, tag, minimunPrice, maximunPrice);
-        this.stringInfo = '';
-      } else if(city && tag && minimunPrice && numberOfBedrooms) {
-        propertiesObservable = this.homeService.getPropertiesByCityTagMinimunPriceAndBedrooms(city, tag, minimunPrice, numberOfBedrooms);
-        this.stringInfo = '';
-      } else if(city && tag && maximunPrice && numberOfBedrooms) {
-        propertiesObservable = this.homeService.getPropertiesByCityTagMaximunPriceAndBedrooms(city, tag, maximunPrice, numberOfBedrooms);
-        this.stringInfo = '';
-      } else if(city && minimunPrice && maximunPrice && numberOfBedrooms) {
-        propertiesObservable = this.homeService.getPropertiesByCityPriceRangeAndBedrooms(city, minimunPrice, maximunPrice, numberOfBedrooms);
-        this.stringInfo = '';
-      } else if(tag && minimunPrice && maximunPrice && numberOfBedrooms) {
-        propertiesObservable = this.homeService.getPropertiesByTagPriceRangeAndBedrooms(tag, minimunPrice, maximunPrice, numberOfBedrooms);
-        this.stringInfo = '';
-      } else if(city && tag && minimunPrice) {
-        propertiesObservable = this.homeService.getPropertiesByCityTagAndMinimunPrice(city, tag, minimunPrice);
-        this.stringInfo = '';
-      } else if(city && tag && maximunPrice) {
-        propertiesObservable = this.homeService.getPropertiesByCityTagAndMaximunPrice(city, tag, maximunPrice);
-        this.stringInfo = '';
-      } else if(city && tag && numberOfBedrooms) {
-        propertiesObservable = this.homeService.getPropertiesByCityTagAndBedrooms(city, tag, numberOfBedrooms);
-        this.stringInfo = '';
-      } else if(city && minimunPrice && maximunPrice) {
-        propertiesObservable = this.homeService.getPropertiesByCityAndPriceRange(city, minimunPrice, maximunPrice);
-        this.stringInfo = '';
-      } else if(city && minimunPrice && numberOfBedrooms) {
-        propertiesObservable = this.homeService.getPropertiesByCityMinimunPriceAndBedrooms(city, minimunPrice, numberOfBedrooms);
-        this.stringInfo = '';
-      } else if(city && maximunPrice && numberOfBedrooms) {
-        propertiesObservable = this.homeService.getPropertiesByCityMaximunPriceAndBedrooms(city, maximunPrice, numberOfBedrooms);
-        this.stringInfo = '';
-      } else if(tag && minimunPrice && maximunPrice) {
-        propertiesObservable = this.homeService.getPropertiesByTagAndPriceRange(tag, minimunPrice, maximunPrice);
-        this.stringInfo = '';
-      } else if(tag && minimunPrice && numberOfBedrooms) {
-        propertiesObservable = this.homeService.getPropertiesByTagMinimunPriceAndBedrooms(tag, minimunPrice, numberOfBedrooms);
-        this.stringInfo = '';
-      } else if(tag && maximunPrice && numberOfBedrooms) {
-        propertiesObservable = this.homeService.getPropertiesByTagMaximunPriceAndBedrooms(tag, maximunPrice, numberOfBedrooms);
-        this.stringInfo = '';
-      } else if(city && tag) {
-        propertiesObservable = this.homeService.getPropertiesByCityAndTag(city, tag);
-        this.stringInfo = '';
-      } else if(city && minimunPrice) {
-        propertiesObservable = this.homeService.getPropertiesByCityAndMinimunPrice(city, minimunPrice);
-        this.stringInfo = '';
-      } else if(city && maximunPrice) {
-        propertiesObservable = this.homeService.getPropertiesByCityAndMaximunPrice(city, maximunPrice);
-        this.stringInfo = '';
-      } else if(city && numberOfBedrooms) {
-        propertiesObservable = this.homeService.getPropertiesByCityAndBedrooms(city, numberOfBedrooms);
-        this.stringInfo = '';
-      } else if(tag && minimunPrice) {
-        propertiesObservable = this.homeService.getPropertiesByTagAndMinimunPrice(tag, minimunPrice);
-        this.stringInfo = '';
-      } else if(tag && maximunPrice) {
-        propertiesObservable = this.homeService.getPropertiesByTagAndMaximunPrice(tag, maximunPrice);
-        this.stringInfo = '';
-      } else if(tag && numberOfBedrooms) {
-        propertiesObservable = this.homeService.getPropertiesByTagAndBedrroms(tag, numberOfBedrooms);
-        this.stringInfo = '';
-      } else if(minimunPrice && maximunPrice) {
-        propertiesObservable = this.homeService.getPropertiesByPriceRange(minimunPrice, maximunPrice);
-        this.stringInfo = `com preço entre R$ ${minimunPrice} e R$ ${maximunPrice}`;
-      } else if(minimunPrice && numberOfBedrooms) {
-        propertiesObservable = this.homeService.getPropertiesByMinimunPriceAndBedrooms(minimunPrice, numberOfBedrooms);
-        this.stringInfo = '';
-      } else if(maximunPrice && numberOfBedrooms) {
-        propertiesObservable = this.homeService.getPropertiesByMaximunPriceAndBedrooms(maximunPrice, numberOfBedrooms);
-        this.stringInfo = '';
-      } else if(city) {
-        propertiesObservable = this.homeService.getPropertiesByCity(city);
-        this.stringInfo = `em ${this.capitalizeWords(city)}`;
-      } else if(tag) {
-        propertiesObservable = this.homeService.getPropertiesByTag(tag);
-        this.stringInfo = '';
-      } else if(minimunPrice) {
-        propertiesObservable = this.homeService.getPropertiesByMinimumPrice(minimunPrice);
-        this.stringInfo = `com preço maior que R$ ${minimunPrice}`;
-      } else if(maximunPrice) {
-        propertiesObservable = this.homeService.getPropertiesByMaximumPrice(maximunPrice);
-        this.stringInfo = `com preço menor que R$ ${maximunPrice}`;
-      } else if(numberOfBedrooms) {
-        propertiesObservable = this.homeService.getPropertiesByBedrooms(numberOfBedrooms);
-        this.stringInfo = `com ${numberOfBedrooms} camas`;
-      } else {
-        propertiesObservable = this.homeService.getAllProperties();
-      }
-
-      propertiesObservable.subscribe((serverProperty) => {
+      this.getProperties(city, tag, maximunPrice, minimunPrice, numberOfBedrooms).subscribe((serverProperty) => {
         this.properties = serverProperty;
         this.arrayChunk(5);
         this.properties = this.propertiesSeparated[this.propertiesStep];
@@ -196,4 +101,107 @@ export class SearchComponent {
       return char.toUpperCase();
     });
   }
+
+  getProperties(city?: string, tag?: string, maximunPrice?: number, minimunPrice?: number, numberOfBedrooms?: number): Observable<Property[]> {
+    let propertiesObservable: Observable<Property[]>;
+
+    if(city && tag && minimunPrice && maximunPrice && numberOfBedrooms) {
+      propertiesObservable = this.homeService.getPropertiesByCityTagPriceRangeAndBedrooms(city, tag, minimunPrice, maximunPrice, numberOfBedrooms);
+      this.stringInfo = '';
+    } else if(city && tag && minimunPrice && maximunPrice) {
+      propertiesObservable = this.homeService.getPropertiesByCityTagAndPriceRange(city, tag, minimunPrice, maximunPrice);
+      this.stringInfo = '';
+    } else if(city && tag && minimunPrice && numberOfBedrooms) {
+      propertiesObservable = this.homeService.getPropertiesByCityTagMinimunPriceAndBedrooms(city, tag, minimunPrice, numberOfBedrooms);
+      this.stringInfo = '';
+    } else if(city && tag && maximunPrice && numberOfBedrooms) {
+      propertiesObservable = this.homeService.getPropertiesByCityTagMaximunPriceAndBedrooms(city, tag, maximunPrice, numberOfBedrooms);
+      this.stringInfo = '';
+    } else if(city && minimunPrice && maximunPrice && numberOfBedrooms) {
+      propertiesObservable = this.homeService.getPropertiesByCityPriceRangeAndBedrooms(city, minimunPrice, maximunPrice, numberOfBedrooms);
+      this.stringInfo = '';
+    } else if(tag && minimunPrice && maximunPrice && numberOfBedrooms) {
+      propertiesObservable = this.homeService.getPropertiesByTagPriceRangeAndBedrooms(tag, minimunPrice, maximunPrice, numberOfBedrooms);
+      this.stringInfo = '';
+    } else if(city && tag && minimunPrice) {
+      propertiesObservable = this.homeService.getPropertiesByCityTagAndMinimunPrice(city, tag, minimunPrice);
+      this.stringInfo = '';
+    } else if(city && tag && maximunPrice) {
+      propertiesObservable = this.homeService.getPropertiesByCityTagAndMaximunPrice(city, tag, maximunPrice);
+      this.stringInfo = '';
+    } else if(city && tag && numberOfBedrooms) {
+      propertiesObservable = this.homeService.getPropertiesByCityTagAndBedrooms(city, tag, numberOfBedrooms);
+      this.stringInfo = '';
+    } else if(city && minimunPrice && maximunPrice) {
+      propertiesObservable = this.homeService.getPropertiesByCityAndPriceRange(city, minimunPrice, maximunPrice);
+      this.stringInfo = '';
+    } else if(city && minimunPrice && numberOfBedrooms) {
+      propertiesObservable = this.homeService.getPropertiesByCityMinimunPriceAndBedrooms(city, minimunPrice, numberOfBedrooms);
+      this.stringInfo = '';
+    } else if(city && maximunPrice && numberOfBedrooms) {
+      propertiesObservable = this.homeService.getPropertiesByCityMaximunPriceAndBedrooms(city, maximunPrice, numberOfBedrooms);
+      this.stringInfo = '';
+    } else if(tag && minimunPrice && maximunPrice) {
+      propertiesObservable = this.homeService.getPropertiesByTagAndPriceRange(tag, minimunPrice, maximunPrice);
+      this.stringInfo = '';
+    } else if(tag && minimunPrice && numberOfBedrooms) {
+      propertiesObservable = this.homeService.getPropertiesByTagMinimunPriceAndBedrooms(tag, minimunPrice, numberOfBedrooms);
+      this.stringInfo = '';
+    } else if(tag && maximunPrice && numberOfBedrooms) {
+      propertiesObservable = this.homeService.getPropertiesByTagMaximunPriceAndBedrooms(tag, maximunPrice, numberOfBedrooms);
+      this.stringInfo = '';
+    } else if(minimunPrice && maximunPrice && numberOfBedrooms) {
+      propertiesObservable = this.homeService.getPropertiesByPriceRangeAndBedrooms(minimunPrice, maximunPrice, numberOfBedrooms);
+      this.stringInfo = '';
+    } else if(city && tag) {
+      propertiesObservable = this.homeService.getPropertiesByCityAndTag(city, tag);
+      this.stringInfo = '';
+    } else if(city && minimunPrice) {
+      propertiesObservable = this.homeService.getPropertiesByCityAndMinimunPrice(city, minimunPrice);
+      this.stringInfo = '';
+    } else if(city && maximunPrice) {
+      propertiesObservable = this.homeService.getPropertiesByCityAndMaximunPrice(city, maximunPrice);
+      this.stringInfo = '';
+    } else if(city && numberOfBedrooms) {
+      propertiesObservable = this.homeService.getPropertiesByCityAndBedrooms(city, numberOfBedrooms);
+      this.stringInfo = '';
+    } else if(tag && minimunPrice) {
+      propertiesObservable = this.homeService.getPropertiesByTagAndMinimunPrice(tag, minimunPrice);
+      this.stringInfo = '';
+    } else if(tag && maximunPrice) {
+      propertiesObservable = this.homeService.getPropertiesByTagAndMaximunPrice(tag, maximunPrice);
+      this.stringInfo = '';
+    } else if(tag && numberOfBedrooms) {
+      propertiesObservable = this.homeService.getPropertiesByTagAndBedrroms(tag, numberOfBedrooms);
+      this.stringInfo = '';
+    } else if(minimunPrice && maximunPrice) {
+      propertiesObservable = this.homeService.getPropertiesByPriceRange(minimunPrice, maximunPrice);
+      this.stringInfo = `com preço entre R$ ${minimunPrice} e R$ ${maximunPrice}`;
+    } else if(minimunPrice && numberOfBedrooms) {
+      propertiesObservable = this.homeService.getPropertiesByMinimunPriceAndBedrooms(minimunPrice, numberOfBedrooms);
+      this.stringInfo = '';
+    } else if(maximunPrice && numberOfBedrooms) {
+      propertiesObservable = this.homeService.getPropertiesByMaximunPriceAndBedrooms(maximunPrice, numberOfBedrooms);
+      this.stringInfo = '';
+    } else if(city) {
+      propertiesObservable = this.homeService.getPropertiesByCity(city);
+      this.stringInfo = `em ${this.capitalizeWords(city)}`;
+    } else if(tag) {
+      propertiesObservable = this.homeService.getPropertiesByTag(tag);
+      this.stringInfo = '';
+    } else if(minimunPrice) {
+      propertiesObservable = this.homeService.getPropertiesByMinimumPrice(minimunPrice);
+      this.stringInfo = `com preço maior que R$ ${minimunPrice}`;
+    } else if(maximunPrice) {
+      propertiesObservable = this.homeService.getPropertiesByMaximumPrice(maximunPrice);
+      this.stringInfo = `com preço menor que R$ ${maximunPrice}`;
+    } else if(numberOfBedrooms) {
+      propertiesObservable = this.homeService.getPropertiesByBedrooms(numberOfBedrooms);
+      this.stringInfo = `com ${numberOfBedrooms} camas`;
+    } else {
+      propertiesObservable = this.homeService.getAllProperties();
+    }
+    return propertiesObservable;
+  }
+
 }
