@@ -67,6 +67,9 @@ export class SearchComponent {
       } else if(city && maximunPrice) {
         propertiesObservable = this.homeService.getPropertiesByCityAndMaximunPrice(city, maximunPrice);
         this.stringInfo = '';
+      } else if(city && numberOfBedrooms) {
+        propertiesObservable = this.homeService.getPropertiesByCityAndBedrooms(city, numberOfBedrooms);
+        this.stringInfo = '';
       } else if(minimunPrice && maximunPrice) {
         propertiesObservable = this.homeService.getPropertiesByPriceRange(minimunPrice, maximunPrice);
         this.stringInfo = `com preço entre R$ ${minimunPrice} e R$ ${maximunPrice}`;
