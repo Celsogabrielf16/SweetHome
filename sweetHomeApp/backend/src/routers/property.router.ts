@@ -65,6 +65,10 @@ router.get("/tag/:tagSearched/maximunPrice/:maximunPrice", (req, res) => {
     PropertyController.getPropertiesByTagAndMaximunPrice(req, res);
 });
 
+router.get("/tag/:tagSearched/numberOfBedrooms/:numberOfBedrooms", (req, res) => {
+    PropertyController.getPropertiesByTagAndBedrooms(req, res);
+});
+
 router.get("/minimunPrice/:minimunPrice/maximunPrice/:maximunPrice", (req, res) => {
     PropertyController.getPropertiesByPriceRange(req, res);
 });

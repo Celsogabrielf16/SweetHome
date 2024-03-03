@@ -63,6 +63,10 @@ const routes: Routes = [
     loadChildren: () => import("./views/search/search.module").then(m => m.SearchModule)
   },
   {
+    path: 'search/tag/:tagSearched/numberOfBedrooms/:numberOfBedrooms',
+    loadChildren: () => import("./views/search/search.module").then(m => m.SearchModule)
+  },
+  {
     path: 'search/minimunPrice/:minimunPrice/maximunPrice/:maximunPrice',
     loadChildren: () => import("./views/search/search.module").then(m => m.SearchModule)
   },

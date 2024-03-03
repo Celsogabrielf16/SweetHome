@@ -38,7 +38,6 @@ export class SearchBarComponent {
     this.minimunPrice = this.infoInputs.minValue;
     this.maximunPrice = this.infoInputs.maxValue;
     this.numberOfBedrooms = this.infoInputs.bedroom;
-    this.tagSearched = this.tagActive;
 
     this.redirectRoute();
   }
@@ -84,6 +83,9 @@ export class SearchBarComponent {
 
     } else if (this.tagSearched && this.maximunPrice) {
       this.router.navigate(['/search/tag', this.tagSearched, 'maximunPrice', this.maximunPrice]);
+
+    } else if (this.tagSearched && this.numberOfBedrooms) {
+      this.router.navigate(['/search/tag', this.tagSearched, 'numberOfBedrooms', this.numberOfBedrooms]);
 
     } else if (this.minimunPrice && this.maximunPrice) {
       this.router.navigate(['/search/minimunPrice', this.minimunPrice, 'maximunPrice', this.maximunPrice]);
