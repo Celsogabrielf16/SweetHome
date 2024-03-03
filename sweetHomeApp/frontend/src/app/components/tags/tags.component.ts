@@ -28,7 +28,6 @@ export class TagsComponent {
   }
 
   clicked(tag: any){
-    console.log(this.tagSearched, this.tags);
     this.tagSearched = tag.name;
     this.tagClicked.emit(this.tagSearched);
     this.setActive();

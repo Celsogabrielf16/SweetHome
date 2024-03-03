@@ -58,6 +58,9 @@ export class SearchBarComponent {
     } else if (this.tagSearched && this.citySearched && this.maximunPrice && this.numberOfBedrooms) {
       this.router.navigate(['/search/city', this.citySearched, 'tag', this.tagSearched, 'maximunPrice', this.maximunPrice, 'numberOfBedrooms', this.numberOfBedrooms]);
 
+    } else if (this.citySearched && this.minimunPrice && this.maximunPrice && this.numberOfBedrooms) {
+      this.router.navigate(['/search/city', this.citySearched, 'minimunPrice', this.minimunPrice, 'maximunPrice', this.maximunPrice, 'numberOfBedrooms', this.numberOfBedrooms]);
+
     } else if (this.tagSearched && this.citySearched) {
       this.router.navigate(['/search/city', this.citySearched, 'tag', this.tagSearched]);
 

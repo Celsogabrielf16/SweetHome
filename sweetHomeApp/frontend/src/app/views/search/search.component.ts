@@ -52,6 +52,9 @@ export class SearchComponent {
       } else if(city && tag && maximunPrice && numberOfBedrooms) {
         propertiesObservable = this.homeService.getPropertiesByCityTagMaximunPriceAndBedrooms(city, tag, maximunPrice, numberOfBedrooms);
         this.stringInfo = '';
+      } else if(city && minimunPrice && maximunPrice && numberOfBedrooms) {
+        propertiesObservable = this.homeService.getPropertiesByCityPriceRangeAndBedrooms(city, minimunPrice, maximunPrice, numberOfBedrooms);
+        this.stringInfo = '';
       } else if(city && tag) {
         propertiesObservable = this.homeService.getPropertiesByCityAndTag(city, tag);
         this.stringInfo = '';
