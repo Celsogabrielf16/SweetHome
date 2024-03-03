@@ -47,6 +47,10 @@ router.get("/city/:citySearched/tag/:tagSearched", (req, res) => {
     PropertyController.getPropertiesByCityAndTag(req, res);
 });
 
+router.get("/city/:citySearched/tag/:tagSearched/minimunPrice/:minimunPrice/numberOfBedrooms/:numberOfBedrooms", (req, res) => {
+    PropertyController.getPropertiesByCityTagMinimunPriceAndBedrooms(req, res);
+});
+
 router.get("/city/:citySearched/tag/:tagSearched/minimunPrice/:minimunPrice/maximunPrice/:maximunPrice", (req, res) => {
     PropertyController.getPropertiesByCityTagAndPriceRange(req, res);
 });

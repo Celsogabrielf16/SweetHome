@@ -48,6 +48,9 @@ export class SearchComponent {
       } else if(city && tag && minimunPrice && maximunPrice) {
         propertiesObservable = this.homeService.getPropertiesByCityTagAndPriceRange(city, tag, minimunPrice, maximunPrice);
         this.stringInfo = '';
+      } else if(city && tag && minimunPrice && numberOfBedrooms) {
+        propertiesObservable = this.homeService.getPropertiesByCityTagMinimunPriceAndBedrooms(city, tag, minimunPrice, numberOfBedrooms);
+        this.stringInfo = '';
       } else if(city && tag) {
         propertiesObservable = this.homeService.getPropertiesByCityAndTag(city, tag);
         this.stringInfo = '';
