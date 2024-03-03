@@ -73,6 +73,9 @@ export class SearchComponent {
       } else if(tag && minimunPrice) {
         propertiesObservable = this.homeService.getPropertiesByTagAndMinimunPrice(tag, minimunPrice);
         this.stringInfo = '';
+      } else if(tag && maximunPrice) {
+        propertiesObservable = this.homeService.getPropertiesByTagAndMaximunPrice(tag, maximunPrice);
+        this.stringInfo = '';
       } else if(minimunPrice && maximunPrice) {
         propertiesObservable = this.homeService.getPropertiesByPriceRange(minimunPrice, maximunPrice);
         this.stringInfo = `com preço entre R$ ${minimunPrice} e R$ ${maximunPrice}`;
