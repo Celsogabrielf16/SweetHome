@@ -219,6 +219,15 @@ export class PropertyController {
         });
         res.send(properties);
     }
+    
+    public static async getPropertiesByTagAndPriceRange(req: Request, res: Response) {
+        const properties = await PropertyModel.find({
+            tags: req.params.tagSearched,
+            price: { $gte: req.params.minimunPrice, $lte: req.params.maximunPrice }
+        });
+        res.send(properties);
+    }
+
 
 
 
