@@ -40,8 +40,6 @@ export class SearchComponent {
       const minimunPrice: number = params['minimunPrice'];
       const numberOfBedrooms: number = params['numberOfBedrooms'];
 
-
-
       if(city && tag && minimunPrice && maximunPrice && numberOfBedrooms) {
         propertiesObservable = this.homeService.getPropertiesByCityTagPriceRangeAndBedrooms(city, tag, minimunPrice, maximunPrice, numberOfBedrooms);
         this.stringInfo = '';
@@ -51,11 +49,13 @@ export class SearchComponent {
       } else if(city && tag && minimunPrice && numberOfBedrooms) {
         propertiesObservable = this.homeService.getPropertiesByCityTagMinimunPriceAndBedrooms(city, tag, minimunPrice, numberOfBedrooms);
         this.stringInfo = '';
+      } else if(city && tag && maximunPrice && numberOfBedrooms) {
+        propertiesObservable = this.homeService.getPropertiesByCityTagMaximunPriceAndBedrooms(city, tag, maximunPrice, numberOfBedrooms);
+        this.stringInfo = '';
       } else if(city && tag) {
         propertiesObservable = this.homeService.getPropertiesByCityAndTag(city, tag);
         this.stringInfo = '';
       } else if(minimunPrice && maximunPrice) {
-        console.log('sdfasd');
         propertiesObservable = this.homeService.getPropertiesByPriceRange(minimunPrice, maximunPrice);
         this.stringInfo = `com preço entre R$ ${minimunPrice} e R$ ${maximunPrice}`;
       } else if(city) {

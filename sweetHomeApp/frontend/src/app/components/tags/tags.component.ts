@@ -9,32 +9,29 @@ import { Tag } from 'src/app/shared/models/Tag';
   styleUrls: ['./tags.component.scss']
 })
 export class TagsComponent {
-  @Output() tagClicked = new EventEmitter<string>();
+  @Output() tagClicked: EventEmitter<string> = new EventEmitter<string>();
 
   svgBedroom = 'assets/Components/card/svgBedroom.svg';
 
   tags: Tag[] = [];
   tagSearched: string = '';
 
-  constructor(private router: Router, homeService: HomeService, private activatedRoute: ActivatedRoute) {
+  constructor(private router: Router, homeService: HomeService, activatedRoute: ActivatedRoute) {
+    activatedRoute.params.subscribe((params) => {
+      this.tagSearched = params.tagSearched;
+    })
+
     homeService.getAllPropertiesTags().subscribe((serverTags) => {
       this.tags = serverTags;
+      this.setActive();
     });
-
-    this.getParams();
-    this.setActive();
   }
 
   clicked(tag: any){
+    console.log(this.tagSearched, this.tags);
     this.tagSearched = tag.name;
     this.tagClicked.emit(this.tagSearched);
     this.setActive();
-  }
-
-  getParams() {
-    this.activatedRoute.params.subscribe((params) => {
-      this.tagSearched = params.tagSearched;
-    })
   }
 
   setActive() {

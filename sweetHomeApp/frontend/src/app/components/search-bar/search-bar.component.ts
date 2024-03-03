@@ -24,6 +24,7 @@ export class SearchBarComponent {
       params.maximunPrice ? this.maximunPrice = params.maximunPrice : null;
       params.numberOfBedrooms ? this.numberOfBedrooms = params.numberOfBedrooms : null;
     });
+
     this.infoInputs.location = this.citySearched;
     this.infoInputs.minValue = this.minimunPrice;
     this.infoInputs.maxValue = this.maximunPrice;
@@ -53,6 +54,9 @@ export class SearchBarComponent {
 
     } else if (this.tagSearched && this.citySearched && this.minimunPrice && this.numberOfBedrooms) {
       this.router.navigate(['/search/city', this.citySearched, 'tag', this.tagSearched, 'minimunPrice', this.minimunPrice, 'numberOfBedrooms', this.numberOfBedrooms]);
+
+    } else if (this.tagSearched && this.citySearched && this.maximunPrice && this.numberOfBedrooms) {
+      this.router.navigate(['/search/city', this.citySearched, 'tag', this.tagSearched, 'maximunPrice', this.maximunPrice, 'numberOfBedrooms', this.numberOfBedrooms]);
 
     } else if (this.tagSearched && this.citySearched) {
       this.router.navigate(['/search/city', this.citySearched, 'tag', this.tagSearched]);
