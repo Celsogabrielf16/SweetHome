@@ -181,6 +181,16 @@ export class PropertyController {
         res.send(properties);
     }
 
+    public static async getPropertiesByCityTagAndBedrooms(req: Request, res: Response) {
+        const searchRegex = new RegExp(req.params.citySearched, 'i');
+        const properties = await PropertyModel.find({
+            city: { $regex: searchRegex },
+            tags: req.params.tagSearched,
+            bedroom: req.params.numberOfBedrooms
+        });
+        res.send(properties);
+    }
+
 
 
 
