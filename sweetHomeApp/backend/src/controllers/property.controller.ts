@@ -227,7 +227,7 @@ export class PropertyController {
         });
         res.send(properties);
     }
-
+    
     public static async getPropertiesByTagMinimunPriceAndBedrooms(req: Request, res: Response) {
         const properties = await PropertyModel.find({
             tags: req.params.tagSearched,
@@ -236,7 +236,16 @@ export class PropertyController {
         });
         res.send(properties);
     }
-
+        
+    public static async getPropertiesByTagMaximunPriceAndBedrooms(req: Request, res: Response) {
+        const properties = await PropertyModel.find({
+            tags: req.params.tagSearched,
+            price: { $lte: req.params.maximunPrice },
+            bedroom: req.params.numberOfBedrooms
+        });
+        res.send(properties);
+    }
+    
 
 
 
