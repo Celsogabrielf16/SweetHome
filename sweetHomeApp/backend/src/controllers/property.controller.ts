@@ -36,7 +36,7 @@ export class PropertyController {
     }
     
     public static async getPropertiesByTag(req: Request, res: Response) {
-        const properties = await PropertyModel.find({tags: {$regex: req.params.tagSearched}});
+        const properties = await PropertyModel.find({tags: req.params.tagSearched});
         res.send(properties);
     }
 
@@ -47,6 +47,11 @@ export class PropertyController {
 
     public static async getPropertiesByMaximumPrice(req: Request, res: Response) {
         const properties = await PropertyModel.find({price: {$lte: req.params.maximunPrice}});
+        res.send(properties);
+    }
+
+    public static async getPropertiesByBedrooms(req: Request, res: Response) {
+        const properties = await PropertyModel.find({bedroom: req.params.numberOfBedrooms});
         res.send(properties);
     }
     

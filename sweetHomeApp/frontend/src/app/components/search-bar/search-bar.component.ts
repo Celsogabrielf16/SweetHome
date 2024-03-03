@@ -15,20 +15,26 @@ export class SearchBarComponent {
   tagSearched: string;
   minimunPrice: number;
   maximunPrice: number;
+  numberOfBedrooms: number;
 
   constructor(private router: Router, activatedRoute: ActivatedRoute) {
     activatedRoute.params.subscribe((params) => {
-      if(params.citySearched) {
-        this.citySearched = params.citySearched;
-      }
+      params.citySearched ? this.citySearched = params.citySearched : null;
+      params.minimunPrice ? this.minimunPrice = params.minimunPrice : null;
+      params.maximunPrice ? this.maximunPrice = params.maximunPrice : null;
+      params.numberOfBedrooms ? this.numberOfBedrooms = params.numberOfBedrooms : null;
     });
     this.infoInputs.location = this.citySearched;
+    this.infoInputs.minValue = this.minimunPrice;
+    this.infoInputs.maxValue = this.maximunPrice;
+    this.infoInputs.bedroom = this.numberOfBedrooms;
   }
 
   search() {
     this.citySearched = this.infoInputs.location;
     this.minimunPrice = this.infoInputs.minValue;
     this.maximunPrice = this.infoInputs.maxValue;
+    this.numberOfBedrooms = this.infoInputs.bedroom;
 
     if (this.tagSearched && this.citySearched) {
       this.router.navigate(['/search/city', this.citySearched, 'tag', this.tagSearched]);
@@ -40,6 +46,8 @@ export class SearchBarComponent {
       this.router.navigate(['/search/minimunPrice', this.minimunPrice]);
     } else if (this.maximunPrice) {
       this.router.navigate(['/search/maximunPrice', this.maximunPrice]);
+    } else if (this.numberOfBedrooms) {
+      this.router.navigate(['/search/numberOfBedrooms', this.numberOfBedrooms]);
     } else {
       this.router.navigate(['/search']);
     }
@@ -49,5 +57,4 @@ export class SearchBarComponent {
     this.tagSearched = tag;
     this.search();
   }
-
 }

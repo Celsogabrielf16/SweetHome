@@ -43,6 +43,10 @@ export class HomeService {
     return this.httpClient.get<Property[]>(`${this.URL}/maximunPrice/${maximunPrice}`);
   }
 
+  getPropertiesByBedrooms(numberOfBedrooms: number): Observable<Property[]> {
+    return this.httpClient.get<Property[]>(`${this.URL}/numberOfBedrooms/${numberOfBedrooms}`);
+  }
+
   getPropertiesByCityAndTag(citySearched: string, tagSearched: string): Observable<Property[]> {
     return this.httpClient.get<Property[]>(`${this.URL}/city/${citySearched}/tag/${tagSearched}`);
   }

@@ -38,6 +38,7 @@ export class SearchComponent {
       const tag: string = params['tagSearched'];
       const maximunPrice: number = params['maximunPrice'];
       const minimunPrice: number = params['minimunPrice'];
+      const numberOfBedrooms: number = params['numberOfBedrooms'];
 
       if(city && tag) {
         propertiesObservable = this.homeService.getPropertiesByCityAndTag(city, tag);
@@ -54,19 +55,19 @@ export class SearchComponent {
       } else if(maximunPrice) {
         propertiesObservable = this.homeService.getPropertiesByMaximumPrice(maximunPrice);
         this.stringInfo = `com preço menor que R$ ${maximunPrice}`;
+      } else if(numberOfBedrooms) {
+        propertiesObservable = this.homeService.getPropertiesByBedrooms(numberOfBedrooms);
+        this.stringInfo = `com ${numberOfBedrooms} camas`;
       } else {
         propertiesObservable = this.homeService.getAllProperties();
       }
 
       propertiesObservable.subscribe((serverProperty) => {
         this.properties = serverProperty;
-      })
-
-      setTimeout(() => {
         this.arrayChunk(5);
         this.properties = this.propertiesSeparated[this.propertiesStep];
         this.hideArrow();
-      }, 100);
+      })
     })
   }
 
