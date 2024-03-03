@@ -90,6 +90,9 @@ export class SearchBarComponent {
     } else if (this.minimunPrice && this.maximunPrice) {
       this.router.navigate(['/search/minimunPrice', this.minimunPrice, 'maximunPrice', this.maximunPrice]);
 
+    } else if (this.minimunPrice && this.numberOfBedrooms) {
+      this.router.navigate(['/search/minimunPrice', this.minimunPrice, 'numberOfBedrooms', this.numberOfBedrooms]);
+
     } else if (this.citySearched) {
       this.router.navigate(['/search/city', this.citySearched]);
 

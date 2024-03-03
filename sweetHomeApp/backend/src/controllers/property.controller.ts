@@ -120,17 +120,24 @@ export class PropertyController {
     }
 
     public static async getPropertiesByTagAndBedrooms(req: Request, res: Response) {
-        const properties = await PropertyModel.find(
-            {
-                tags: req.params.tagSearched,
-                bedroom: req.params.numberOfBedrooms
-            }
-        );
+        const properties = await PropertyModel.find({
+            tags: req.params.tagSearched,
+            bedroom: req.params.numberOfBedrooms
+        });
         res.send(properties);
     }
         
     public static async getPropertiesByPriceRange(req: Request, res: Response) {
         const properties = await PropertyModel.find({price: { $gte: req.params.minimunPrice, $lte: req.params.maximunPrice }});
+        res.send(properties);
+    }
+
+    
+    public static async getPropertiesByMinimunPriceAndBedrooms(req: Request, res: Response) {
+        const properties = await PropertyModel.find({
+            price: { $gte: req.params.minimunPrice },
+            bedroom: req.params.numberOfBedrooms
+        });
         res.send(properties);
     }
     
