@@ -13,6 +13,7 @@ export class SearchBarComponent {
 
   citySearched: string;
   tagSearched: string;
+  minimunPrice: number;
   maximunPrice: number;
 
   constructor(private router: Router, activatedRoute: ActivatedRoute) {
@@ -26,6 +27,7 @@ export class SearchBarComponent {
 
   search() {
     this.citySearched = this.infoInputs.location;
+    this.minimunPrice = this.infoInputs.minValue;
     this.maximunPrice = this.infoInputs.maxValue;
 
     if (this.tagSearched && this.citySearched) {
@@ -34,6 +36,8 @@ export class SearchBarComponent {
       this.router.navigate(['/search/city', this.citySearched]);
     } else if (this.tagSearched) {
       this.router.navigate(['/search/tag', this.tagSearched]);
+    } else if (this.minimunPrice) {
+      this.router.navigate(['/search/minimunPrice', this.minimunPrice]);
     } else if (this.maximunPrice) {
       this.router.navigate(['/search/maximunPrice', this.maximunPrice]);
     } else {

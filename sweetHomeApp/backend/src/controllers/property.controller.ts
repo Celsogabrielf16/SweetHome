@@ -40,6 +40,11 @@ export class PropertyController {
         res.send(properties);
     }
 
+    public static async getPropertiesByMinimumPrice(req: Request, res: Response) {
+        const properties = await PropertyModel.find({price: {$gte: req.params.minimunPrice}});
+        res.send(properties);
+    }
+
     public static async getPropertiesByMaximumPrice(req: Request, res: Response) {
         const properties = await PropertyModel.find({price: {$lte: req.params.maximunPrice}});
         res.send(properties);

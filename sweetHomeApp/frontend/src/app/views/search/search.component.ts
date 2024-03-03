@@ -26,12 +26,18 @@ export class SearchComponent {
   numberOfProperties: number;
   stringInfo: string = '';
 
-  constructor(private homeService: HomeService, private router: Router, activatedRoute: ActivatedRoute) {
-    activatedRoute.params.subscribe((params) => {
+  constructor(
+    private homeService: HomeService,
+    private router: Router,
+    private activatedRoute: ActivatedRoute
+  ) {
+    this.activatedRoute.params.subscribe((params) => {
       let propertiesObservable: Observable<Property[]>
-      const city = params['citySearched'];
-      const tag = params['tagSearched'];
+
+      const city: string = params['citySearched'];
+      const tag: string = params['tagSearched'];
       const maximunPrice: number = params['maximunPrice'];
+      const minimunPrice: number = params['minimunPrice'];
 
       if(city && tag) {
         propertiesObservable = this.homeService.getPropertiesByCityAndTag(city, tag);
@@ -42,9 +48,12 @@ export class SearchComponent {
       } else if(tag) {
         propertiesObservable = this.homeService.getPropertiesByTag(tag);
         this.stringInfo = '';
+      } else if(minimunPrice) {
+        propertiesObservable = this.homeService.getPropertiesByMinimumPrice(minimunPrice);
+        this.stringInfo = `com preço maior que R$ ${minimunPrice}`;
       } else if(maximunPrice) {
         propertiesObservable = this.homeService.getPropertiesByMaximumPrice(maximunPrice);
-        this.stringInfo = `com preço até R$ ${maximunPrice}`;
+        this.stringInfo = `com preço menor que R$ ${maximunPrice}`;
       } else {
         propertiesObservable = this.homeService.getAllProperties();
       }
@@ -59,7 +68,6 @@ export class SearchComponent {
         this.hideArrow();
       }, 100);
     })
-
   }
 
   redirectDetails(id: number) {
