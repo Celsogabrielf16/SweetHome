@@ -103,6 +103,10 @@ export class HomeService {
     return this.httpClient.get<Property[]>(`${this.URL}/city/${citySearched}/tag/${tagSearched}/minimunPrice/${minimunPrice}`);
   }
 
+  getPropertiesByCityTagAndMaximunPrice(citySearched: string, tagSearched: string, maximunPrice: number): Observable<Property[]> {
+    return this.httpClient.get<Property[]>(`${this.URL}/city/${citySearched}/tag/${tagSearched}/maximunPrice/${maximunPrice}`);
+  }
+
 
 
 

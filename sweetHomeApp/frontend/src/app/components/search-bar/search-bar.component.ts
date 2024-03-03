@@ -69,6 +69,9 @@ export class SearchBarComponent {
     } else if (this.citySearched && this.tagSearched && this.minimunPrice) {
       this.router.navigate(['/search/city', this.citySearched, 'tag', this.tagSearched, 'minimunPrice', this.minimunPrice]);
 
+    } else if (this.citySearched && this.tagSearched && this.maximunPrice) {
+      this.router.navigate(['/search/city', this.citySearched, 'tag', this.tagSearched, 'maximunPrice', this.maximunPrice]);
+
     } else if (this.citySearched && this.tagSearched) {
       this.router.navigate(['/search/city', this.citySearched, 'tag', this.tagSearched]);
 
