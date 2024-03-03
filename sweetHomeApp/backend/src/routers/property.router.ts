@@ -82,7 +82,11 @@ router.get("/maximunPrice/:maximunPrice/numberOfBedrooms/:numberOfBedrooms", (re
 });
 
 
-// 3 Inputs - 0/10 rotas 
+// 3 Inputs - 1/10 rotas
+
+router.get("/city/:citySearched/tag/:tagSearched/minimunPrice/:minimunPrice", (req, res) => {
+    PropertyController.getPropertiesByCityTagAndMinimunPrice(req, res);
+});
 
 // 4 Inputs - 5/5 rotas
 

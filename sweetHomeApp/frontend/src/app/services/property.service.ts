@@ -99,6 +99,10 @@ export class HomeService {
 
 
 
+  getPropertiesByCityTagAndMinimunPrice(citySearched: string, tagSearched: string, minimunPrice: number): Observable<Property[]> {
+    return this.httpClient.get<Property[]>(`${this.URL}/city/${citySearched}/tag/${tagSearched}/minimunPrice/${minimunPrice}`);
+  }
+
 
 
 
