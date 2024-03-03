@@ -70,6 +70,15 @@ export class PropertyController {
         const properties = await PropertyModel.find({price: { $gte: req.params.minimunPrice, $lte: req.params.maximunPrice }});
         res.send(properties);
     }
+    
+    public static async getPropertiesByTagPriceRangeAndBedrooms(req: Request, res: Response) {
+        const properties = await PropertyModel.find({
+            tags: req.params.tagSearched,
+            price: { $gte: req.params.minimunPrice, $lte: req.params.maximunPrice },
+            bedroom: req.params.numberOfBedrooms
+        });
+        res.send(properties);
+    }
 
     public static async getPropertiesByCityPriceRangeAndBedrooms(req: Request, res: Response) {
         const searchRegex = new RegExp(req.params.citySearched, 'i');

@@ -55,6 +55,10 @@ export class HomeService {
     return this.httpClient.get<Property[]>(`${this.URL}/minimunPrice/${minimunPrice}/maximunPrice/${maximunPrice}`);
   }
 
+  getPropertiesByTagPriceRangeAndBedrooms(tagSearched: string, minimunPrice: number, maximunPrice: number, numberOfBedrooms: number): Observable<Property[]> {
+    return this.httpClient.get<Property[]>(`${this.URL}/tag/${tagSearched}/minimunPrice/${minimunPrice}/maximunPrice/${maximunPrice}/numberOfBedrooms/${numberOfBedrooms}`);
+  }
+
   getPropertiesByCityPriceRangeAndBedrooms(citySearched: string, minimunPrice: number, maximunPrice: number, numberOfBedrooms: number): Observable<Property[]> {
     return this.httpClient.get<Property[]>(`${this.URL}/city/${citySearched}/minimunPrice/${minimunPrice}/maximunPrice/${maximunPrice}/numberOfBedrooms/${numberOfBedrooms}`);
   }

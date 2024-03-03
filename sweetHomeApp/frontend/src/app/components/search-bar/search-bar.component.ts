@@ -10,6 +10,7 @@ import icons from 'src/assets/icons';
 export class SearchBarComponent {
   icons: Object | any = icons;
   infoInputs: any = {};
+  tagActive: string;
 
   citySearched: string;
   tagSearched: string;
@@ -23,6 +24,7 @@ export class SearchBarComponent {
       params.minimunPrice ? this.minimunPrice = params.minimunPrice : null;
       params.maximunPrice ? this.maximunPrice = params.maximunPrice : null;
       params.numberOfBedrooms ? this.numberOfBedrooms = params.numberOfBedrooms : null;
+      params.tagSearched ? this.tagActive = params.tagSearched : null;
     });
 
     this.infoInputs.location = this.citySearched;
@@ -46,20 +48,23 @@ export class SearchBarComponent {
   }
 
   redirectRoute() {
-    if (this.tagSearched && this.citySearched && this.minimunPrice && this.maximunPrice && this.numberOfBedrooms) {
+    if (this.citySearched && this.tagSearched && this.minimunPrice && this.maximunPrice && this.numberOfBedrooms) {
       this.router.navigate(['/search/city', this.citySearched, 'tag', this.tagSearched, 'minimunPrice', this.minimunPrice, 'maximunPrice', this.maximunPrice, 'numberOfBedrooms', this.numberOfBedrooms]);
 
-    } else if (this.tagSearched && this.citySearched && this.minimunPrice && this.maximunPrice) {
+    } else if (this.citySearched && this.tagSearched && this.minimunPrice && this.maximunPrice) {
       this.router.navigate(['/search/city', this.citySearched, 'tag', this.tagSearched, 'minimunPrice', this.minimunPrice, 'maximunPrice', this.maximunPrice]);
 
-    } else if (this.tagSearched && this.citySearched && this.minimunPrice && this.numberOfBedrooms) {
+    } else if (this.citySearched && this.tagSearched && this.minimunPrice && this.numberOfBedrooms) {
       this.router.navigate(['/search/city', this.citySearched, 'tag', this.tagSearched, 'minimunPrice', this.minimunPrice, 'numberOfBedrooms', this.numberOfBedrooms]);
 
-    } else if (this.tagSearched && this.citySearched && this.maximunPrice && this.numberOfBedrooms) {
+    } else if (this.citySearched && this.tagSearched && this.maximunPrice && this.numberOfBedrooms) {
       this.router.navigate(['/search/city', this.citySearched, 'tag', this.tagSearched, 'maximunPrice', this.maximunPrice, 'numberOfBedrooms', this.numberOfBedrooms]);
 
     } else if (this.citySearched && this.minimunPrice && this.maximunPrice && this.numberOfBedrooms) {
       this.router.navigate(['/search/city', this.citySearched, 'minimunPrice', this.minimunPrice, 'maximunPrice', this.maximunPrice, 'numberOfBedrooms', this.numberOfBedrooms]);
+
+    } else if (this.tagSearched && this.minimunPrice && this.maximunPrice && this.numberOfBedrooms) {
+      this.router.navigate(['/search/tag', this.tagSearched, 'minimunPrice', this.minimunPrice, 'maximunPrice', this.maximunPrice, 'numberOfBedrooms', this.numberOfBedrooms]);
 
     } else if (this.tagSearched && this.citySearched) {
       this.router.navigate(['/search/city', this.citySearched, 'tag', this.tagSearched]);
