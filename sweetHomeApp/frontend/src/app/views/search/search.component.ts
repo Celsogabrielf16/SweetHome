@@ -41,7 +41,11 @@ export class SearchComponent {
       const numberOfBedrooms: number = params['numberOfBedrooms'];
 
 
-      if(city && tag) {
+
+      if(city && tag && minimunPrice && maximunPrice && numberOfBedrooms) {
+        propertiesObservable = this.homeService.getPropertiesByCityTagPriceRangeAndBedrooms(city, tag, minimunPrice, maximunPrice, numberOfBedrooms);
+        this.stringInfo = '';
+      } else if(city && tag) {
         propertiesObservable = this.homeService.getPropertiesByCityAndTag(city, tag);
         this.stringInfo = '';
       } else if(minimunPrice && maximunPrice) {
