@@ -38,6 +38,8 @@ export class SearchBarComponent {
 
     if (this.tagSearched && this.citySearched) {
       this.router.navigate(['/search/city', this.citySearched, 'tag', this.tagSearched]);
+    } else if (this.minimunPrice && this.maximunPrice) {
+      this.router.navigate(['/search/minimunPrice', this.minimunPrice, 'maximunPrice', this.maximunPrice]);
     } else if (this.citySearched) {
       this.router.navigate(['/search/city', this.citySearched]);
     } else if (this.tagSearched) {

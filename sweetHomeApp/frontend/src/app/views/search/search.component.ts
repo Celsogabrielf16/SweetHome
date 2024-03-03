@@ -40,9 +40,13 @@ export class SearchComponent {
       const minimunPrice: number = params['minimunPrice'];
       const numberOfBedrooms: number = params['numberOfBedrooms'];
 
+
       if(city && tag) {
         propertiesObservable = this.homeService.getPropertiesByCityAndTag(city, tag);
         this.stringInfo = '';
+      } else if(minimunPrice && maximunPrice) {
+        propertiesObservable = this.homeService.getPropertiesByPriceRange(minimunPrice, maximunPrice);
+        this.stringInfo = `com preço entre R$ ${minimunPrice} e R$ ${maximunPrice}`;
       } else if(city) {
         propertiesObservable = this.homeService.getPropertiesByCity(city);
         this.stringInfo = `em ${this.capitalizeWords(city)}`;
