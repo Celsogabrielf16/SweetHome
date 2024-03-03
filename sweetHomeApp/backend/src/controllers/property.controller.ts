@@ -39,6 +39,11 @@ export class PropertyController {
         const properties = await PropertyModel.find({tags: {$regex: req.params.tagSearched}});
         res.send(properties);
     }
+
+    public static async getPropertiesByMaximumPrice(req: Request, res: Response) {
+        const properties = await PropertyModel.find({price: {$lte: req.params.maximunPrice}});
+        res.send(properties);
+    }
     
     public static async getPropertiesByCityAndTag(req: Request, res: Response) {
         const searchRegex = new RegExp(req.params.citySearched, 'i');

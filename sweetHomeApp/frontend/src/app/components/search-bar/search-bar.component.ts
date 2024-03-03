@@ -10,8 +10,10 @@ import icons from 'src/assets/icons';
 export class SearchBarComponent {
   icons: Object | any = icons;
   infoInputs: any = {};
+
   citySearched: string;
   tagSearched: string;
+  maximunPrice: number;
 
   constructor(private router: Router, activatedRoute: ActivatedRoute) {
     activatedRoute.params.subscribe((params) => {
@@ -24,6 +26,7 @@ export class SearchBarComponent {
 
   search() {
     this.citySearched = this.infoInputs.location;
+    this.maximunPrice = this.infoInputs.maxValue;
 
     if (this.tagSearched && this.citySearched) {
       this.router.navigate(['/search/city', this.citySearched, 'tag', this.tagSearched]);
@@ -31,6 +34,8 @@ export class SearchBarComponent {
       this.router.navigate(['/search/city', this.citySearched]);
     } else if (this.tagSearched) {
       this.router.navigate(['/search/tag', this.tagSearched]);
+    } else if (this.maximunPrice) {
+      this.router.navigate(['/search/maximunPrice', this.maximunPrice]);
     } else {
       this.router.navigate(['/search']);
     }

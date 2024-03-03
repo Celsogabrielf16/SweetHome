@@ -27,6 +27,10 @@ router.get("/tag/:tagSearched", (req, res) => {
     PropertyController.getPropertiesByTag(req, res);
 });
 
+router.get("/maximunPrice/:maximunPrice", (req, res) => {
+    PropertyController.getPropertiesByMaximumPrice(req, res);
+});
+
 router.get("/city/:citySearched/tag/:tagSearched", (req, res) => {
     PropertyController.getPropertiesByCityAndTag(req, res);
 });

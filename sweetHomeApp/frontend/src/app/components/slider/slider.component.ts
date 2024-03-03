@@ -14,14 +14,18 @@ import { Property } from 'src/app/shared/models/Property';
 
 export class SliderComponent {
   @ViewChild('slider') sliderRef: ElementRef;
+  @Input() titleSlider: string;
 
   slider: KeenSliderInstance | any = null;
+  indexInitialSlide: number = Math.round(Math.random() * 4);
 
-  @Input() titleSlider: string;
 
   ngAfterViewInit() {
     this.slider = new KeenSlider(this.sliderRef.nativeElement, {
+      initial: 5,
       loop: true,
+      mode: 'free-snap',
+      dragSpeed: 0.8,
       slides: {
         perView: 4.5,
         spacing: 50
@@ -56,14 +60,25 @@ export class SliderComponent {
   }
 
   ngOnDestroy() {
-    if (this.slider) this.slider.destroy()
+    if (this.slider) this.slider.destroy();
   }
 
+
   properties: Property[] = [];
+  update: boolean = false
 
   constructor(private homeService: HomeService) {
-    homeService.getAllProperties().subscribe((serverProperty) => {
-      this.properties = serverProperty;
+    this.homeService.getAllProperties().subscribe((serverProperty) => {
+      this.properties = serverProperty.slice().sort(() => Math.random() - 0.5);
+      this.update = true;
     });
+
+  }
+
+  ngAfterViewChecked(): void{
+    if(this.slider && this.update) {
+      this.slider.update();
+      this.update = false;
+    }
   }
 }

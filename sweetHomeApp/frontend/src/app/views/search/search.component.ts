@@ -31,16 +31,20 @@ export class SearchComponent {
       let propertiesObservable: Observable<Property[]>
       const city = params['citySearched'];
       const tag = params['tagSearched'];
+      const maximunPrice: number = params['maximunPrice'];
 
       if(city && tag) {
         propertiesObservable = this.homeService.getPropertiesByCityAndTag(city, tag);
         this.stringInfo = '';
       } else if(city) {
         propertiesObservable = this.homeService.getPropertiesByCity(city);
-        this.stringInfo = 'em ' + this.capitalizeWords(city);
+        this.stringInfo = `em ${this.capitalizeWords(city)}`;
       } else if(tag) {
         propertiesObservable = this.homeService.getPropertiesByTag(tag);
         this.stringInfo = '';
+      } else if(maximunPrice) {
+        propertiesObservable = this.homeService.getPropertiesByMaximumPrice(maximunPrice);
+        this.stringInfo = `com preço até R$ ${maximunPrice}`;
       } else {
         propertiesObservable = this.homeService.getAllProperties();
       }

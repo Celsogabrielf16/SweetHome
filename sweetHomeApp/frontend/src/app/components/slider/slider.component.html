@@ -1,4 +1,4 @@
-<div class="slider">
+<div class="slider" *ngIf="properties">
   <p class="title">{{ titleSlider }}</p>
   <div class="slide" #slider>
     <app-card *ngFor="let property of properties" [infoCard]="property" class="keen-slider__slide"></app-card>

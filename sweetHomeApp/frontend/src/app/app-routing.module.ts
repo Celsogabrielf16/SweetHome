@@ -23,7 +23,11 @@ const routes: Routes = [
     loadChildren: () => import("./views/search/search.module").then(m => m.SearchModule)
   },
   {
-    path: 'search/city/:citySearched/tag/:tagSearched',
+    path: 'search/tag/:tagSearched',
+    loadChildren: () => import("./views/search/search.module").then(m => m.SearchModule)
+  },
+  {
+    path: 'search/maximunPrice/:maximunPrice',
     loadChildren: () => import("./views/search/search.module").then(m => m.SearchModule)
   },
   {
