@@ -66,6 +66,17 @@ export class PropertyController {
         res.send(properties);
     }
 
+    public static async getPropertiesByCityAndMinimunPrice(req: Request, res: Response) {
+        const searchRegex = new RegExp(req.params.citySearched, 'i');
+        const properties = await PropertyModel.find(
+            {
+                city: { $regex: searchRegex },
+                price: { $gte: req.params.minimunPrice }
+            }
+        );
+        res.send(properties);
+    }
+
     public static async getPropertiesByPriceRange(req: Request, res: Response) {
         const properties = await PropertyModel.find({price: { $gte: req.params.minimunPrice, $lte: req.params.maximunPrice }});
         res.send(properties);
@@ -83,7 +94,7 @@ export class PropertyController {
     public static async getPropertiesByCityPriceRangeAndBedrooms(req: Request, res: Response) {
         const searchRegex = new RegExp(req.params.citySearched, 'i');
         const properties = await PropertyModel.find({
-            city: {$regex: searchRegex}, 
+            city: { $regex: searchRegex }, 
             price: { $gte: req.params.minimunPrice, $lte: req.params.maximunPrice },
             bedroom: req.params.numberOfBedrooms
         });
@@ -94,7 +105,7 @@ export class PropertyController {
         const searchRegex = new RegExp(req.params.citySearched, 'i');
         const properties = await PropertyModel.find({
             tags: req.params.tagSearched,
-            city: {$regex: searchRegex}, 
+            city: { $regex: searchRegex }, 
             price: { $lte: req.params.maximunPrice },
             bedroom: req.params.numberOfBedrooms
         });
@@ -105,7 +116,7 @@ export class PropertyController {
         const searchRegex = new RegExp(req.params.citySearched, 'i');
         const properties = await PropertyModel.find({
             tags: req.params.tagSearched,
-            city: {$regex: searchRegex}, 
+            city: { $regex: searchRegex }, 
             price: { $gte: req.params.minimunPrice },
             bedroom: req.params.numberOfBedrooms
         });
@@ -116,7 +127,7 @@ export class PropertyController {
         const searchRegex = new RegExp(req.params.citySearched, 'i');
         const properties = await PropertyModel.find({
             tags: req.params.tagSearched,
-            city: {$regex: searchRegex},
+            city: { $regex: searchRegex },
             price: { $gte: req.params.minimunPrice, $lte: req.params.maximunPrice }
         });
         res.send(properties);
@@ -126,7 +137,7 @@ export class PropertyController {
         const searchRegex = new RegExp(req.params.citySearched, 'i');
         const properties = await PropertyModel.find({
             tags: req.params.tagSearched,
-            city: {$regex: searchRegex}, 
+            city: { $regex: searchRegex }, 
             price: { $gte: req.params.minimunPrice, $lte: req.params.maximunPrice },
             bedroom: req.params.numberOfBedrooms
         });

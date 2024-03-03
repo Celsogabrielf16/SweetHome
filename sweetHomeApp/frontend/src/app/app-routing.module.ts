@@ -43,6 +43,10 @@ const routes: Routes = [
     loadChildren: () => import("./views/search/search.module").then(m => m.SearchModule)
   },
   {
+    path: 'search/city/:citySearched/minimunPrice/:minimunPrice', 
+    loadChildren: () => import("./views/search/search.module").then(m => m.SearchModule)
+  },
+  {
     path: 'search/minimunPrice/:minimunPrice/maximunPrice/:maximunPrice',
     loadChildren: () => import("./views/search/search.module").then(m => m.SearchModule)
   },
