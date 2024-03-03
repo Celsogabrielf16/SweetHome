@@ -190,7 +190,15 @@ export class PropertyController {
         });
         res.send(properties);
     }
-
+    
+    public static async getPropertiesByCityAndPriceRange(req: Request, res: Response) {
+        const searchRegex = new RegExp(req.params.citySearched, 'i');
+        const properties = await PropertyModel.find({
+            city: { $regex: searchRegex },
+            price: { $gte: req.params.minimunPrice, $lte: req.params.maximunPrice }
+        });
+        res.send(properties);
+    }
 
 
 
