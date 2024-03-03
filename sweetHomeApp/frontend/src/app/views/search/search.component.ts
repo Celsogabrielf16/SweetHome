@@ -85,6 +85,9 @@ export class SearchComponent {
       } else if(minimunPrice && numberOfBedrooms) {
         propertiesObservable = this.homeService.getPropertiesByMinimunPriceAndBedrooms(minimunPrice, numberOfBedrooms);
         this.stringInfo = '';
+      } else if(maximunPrice && numberOfBedrooms) {
+        propertiesObservable = this.homeService.getPropertiesByMaximunPriceAndBedrooms(maximunPrice, numberOfBedrooms);
+        this.stringInfo = '';
       } else if(city) {
         propertiesObservable = this.homeService.getPropertiesByCity(city);
         this.stringInfo = `em ${this.capitalizeWords(city)}`;
