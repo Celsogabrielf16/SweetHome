@@ -1,0 +1,49 @@
+<app-search-bar></app-search-bar>
+
+<main>
+  <div [ngClass]="{propertiesNotFound: numberOfProperties === 0}" class="searchResult">
+    <div class="filterInfo">
+      <p> {{ numberOfProperties }} Imóveis encontrados {{ stringInfo }}</p>
+    </div>
+
+    <div class="infoImmobile" (click)="redirectDetails(property.id)" *ngFor="let property of properties">
+      <img class="imgImmobile" [src]="property.url" alt="">
+      <div class="infos">
+          <h1>R$ {{ property.price }}</h1>
+          <p class="description">{{ property.description }}</p>
+          <p class="city">{{ property.city }} - {{ property.uf }}</p>
+          <div class="details">
+              <div>
+                  <img [src]="svgArea" alt="">
+                  <p>{{ property.area }}</p>
+              </div>
+              <div>
+                  <img [src]="svgBedroom" alt="">
+                  <p>{{ property.bedroom }}</p>
+              </div>
+              <div>
+                  <img [src]="svgSpot" alt="">
+                  <p>{{ property.spot }}</p>
+              </div>
+              <div>
+                  <img [src]="svgBathroom" alt="">
+                  <p>{{ property.bathroom }}</p>
+              </div>
+          </div>
+      </div>
+    </div>
+
+    <div class="infoImmobileStep">
+      <img #previous [src]="svgArrow" class="previous active" alt="" (click)="previousCardSet(1)">
+      <div class="step" [ngClass]="{'active': i === propertiesStep }" *ngFor="let infoImovel of propertiesSeparated; let i = index" (click)="changeStep(i)"><h4>{{ i + 1 }}</h4></div>
+      <img #next [src]="svgArrow" class="active" alt="" (click)="nextCardSet(1)">
+    </div>
+  </div>
+
+  <div [ngClass]="{propertiesNotFound: numberOfProperties === 0}" class="propertiesNotFoundText">
+    Nenhum imóvel encontrado com o filtro desejado
+  </div>
+</main>
+
+<app-slider titleSlider="Imóveis em Destaque"></app-slider>
+<app-slider titleSlider="Imóveis para Você"></app-slider>

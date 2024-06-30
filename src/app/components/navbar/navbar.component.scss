@@ -1,0 +1,141 @@
+section{
+  width: 100%;
+  background: linear-gradient(45deg, #FF2E00 0%, #EA580C 100%);
+
+  header{
+    width: 95%;
+    max-width: 1500px;
+    margin: auto;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    ul{
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      font-family: 'Poppins';
+
+      a{
+        text-decoration: none;
+        color: #fff;
+      }
+
+      a::after{
+        content: '';
+        height: 2px;
+        width: 0;
+        display: block;
+        background-color: #fff;
+        transition: .3s;
+      }
+
+      a.active::after{
+        width: 100%;
+      }
+
+      a:hover::after{
+        width: 100%;
+      }
+    }
+
+    .boxLogo{
+      font-family: 'Courgette', cursive;
+      font-weight: 400;
+      font-size: 1.4rem;
+      width: 150px;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    .buttons{
+      width: 50px;
+      display: flex;
+      justify-content: flex-end;
+
+      button, a{
+        width: 40px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+      }
+
+      .menu{
+        display: none;
+      }
+    }
+  }
+}
+
+.headerResponsiveMenu{
+  display: none;
+}
+
+@media (max-width: 580px) {
+  nav{
+    display: none;
+  }
+
+  .menu{
+    display: flex !important;
+  }
+
+  .user{
+    display: none !important;
+  }
+
+  .headerResponsiveMenu{
+    display: block;
+    width: 200px;
+    height: 400px;
+    position: absolute;
+    background-color: #fff;
+    z-index: 2000;
+    transition: .7s;
+    transform: translateX(-200px);
+    border-radius: 0 0 20px 0;
+    border-top: none;
+    border-left: none;
+
+    ul{
+      display: flex;
+      list-style: none;
+      flex-direction: column;
+      gap: 20px;
+      padding: 15px;
+
+      li{
+
+        a{
+          font-family: 'Poppins';
+          width: 100%;
+          display: flex;
+          background-color: #ffffff;
+          padding: 6px 18px;
+          color: #888;
+          text-decoration: none;
+          border-radius: 20px;
+          box-shadow: rgba(0, 0, 0, 0.25) 0px 0px 0px 1px;
+          transition: .3s;
+        }
+
+        a.active{
+          width: 100%;
+          display: flex;
+          background-color: #ebebeb;
+          box-shadow: rgba(0, 0, 0, 0.25) 0px 0px 0px 1px;
+        }
+      }
+    }
+  }
+
+  .headerResponsiveMenu.active{
+    transform: translateX(0px);
+  }
+}

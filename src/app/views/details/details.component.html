@@ -1,0 +1,51 @@
+<section>
+  <div class="boxImages">
+    <div class="bigHouse"><img [src]="property.url"></div>
+    <div class="disappear2"> <img src="./../../../assets/Components/card/property02.jpg"></div>
+    <div class="disappear2"> <img src="./../../../assets/Components/card/property03.jpg"></div>
+    <div class="disappear"> <img src="./../../../assets/Components/card/property08.jpg"></div>
+    <div class="disappear"> <img src="./../../../assets/Components/card/property04.jpg"></div>
+  </div>
+    <div class="description">
+      <div class="help">
+        <h3>{{property.title}}</h3>
+        <p>{{property.street}}, {{property.number}} - {{property.neighborhood}}, {{property.city}} - {{property.uf}}</p>
+        <h4>R$ {{property.price}}</h4>
+
+        <div class="details">
+          <div>
+            <img [src]="svgBedroom" alt="Icone de uma cama">
+            <p>{{ property.bedroom }} quarto{{ property.bedroom }}</p>
+          </div>
+          <div>
+            <img [src]="svgArea" alt="Icone de dois quadrados">
+            <p>{{ property.area }} m²</p>
+          </div>
+          <div>
+            <img [src]="svgBathroom" alt="Icone de um banheiro">
+            <p>{{ property.bathroom }} banheiro{{ property.bathroom }}</p>
+          </div>
+          <div>
+            <img [src]="svgSpot" alt="Icone de uma garagem">
+            <p>{{ property.spot }} vaga{{ property.spot }}</p>
+          </div>
+        </div>
+
+        <h3 class="titleDetails">Descrição</h3>
+        <p>{{property.description}}</p>
+
+        <h5>Você precisa de mais alguma informação foda-se</h5>
+
+        <div class="boxContato">
+            <img src="./../../../assets/icons/zap.png" alt="">
+            <p>Contatar anunciante</p>
+        </div>
+
+        <span class="neighborhood">Conheça a região do bairro {{property.neighborhood}}</span>
+      </div>
+    </div>
+    <iframe src="https://www.google.com/maps/embedpb=!1m18!1m12!1m3!1d14595.297630237024!2d-49.14193838264477!3d-23.8603682336605!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c3c4e8a4bdc997%3A0x7363e86c721c19c5!2sItaber%C3%A1%2C%20SP%2C%2018440-000!5e0!3m2!1spt-BR!2sbr!4v1705446974893!5m2!1spt-BR!2sbr" class="maps"></iframe>
+
+    <app-slider titleSlider="Imóveis em Destaque"></app-slider>
+    <app-slider titleSlider="Imóveis para Você"></app-slider>
+</section>
