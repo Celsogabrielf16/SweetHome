@@ -19,12 +19,15 @@ export class DetailsComponent {
   svgBathroom = '../../../assets/icons/bathroom.png';
   svgSpot = '../../../assets/icons/spot.png';
 
+  propertyImg: String[] = [];
+
   constructor(activatedRoute: ActivatedRoute, homeService: HomeService) {
     let propertyObservable: Observable<Property>;
     activatedRoute.params.subscribe((params) => {
       if(params.id) {
         homeService.getPropertyByID(params.id).subscribe((serverProperty) => {
           this.property = serverProperty;
+          this.propertyImg = this.property.url;
         });
       }
     })

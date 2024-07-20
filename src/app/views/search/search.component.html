@@ -7,7 +7,7 @@
     </div>
 
     <div class="infoImmobile" (click)="redirectDetails(property.id)" *ngFor="let property of properties">
-      <img class="imgImmobile" [src]="property.url" alt="">
+      <img class="imgImmobile" [src]="property.url[0]" alt="">
       <div class="infos">
           <h1>R$ {{ property.price }}</h1>
           <p class="description">{{ property.description }}</p>

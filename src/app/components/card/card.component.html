@@ -1,7 +1,7 @@
 <div class="card" (click)="redirectDetails()">
-  <img class="card__img" [src]="infoCard.url" alt="Foto de uma casa bonita e elegante">
+  <img class="card__img" [src]="infoCard.url[0]" alt="Foto de uma casa bonita e elegante">
   <div class="card__info">
-    <p class="price">R$ {{ infoCard.price }} mês</p>
+    <p class="price">R$ {{ infoCard.price }} por noite</p>
     <p class="location">{{ infoCard.city }}, {{ infoCard.country }}</p>
     <div class="details">
       <div class="information">

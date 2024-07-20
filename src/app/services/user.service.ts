@@ -9,7 +9,7 @@ import { IUserRegister } from '../shared/interfaces/IUserRegister';
   providedIn: 'root'
 })
 export class UserService {
-  private readonly URL = "https://portfolio-7cbqb739x-celsogabrielfs-projects.vercel.app/user";
+  private readonly URL = "https://portfolio-api-pink-nine.vercel.app/user";
   private userSubject = new BehaviorSubject<User>(this.getUserToLocalStorage());
   public userObservable: Observable<User>;
 

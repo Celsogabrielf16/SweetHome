@@ -27,7 +27,7 @@ export class SliderComponent {
       mode: 'free-snap',
       dragSpeed: 0.8,
       slides: {
-        perView: 4.5,
+        perView: 3.5,
         spacing: 50
       },
       breakpoints: {

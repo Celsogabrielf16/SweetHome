@@ -1,10 +1,10 @@
 <section>
   <div class="boxImages">
-    <div class="bigHouse"><img [src]="property.url"></div>
-    <div class="disappear2"> <img src="./../../../assets/Components/card/property02.jpg"></div>
-    <div class="disappear2"> <img src="./../../../assets/Components/card/property03.jpg"></div>
-    <div class="disappear"> <img src="./../../../assets/Components/card/property08.jpg"></div>
-    <div class="disappear"> <img src="./../../../assets/Components/card/property04.jpg"></div>
+    <div class="bigHouse"><img [src]="propertyImg[0]"></div>
+    <div class="disappear2"> <img [src]="propertyImg[1]"></div>
+    <div class="disappear2"> <img [src]="propertyImg[2]"></div>
+    <div class="disappear"> <img [src]="propertyImg[3]"></div>
+    <div class="disappear"> <img [src]="propertyImg[4]"></div>
   </div>
     <div class="description">
       <div class="help">
@@ -15,7 +15,7 @@
         <div class="details">
           <div>
             <img [src]="svgBedroom" alt="Icone de uma cama">
-            <p>{{ property.bedroom }} quarto{{ property.bedroom }}</p>
+            <p>{{ property.bedroom }} quarto</p>
           </div>
           <div>
             <img [src]="svgArea" alt="Icone de dois quadrados">
@@ -23,11 +23,11 @@
           </div>
           <div>
             <img [src]="svgBathroom" alt="Icone de um banheiro">
-            <p>{{ property.bathroom }} banheiro{{ property.bathroom }}</p>
+            <p>{{ property.bathroom }} banheiro</p>
           </div>
           <div>
             <img [src]="svgSpot" alt="Icone de uma garagem">
-            <p>{{ property.spot }} vaga{{ property.spot }}</p>
+            <p>{{ property.spot }} vaga</p>
           </div>
         </div>
 
@@ -44,7 +44,7 @@
         <span class="neighborhood">Conheça a região do bairro {{property.neighborhood}}</span>
       </div>
     </div>
-    <iframe src="https://www.google.com/maps/embedpb=!1m18!1m12!1m3!1d14595.297630237024!2d-49.14193838264477!3d-23.8603682336605!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c3c4e8a4bdc997%3A0x7363e86c721c19c5!2sItaber%C3%A1%2C%20SP%2C%2018440-000!5e0!3m2!1spt-BR!2sbr!4v1705446974893!5m2!1spt-BR!2sbr" class="maps"></iframe>
+<!--     <iframe src="https://www.google.com/maps/embedpb=!1m18!1m12!1m3!1d14595.297630237024!2d-49.14193838264477!3d-23.8603682336605!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c3c4e8a4bdc997%3A0x7363e86c721c19c5!2sItaber%C3%A1%2C%20SP%2C%2018440-000!5e0!3m2!1spt-BR!2sbr!4v1705446974893!5m2!1spt-BR!2sbr" class="maps"></iframe> -->
 
     <app-slider titleSlider="Imóveis em Destaque"></app-slider>
     <app-slider titleSlider="Imóveis para Você"></app-slider>
