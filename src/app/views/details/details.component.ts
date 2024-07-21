@@ -1,8 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Loader } from '@googlemaps/js-api-loader';
 import { Observable } from 'rxjs';
 import { HomeService } from 'src/app/services/property.service';
 import { Property } from 'src/app/shared/models/Property';
+
+import { GoogleMapsModule } from "@angular/google-maps";
 
 @Component({
   selector: 'app-details',
@@ -10,16 +13,19 @@ import { Property } from 'src/app/shared/models/Property';
   styleUrls: ['./details.component.scss']
 })
 
-export class DetailsComponent {
+export class DetailsComponent implements OnInit {
 
   property: Property = new Property;
 
-  svgBedroom = '../../../assets/icons/bedroom.png';
-  svgArea = '../../../assets/icons/uf.png';
-  svgBathroom = '../../../assets/icons/bathroom.png';
-  svgSpot = '../../../assets/icons/spot.png';
+  svgBedroom = '../../../assets/Components/card/svgBedroom.svg';
+  svgArea = '../../../assets/Components/card/svgArea.svg';
+  svgBathroom = '../../../assets/Components/card/svgBathroom.svg';
+  svgSpot = '../../../assets/Components/card/svgSpot.svg';
+  imgWhatsApp = '../../../assets/icons/whatsapp.png';
 
   propertyImg: String[] = [];
+
+  @ViewChild('map') mapRef: HTMLElement;
 
   constructor(activatedRoute: ActivatedRoute, homeService: HomeService) {
     let propertyObservable: Observable<Property>;
@@ -31,5 +37,18 @@ export class DetailsComponent {
         });
       }
     })
+  }
+
+  ngOnInit(): void {
+      let loader = new Loader({
+        apiKey: 'AIzaSyB5yMmUVIOFWkq8ZD11E7aWHKI8S91PqIc'
+      })
+
+      loader.load().then(() => {
+        new google.maps.Map(this.mapRef, {
+          center: { lat: -23.798507690429688, lng: -48.59711456298828 },
+          zoom: 14
+        })
+      })
   }
 }
