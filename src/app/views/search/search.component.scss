@@ -38,32 +38,28 @@ main {
   margin: 25px auto;
   background: linear-gradient(45deg, #FF2E00, #EA580C);
   display: flex;
-  border-radius: 24px;
+  border-radius: 12px;
   color: white;
   cursor: pointer;
 
   .imgImmobile {
+    min-width: 400px;
     width: 400px;
-    border-radius: 24px 0 0 24px;
+    border-radius: 12px 0 0 12px;
     object-fit: cover;
   }
 
   .infos {
     width: 100%;
     height: 100%;
-    padding: 20px;
+    padding: 15px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 
     h1 {
-      font-size: 1.8rem;
+      font-size: 1.6rem;
       font-weight: 400;
-    }
-
-    .description {
-      font-size: 1.4rem;
-      font-weight: 300;
     }
 
     .city {
@@ -71,23 +67,27 @@ main {
       font-weight: 300;
     }
 
+    .description {
+      font-size: 1.125rem;
+      font-weight: 300;
+    }
+
     .details {
       display: flex;
       justify-content: space-between;
 
-      div {
-        width: 100px;
+      .information {
         display: flex;
+        gap: 8px;
       }
 
-      img {
-        width: 35px;
-      }
-
-      p {
-        margin-left: 10px;
-        font-size: 1.2rem;
+      .information p {
+        font-size: 1rem;
         font-weight: 300;
+      }
+
+      .information img {
+        width: 25px;
       }
     }
   }
@@ -151,6 +151,7 @@ main {
     margin: 15px auto;
 
     .imgImmobile {
+      min-width: 250px;
       width: 250px;
     }
 
@@ -159,24 +160,30 @@ main {
       padding: 10px 15px;
 
       h1 {
-        font-size: 1.6rem;
+        font-size: 1.2rem;
       }
 
       .description {
-        font-size: 1rem;
+        font-size: 0.8rem;
       }
 
       .city {
-        font-size: 1rem;
+        font-size: 0.9rem;
       }
 
+
       .details {
-        img {
-          width: 25px;
+
+        .information {
+          gap: 4px;
         }
 
-        p {
-          font-size: 1em;
+        .information p {
+          font-size: 0.7rem;
+        }
+
+        .information img {
+          width: 20px;
         }
       }
     }
@@ -198,11 +205,12 @@ main {
     height: 450px;
     margin: 15px auto;
     flex-direction: column;
+    border-radius: 12px;
 
     .imgImmobile {
       width: 100%;
       height: 250px;
-      border-radius: 24px 24px 0 0;
+      border-radius: 12px 12px 0 0;
     }
 
     .infos {
@@ -213,33 +221,5 @@ main {
 
   .infoImmobileStep {
     width: 400px;
-  }
-}
-
-@media (max-width: 700px) {
-  .filterInfo {
-    width: 380px;
-  }
-
-  .infoImmobile {
-    width: 380px;
-    height: 450px;
-    margin: 15px auto;
-    flex-direction: column;
-
-    .imgImmobile {
-      width: 100%;
-      height: 250px;
-      border-radius: 24px 24px 0 0;
-    }
-
-    .infos {
-      width: 100%;
-      padding: 10px 15px 15px 15px;
-    }
-  }
-
-  .infoImmobileStep {
-    width: 380px;
   }
 }

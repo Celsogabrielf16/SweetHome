@@ -9,12 +9,13 @@ import { Property } from 'src/app/shared/models/Property';
   templateUrl: './search.component.html',
   styleUrls: ['./search.component.scss']
 })
+
 export class SearchComponent {
 
-  svgBedroom = 'assets/Components/card/svgBedroom.svg';
-  svgArea = 'assets/Components/card/svgArea.svg';
-  svgBathroom = 'assets/Components/card/svgBathroom.svg';
-  svgSpot = 'assets/Components/card/svgSpot.svg';
+  svgBedroom = 'assets/Components/search/svgBedroom.svg';
+  svgArea = 'assets/Components/search/svgArea.svg';
+  svgBathroom = 'assets/Components/search/svgBathroom.svg';
+  svgSpot = 'assets/Components/search/svgSpot.svg';
   svgArrow = 'assets/Components/card/svgArrow.svg';
 
   @ViewChild('previous') previousRef: ElementRef;

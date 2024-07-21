@@ -9,27 +9,29 @@
     <div class="infoImmobile" (click)="redirectDetails(property.id)" *ngFor="let property of properties">
       <img class="imgImmobile" [src]="property.url[0]" alt="">
       <div class="infos">
-          <h1>R$ {{ property.price }}</h1>
-          <p class="description">{{ property.description }}</p>
-          <p class="city">{{ property.city }} - {{ property.uf }}</p>
-          <div class="details">
-              <div>
-                  <img [src]="svgArea" alt="">
-                  <p>{{ property.area }}</p>
-              </div>
-              <div>
-                  <img [src]="svgBedroom" alt="">
-                  <p>{{ property.bedroom }}</p>
-              </div>
-              <div>
-                  <img [src]="svgSpot" alt="">
-                  <p>{{ property.spot }}</p>
-              </div>
-              <div>
-                  <img [src]="svgBathroom" alt="">
-                  <p>{{ property.bathroom }}</p>
-              </div>
+          <div class="">
+            <h1>R$ {{ property.price }} por noite</h1>
+            <p class="city">{{ property.city }} - {{ property.uf }}</p>
           </div>
+          <p class="description">{{ property.description }}</p>
+          <div class="details">
+            <div class="information">
+              <img [src]="svgBedroom" alt="Icone de uma cama">
+              <p>{{ property.bedroom }} quartos</p>
+            </div>
+            <div class="information">
+              <img [src]="svgArea" alt="Icone de dois quadrados">
+              <p>{{ property.area }} m²</p>
+            </div>
+            <div class="information">
+              <img [src]="svgBathroom" alt="Icone de um banheiro">
+              <p>{{ property.bathroom }} banheiros</p>
+            </div>
+            <div class="information">
+              <img [src]="svgSpot" alt="Icone de uma garagem">
+              <p>{{ property.spot }} vaga</p>
+            </div>
+        </div>
       </div>
     </div>
 

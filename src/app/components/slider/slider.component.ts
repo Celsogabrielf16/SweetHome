@@ -33,19 +33,19 @@ export class SliderComponent {
       breakpoints: {
         '(max-width: 1500px)': {
           slides: {
-            perView: 3.5,
+            perView: 2.75,
             spacing: 50
           },
         },
         '(max-width: 1150px)': {
           slides: {
-            perView: 2.5,
+            perView: 1.95,
             spacing: 50
           },
         },
         '(max-width: 800px)': {
           slides: {
-            perView: 1.5,
+            perView: 1.18,
             spacing: 30
           },
         },
