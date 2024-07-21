@@ -5,8 +5,6 @@ import { Observable } from 'rxjs';
 import { HomeService } from 'src/app/services/property.service';
 import { Property } from 'src/app/shared/models/Property';
 
-import { GoogleMapsModule } from "@angular/google-maps";
-
 @Component({
   selector: 'app-details',
   templateUrl: './details.component.html',

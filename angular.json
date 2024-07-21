@@ -65,10 +65,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "sweetHomeApp:build:production"
+              "buildTarget": "sweetHomeApp:build:production"
             },
             "development": {
-              "browserTarget": "sweetHomeApp:build:development"
+              "buildTarget": "sweetHomeApp:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -76,7 +76,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "sweetHomeApp:build"
+            "buildTarget": "sweetHomeApp:build"
           }
         },
         "test": {
