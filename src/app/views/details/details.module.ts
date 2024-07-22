@@ -5,6 +5,8 @@ import { DetailsRoutingModule } from './details-routing.module';
 import { DetailsComponent } from './details.component';
 import { ComponentsModule } from 'src/app/components/components.module';
 
+import { GoogleMapsModule } from "@angular/google-maps";
+
 
 @NgModule({
   declarations: [
@@ -13,7 +15,8 @@ import { ComponentsModule } from 'src/app/components/components.module';
   imports: [
     CommonModule,
     DetailsRoutingModule,
-    ComponentsModule
+    ComponentsModule,
+    GoogleMapsModule
   ]
 })
 export class DetailsModule {}

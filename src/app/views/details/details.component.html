@@ -47,7 +47,14 @@
         <span class="neighborhood">Conheça a região do bairro {{property.neighborhood}}</span>
       </div>
     </div>
-    <div #map class="map"></div>
+    <div #map class="map">
+      <google-map height="100%" width="100%" [options]="options">
+        <map-advanced-marker
+        #markerElem="mapAdvancedMarker"
+        [position]="{ lat: -23.79846954345703, lng: -48.597328186035156 }"
+      />
+      </google-map>
+    </div>
 
     <app-slider titleSlider="Imóveis em Destaque"></app-slider>
     <app-slider titleSlider="Imóveis para Você"></app-slider>

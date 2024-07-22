@@ -25,6 +25,14 @@ export class DetailsComponent implements OnInit {
 
   @ViewChild('map') mapRef: HTMLElement;
 
+  options: google.maps.MapOptions = {
+    mapId: "2e60ad0783128a85",
+    center: { lat: -23.79846954345703, lng: -48.597328186035156 },
+    zoom: 14
+  };
+
+  private apiUrl: string = 'https://maps.googleapis.com/maps/api/geocode/json';
+
   constructor(activatedRoute: ActivatedRoute, homeService: HomeService) {
     let propertyObservable: Observable<Property>;
     activatedRoute.params.subscribe((params) => {
