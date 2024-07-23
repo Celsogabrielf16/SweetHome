@@ -1,6 +1,6 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { GeocodingService } from 'src/app/services/geocoding.service';
+import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Loader } from '@googlemaps/js-api-loader';
 import { Observable } from 'rxjs';
 import { HomeService } from 'src/app/services/property.service';
 import { Property } from 'src/app/shared/models/Property';
@@ -11,9 +11,7 @@ import { Property } from 'src/app/shared/models/Property';
   styleUrls: ['./details.component.scss']
 })
 
-export class DetailsComponent implements OnInit {
-
-  property: Property = new Property;
+export class DetailsComponent {
 
   svgBedroom = '../../../assets/Components/card/svgBedroom.svg';
   svgArea = '../../../assets/Components/card/svgArea.svg';
@@ -22,39 +20,43 @@ export class DetailsComponent implements OnInit {
   imgWhatsApp = '../../../assets/icons/whatsapp.png';
 
   propertyImg: String[] = [];
+  property: Property = new Property;
 
-  @ViewChild('map') mapRef: HTMLElement;
+  latitude!: number;
+  longitude!: number;
 
-  options: google.maps.MapOptions = {
-    mapId: "2e60ad0783128a85",
-    center: { lat: -23.79846954345703, lng: -48.597328186035156 },
-    zoom: 14
-  };
-
-  private apiUrl: string = 'https://maps.googleapis.com/maps/api/geocode/json';
-
-  constructor(activatedRoute: ActivatedRoute, homeService: HomeService) {
-    let propertyObservable: Observable<Property>;
+  constructor(activatedRoute: ActivatedRoute, homeService: HomeService, private geocodingService: GeocodingService) {
     activatedRoute.params.subscribe((params) => {
       if(params.id) {
         homeService.getPropertyByID(params.id).subscribe((serverProperty) => {
           this.property = serverProperty;
           this.propertyImg = this.property.url;
+          this.getCoordinates(this.property.city, this.property.country);
         });
       }
     })
   }
 
-  ngOnInit(): void {
-      let loader = new Loader({
-        apiKey: 'AIzaSyB5yMmUVIOFWkq8ZD11E7aWHKI8S91PqIc'
-      })
+  getCoordinates(cityName: string, countryName: string) {
+    const locationString = cityName + ", " + countryName
 
-      loader.load().then(() => {
-        new google.maps.Map(this.mapRef, {
-          center: { lat: -23.798507690429688, lng: -48.59711456298828 },
-          zoom: 14
-        })
-      })
+    this.geocodingService.getCoordinates(locationString).subscribe(response => {
+      if (response.status === 'OK') {
+        let indexCorreto: number = 0;
+
+        for (let index = 0; index < response.results.length; index++) {
+          if (response.results[index].address_components[0].long_name === cityName) {
+            indexCorreto = index;
+            break;
+          }
+        }
+        
+        const location = response.results[indexCorreto].geometry.location;
+        this.latitude = location.lat;
+        this.longitude = location.lng;
+      } else {
+        console.error('Geocoding failed: ', response.status);
+      }
+    });
   }
 }

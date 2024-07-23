@@ -4,8 +4,7 @@ import { CommonModule } from '@angular/common';
 import { DetailsRoutingModule } from './details-routing.module';
 import { DetailsComponent } from './details.component';
 import { ComponentsModule } from 'src/app/components/components.module';
-
-import { GoogleMapsModule } from "@angular/google-maps";
+import { MapComponent } from 'src/app/components/map/map.component';
 
 
 @NgModule({
@@ -16,7 +15,7 @@ import { GoogleMapsModule } from "@angular/google-maps";
     CommonModule,
     DetailsRoutingModule,
     ComponentsModule,
-    GoogleMapsModule
+    MapComponent
   ]
 })
 export class DetailsModule {}

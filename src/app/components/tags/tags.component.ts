@@ -1,5 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { HomeService } from 'src/app/services/property.service';
 import { TagService } from 'src/app/services/tag.service';
 import { Tag } from 'src/app/shared/models/Tag';

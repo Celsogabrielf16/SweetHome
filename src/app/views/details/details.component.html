@@ -44,16 +44,11 @@
             <p class="text">Contatar anunciante</p>
         </a>
 
-        <span class="neighborhood">Conheça a região do bairro {{property.neighborhood}}</span>
+        <span class="neighborhood">Conheça a cidade de {{property.city}}</span>
       </div>
     </div>
-    <div #map class="map">
-      <google-map height="100%" width="100%" [options]="options">
-        <map-advanced-marker
-        #markerElem="mapAdvancedMarker"
-        [position]="{ lat: -23.79846954345703, lng: -48.597328186035156 }"
-      />
-      </google-map>
+    <div *ngIf="latitude && longitude" #map class="map">
+      <app-map [latitude]="latitude" [longitude]="longitude"></app-map>
     </div>
 
     <app-slider titleSlider="Imóveis em Destaque"></app-slider>

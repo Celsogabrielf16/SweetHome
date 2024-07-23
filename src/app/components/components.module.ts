@@ -4,16 +4,16 @@ import { CardComponent } from './card/card.component';
 import { SliderComponent } from './slider/slider.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
 import { FormsModule } from '@angular/forms';
-import { TagsComponent } from './tags/tags.component';
 import { LoadingComponent } from './loading/loading.component';
+import { TagsComponent } from './tags/tags.component';
 
 @NgModule({
   declarations: [
     CardComponent,
     SliderComponent,
     SearchBarComponent,
-    TagsComponent,
-    LoadingComponent
+    LoadingComponent,
+    TagsComponent
   ],
   imports: [
     CommonModule,
@@ -23,8 +23,8 @@ import { LoadingComponent } from './loading/loading.component';
     CardComponent,
     SliderComponent,
     SearchBarComponent,
-    TagsComponent,
-    LoadingComponent
+    LoadingComponent,
+    TagsComponent
   ]
 })
 export class ComponentsModule { }
