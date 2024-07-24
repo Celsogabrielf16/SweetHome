@@ -14,7 +14,6 @@ export class TagsComponent {
   svgBedroom = 'assets/Components/card/svgBedroom.svg';
 
   tags: Tag[] = [];
-  tagActive: string;
 
   constructor(homeService: HomeService, private tagService: TagService) {
     homeService.getAllPropertiesTags().subscribe((serverTags) => {

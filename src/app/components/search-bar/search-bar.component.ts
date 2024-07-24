@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { TagService } from 'src/app/services/tag.service';
 import Search from 'src/app/shared/models/Search';
@@ -9,7 +9,7 @@ import icons from 'src/assets/icons';
   templateUrl: './search-bar.component.html',
   styleUrls: ['./search-bar.component.scss']
 })
-export class SearchBarComponent {
+export class SearchBarComponent implements OnDestroy {
   icons: Object | any = icons;
   infoInputs: Search = new Search;
 
@@ -46,7 +46,6 @@ export class SearchBarComponent {
 
   tagClicked(tag: string) {
     this.tagSearched = tag;
-    this.search();
   }
 
   redirectRoute() {
@@ -146,5 +145,9 @@ export class SearchBarComponent {
     } else {
       this.router.navigate(['/search']);
     }
+  }
+
+  ngOnDestroy(): void {
+    this.tagService.updateTagActive('');
   }
 }
