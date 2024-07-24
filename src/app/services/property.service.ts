@@ -27,8 +27,8 @@ export class HomeService {
     return this.httpClient.get<Property>(`${this.URL}/id/${idSearched}`);
   }
 
-  getPropertiesByCity(citySearched: string): Observable<Property[]> {
-    return this.httpClient.get<Property[]>(`${this.URL}/city/${citySearched}`);
+  getPropertiesByAddress(addressSearched: string): Observable<Property[]> {
+    return this.httpClient.get<Property[]>(`${this.URL}/address/${addressSearched}`);
   }
 
   getPropertiesByTag(tagSearched: string): Observable<Property[]> {
@@ -47,20 +47,20 @@ export class HomeService {
     return this.httpClient.get<Property[]>(`${this.URL}/numberOfBedrooms/${numberOfBedrooms}`);
   }
 
-  getPropertiesByCityAndTag(citySearched: string, tagSearched: string): Observable<Property[]> {
-    return this.httpClient.get<Property[]>(`${this.URL}/city/${citySearched}/tag/${tagSearched}`);
+  getPropertiesByAddressAndTag(addressSearched: string, tagSearched: string): Observable<Property[]> {
+    return this.httpClient.get<Property[]>(`${this.URL}/address/${addressSearched}/tag/${tagSearched}`);
   }
 
-  getPropertiesByCityAndMinimunPrice(citySearched: string, minimunPrice: number): Observable<Property[]> {
-    return this.httpClient.get<Property[]>(`${this.URL}/city/${citySearched}/minimunPrice/${minimunPrice}`);
+  getPropertiesByAddressAndMinimunPrice(addressSearched: string, minimunPrice: number): Observable<Property[]> {
+    return this.httpClient.get<Property[]>(`${this.URL}/address/${addressSearched}/minimunPrice/${minimunPrice}`);
   }
 
-  getPropertiesByCityAndMaximunPrice(citySearched: string, maximunPrice: number): Observable<Property[]> {
-    return this.httpClient.get<Property[]>(`${this.URL}/city/${citySearched}/maximunPrice/${maximunPrice}`);
+  getPropertiesByAddressAndMaximunPrice(addressSearched: string, maximunPrice: number): Observable<Property[]> {
+    return this.httpClient.get<Property[]>(`${this.URL}/address/${addressSearched}/maximunPrice/${maximunPrice}`);
   }
 
-  getPropertiesByCityAndBedrooms(citySearched: string, numberOfBedrooms: number): Observable<Property[]> {
-    return this.httpClient.get<Property[]>(`${this.URL}/city/${citySearched}/numberOfBedrooms/${numberOfBedrooms}`);
+  getPropertiesByAddressAndBedrooms(addressSearched: string, numberOfBedrooms: number): Observable<Property[]> {
+    return this.httpClient.get<Property[]>(`${this.URL}/address/${addressSearched}/numberOfBedrooms/${numberOfBedrooms}`);
   }
 
   getPropertiesByTagAndMinimunPrice(tagSearched: string, minimunPrice: number): Observable<Property[]> {
@@ -87,28 +87,28 @@ export class HomeService {
     return this.httpClient.get<Property[]>(`${this.URL}/maximunPrice/${maximunPrice}/numberOfBedrooms/${numberOfBedrooms}`);
   }
 
-  getPropertiesByCityTagAndMinimunPrice(citySearched: string, tagSearched: string, minimunPrice: number): Observable<Property[]> {
-    return this.httpClient.get<Property[]>(`${this.URL}/city/${citySearched}/tag/${tagSearched}/minimunPrice/${minimunPrice}`);
+  getPropertiesByAddressTagAndMinimunPrice(addressSearched: string, tagSearched: string, minimunPrice: number): Observable<Property[]> {
+    return this.httpClient.get<Property[]>(`${this.URL}/address/${addressSearched}/tag/${tagSearched}/minimunPrice/${minimunPrice}`);
   }
 
-  getPropertiesByCityTagAndMaximunPrice(citySearched: string, tagSearched: string, maximunPrice: number): Observable<Property[]> {
-    return this.httpClient.get<Property[]>(`${this.URL}/city/${citySearched}/tag/${tagSearched}/maximunPrice/${maximunPrice}`);
+  getPropertiesByAddressTagAndMaximunPrice(addressSearched: string, tagSearched: string, maximunPrice: number): Observable<Property[]> {
+    return this.httpClient.get<Property[]>(`${this.URL}/address/${addressSearched}/tag/${tagSearched}/maximunPrice/${maximunPrice}`);
   }
 
-  getPropertiesByCityTagAndBedrooms(citySearched: string, tagSearched: string, numberOfBedrooms: number): Observable<Property[]> {
-    return this.httpClient.get<Property[]>(`${this.URL}/city/${citySearched}/tag/${tagSearched}/numberOfBedrooms/${numberOfBedrooms}`);
+  getPropertiesByAddressTagAndBedrooms(addressSearched: string, tagSearched: string, numberOfBedrooms: number): Observable<Property[]> {
+    return this.httpClient.get<Property[]>(`${this.URL}/address/${addressSearched}/tag/${tagSearched}/numberOfBedrooms/${numberOfBedrooms}`);
   }
 
-  getPropertiesByCityAndPriceRange(citySearched: string, minimunPrice: number, maximunPrice: number): Observable<Property[]> {
-    return this.httpClient.get<Property[]>(`${this.URL}/city/${citySearched}/minimunPrice/${minimunPrice}/maximunPrice/${maximunPrice}`);
+  getPropertiesByAddressAndPriceRange(addressSearched: string, minimunPrice: number, maximunPrice: number): Observable<Property[]> {
+    return this.httpClient.get<Property[]>(`${this.URL}/address/${addressSearched}/minimunPrice/${minimunPrice}/maximunPrice/${maximunPrice}`);
   }
 
-  getPropertiesByCityMinimunPriceAndBedrooms(citySearched: string, minimunPrice: number, numberOfBedrooms: number): Observable<Property[]> {
-    return this.httpClient.get<Property[]>(`${this.URL}/city/${citySearched}/minimunPrice/${minimunPrice}/numberOfBedrooms/${numberOfBedrooms}`);
+  getPropertiesByAddressMinimunPriceAndBedrooms(addressSearched: string, minimunPrice: number, numberOfBedrooms: number): Observable<Property[]> {
+    return this.httpClient.get<Property[]>(`${this.URL}/address/${addressSearched}/minimunPrice/${minimunPrice}/numberOfBedrooms/${numberOfBedrooms}`);
   }
 
-  getPropertiesByCityMaximunPriceAndBedrooms(citySearched: string, maximunPrice: number, numberOfBedrooms: number): Observable<Property[]> {
-    return this.httpClient.get<Property[]>(`${this.URL}/city/${citySearched}/maximunPrice/${maximunPrice}/numberOfBedrooms/${numberOfBedrooms}`);
+  getPropertiesByAddressMaximunPriceAndBedrooms(addressSearched: string, maximunPrice: number, numberOfBedrooms: number): Observable<Property[]> {
+    return this.httpClient.get<Property[]>(`${this.URL}/address/${addressSearched}/maximunPrice/${maximunPrice}/numberOfBedrooms/${numberOfBedrooms}`);
   }
 
   getPropertiesByTagAndPriceRange(tagSearched: string, minimunPrice: number, maximunPrice: number): Observable<Property[]> {
@@ -127,27 +127,27 @@ export class HomeService {
     return this.httpClient.get<Property[]>(`${this.URL}/minimunPrice/${minimunPrice}/maximunPrice/${maximunPrice}/numberOfBedrooms/${numberOfBedrooms}`);
   }
 
-  getPropertiesByCityTagAndPriceRange(citySearched: string, tagSearched: string, minimunPrice: number, maximunPrice: number): Observable<Property[]> {
-    return this.httpClient.get<Property[]>(`${this.URL}/city/${citySearched}/tag/${tagSearched}/minimunPrice/${minimunPrice}/maximunPrice/${maximunPrice}`);
+  getPropertiesByAddressTagAndPriceRange(addressSearched: string, tagSearched: string, minimunPrice: number, maximunPrice: number): Observable<Property[]> {
+    return this.httpClient.get<Property[]>(`${this.URL}/address/${addressSearched}/tag/${tagSearched}/minimunPrice/${minimunPrice}/maximunPrice/${maximunPrice}`);
   }
 
-  getPropertiesByCityTagMinimunPriceAndBedrooms(citySearched: string, tagSearched: string, minimunPrice: number, numberOfBedrooms: number): Observable<Property[]> {
-    return this.httpClient.get<Property[]>(`${this.URL}/city/${citySearched}/tag/${tagSearched}/minimunPrice/${minimunPrice}/numberOfBedrooms/${numberOfBedrooms}`);
+  getPropertiesByAddressTagMinimunPriceAndBedrooms(addressSearched: string, tagSearched: string, minimunPrice: number, numberOfBedrooms: number): Observable<Property[]> {
+    return this.httpClient.get<Property[]>(`${this.URL}/address/${addressSearched}/tag/${tagSearched}/minimunPrice/${minimunPrice}/numberOfBedrooms/${numberOfBedrooms}`);
   }
 
-  getPropertiesByCityPriceRangeAndBedrooms(citySearched: string, minimunPrice: number, maximunPrice: number, numberOfBedrooms: number): Observable<Property[]> {
-    return this.httpClient.get<Property[]>(`${this.URL}/city/${citySearched}/minimunPrice/${minimunPrice}/maximunPrice/${maximunPrice}/numberOfBedrooms/${numberOfBedrooms}`);
+  getPropertiesByAddressPriceRangeAndBedrooms(addressSearched: string, minimunPrice: number, maximunPrice: number, numberOfBedrooms: number): Observable<Property[]> {
+    return this.httpClient.get<Property[]>(`${this.URL}/address/${addressSearched}/minimunPrice/${minimunPrice}/maximunPrice/${maximunPrice}/numberOfBedrooms/${numberOfBedrooms}`);
   }
 
-  getPropertiesByCityTagMaximunPriceAndBedrooms(citySearched: string, tagSearched: string, maximunPrice: number, numberOfBedrooms: number): Observable<Property[]> {
-    return this.httpClient.get<Property[]>(`${this.URL}/city/${citySearched}/tag/${tagSearched}/maximunPrice/${maximunPrice}/numberOfBedrooms/${numberOfBedrooms}`);
+  getPropertiesByAddressTagMaximunPriceAndBedrooms(addressSearched: string, tagSearched: string, maximunPrice: number, numberOfBedrooms: number): Observable<Property[]> {
+    return this.httpClient.get<Property[]>(`${this.URL}/address/${addressSearched}/tag/${tagSearched}/maximunPrice/${maximunPrice}/numberOfBedrooms/${numberOfBedrooms}`);
   }
 
   getPropertiesByTagPriceRangeAndBedrooms(tagSearched: string, minimunPrice: number, maximunPrice: number, numberOfBedrooms: number): Observable<Property[]> {
     return this.httpClient.get<Property[]>(`${this.URL}/tag/${tagSearched}/minimunPrice/${minimunPrice}/maximunPrice/${maximunPrice}/numberOfBedrooms/${numberOfBedrooms}`);
   }
 
-  getPropertiesByCityTagPriceRangeAndBedrooms(citySearched: string, tagSearched: string, minimunPrice: number, maximunPrice: number, numberOfBedrooms: number): Observable<Property[]> {
-    return this.httpClient.get<Property[]>(`${this.URL}/city/${citySearched}/tag/${tagSearched}/minimunPrice/${minimunPrice}/maximunPrice/${maximunPrice}/numberOfBedrooms/${numberOfBedrooms}`);
+  getPropertiesByAddressTagPriceRangeAndBedrooms(addressSearched: string, tagSearched: string, minimunPrice: number, maximunPrice: number, numberOfBedrooms: number): Observable<Property[]> {
+    return this.httpClient.get<Property[]>(`${this.URL}/address/${addressSearched}/tag/${tagSearched}/minimunPrice/${minimunPrice}/maximunPrice/${maximunPrice}/numberOfBedrooms/${numberOfBedrooms}`);
   }
 }

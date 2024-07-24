@@ -15,7 +15,7 @@ const routes: Routes = [
     loadChildren: () => import("./views/search/search.module").then(m => m.SearchModule)
   },
   {
-    path: 'search/city/:citySearched',
+    path: 'search/address/:addressSearched',
     loadChildren: () => import("./views/search/search.module").then(m => m.SearchModule)
   },
   {
@@ -39,19 +39,19 @@ const routes: Routes = [
     loadChildren: () => import("./views/search/search.module").then(m => m.SearchModule)
   },
   {
-    path: 'search/city/:citySearched/tag/:tagSearched',
+    path: 'search/address/:addressSearched/tag/:tagSearched',
     loadChildren: () => import("./views/search/search.module").then(m => m.SearchModule)
   },
   {
-    path: 'search/city/:citySearched/minimunPrice/:minimunPrice',
+    path: 'search/address/:addressSearched/minimunPrice/:minimunPrice',
     loadChildren: () => import("./views/search/search.module").then(m => m.SearchModule)
   },
   {
-    path: 'search/city/:citySearched/maximunPrice/:maximunPrice',
+    path: 'search/address/:addressSearched/maximunPrice/:maximunPrice',
     loadChildren: () => import("./views/search/search.module").then(m => m.SearchModule)
   },
   {
-    path: 'search/city/:citySearched/numberOfBedrooms/:numberOfBedrooms',
+    path: 'search/address/:addressSearched/numberOfBedrooms/:numberOfBedrooms',
     loadChildren: () => import("./views/search/search.module").then(m => m.SearchModule)
   },
   {
@@ -79,27 +79,27 @@ const routes: Routes = [
     loadChildren: () => import("./views/search/search.module").then(m => m.SearchModule)
   },
   {
-    path: 'search/city/:citySearched/tag/:tagSearched/minimunPrice/:minimunPrice',
+    path: 'search/address/:addressSearched/tag/:tagSearched/minimunPrice/:minimunPrice',
     loadChildren: () => import("./views/search/search.module").then(m => m.SearchModule)
   },
   {
-    path: 'search/city/:citySearched/tag/:tagSearched/maximunPrice/:maximunPrice',
+    path: 'search/address/:addressSearched/tag/:tagSearched/maximunPrice/:maximunPrice',
     loadChildren: () => import("./views/search/search.module").then(m => m.SearchModule)
   },
   {
-    path: 'search/city/:citySearched/tag/:tagSearched/numberOfBedrooms/:numberOfBedrooms',
+    path: 'search/address/:addressSearched/tag/:tagSearched/numberOfBedrooms/:numberOfBedrooms',
     loadChildren: () => import("./views/search/search.module").then(m => m.SearchModule)
   },
   {
-    path: 'search/city/:citySearched/minimunPrice/:minimunPrice/maximunPrice/:maximunPrice',
+    path: 'search/address/:addressSearched/minimunPrice/:minimunPrice/maximunPrice/:maximunPrice',
     loadChildren: () => import("./views/search/search.module").then(m => m.SearchModule)
   },
   {
-    path: 'search/city/:citySearched/minimunPrice/:minimunPrice/numberOfBedrooms/:numberOfBedrooms',
+    path: 'search/address/:addressSearched/minimunPrice/:minimunPrice/numberOfBedrooms/:numberOfBedrooms',
     loadChildren: () => import("./views/search/search.module").then(m => m.SearchModule)
   },
   {
-    path: 'search/city/:citySearched/maximunPrice/:maximunPrice/numberOfBedrooms/:numberOfBedrooms',
+    path: 'search/address/:addressSearched/maximunPrice/:maximunPrice/numberOfBedrooms/:numberOfBedrooms',
     loadChildren: () => import("./views/search/search.module").then(m => m.SearchModule)
   },
   {
@@ -123,23 +123,23 @@ const routes: Routes = [
     loadChildren: () => import("./views/search/search.module").then(m => m.SearchModule)
   },
   {
-    path: 'search/city/:citySearched/minimunPrice/:minimunPrice/maximunPrice/:maximunPrice/numberOfBedrooms/:numberOfBedrooms',
+    path: 'search/address/:addressSearched/minimunPrice/:minimunPrice/maximunPrice/:maximunPrice/numberOfBedrooms/:numberOfBedrooms',
     loadChildren: () => import("./views/search/search.module").then(m => m.SearchModule)
   },
   {
-    path: 'search/city/:citySearched/tag/:tagSearched/minimunPrice/:minimunPrice/numberOfBedrooms/:numberOfBedrooms',
+    path: 'search/address/:addressSearched/tag/:tagSearched/minimunPrice/:minimunPrice/numberOfBedrooms/:numberOfBedrooms',
     loadChildren: () => import("./views/search/search.module").then(m => m.SearchModule)
   },
   {
-    path: 'search/city/:citySearched/tag/:tagSearched/maximunPrice/:maximunPrice/numberOfBedrooms/:numberOfBedrooms',
+    path: 'search/address/:addressSearched/tag/:tagSearched/maximunPrice/:maximunPrice/numberOfBedrooms/:numberOfBedrooms',
     loadChildren: () => import("./views/search/search.module").then(m => m.SearchModule)
   },
   {
-    path: 'search/city/:citySearched/tag/:tagSearched/minimunPrice/:minimunPrice/maximunPrice/:maximunPrice',
+    path: 'search/address/:addressSearched/tag/:tagSearched/minimunPrice/:minimunPrice/maximunPrice/:maximunPrice',
     loadChildren: () => import("./views/search/search.module").then(m => m.SearchModule)
   },
   {
-    path: 'search/city/:citySearched/tag/:tagSearched/minimunPrice/:minimunPrice/maximunPrice/:maximunPrice/numberOfBedrooms/:numberOfBedrooms',
+    path: 'search/address/:addressSearched/tag/:tagSearched/minimunPrice/:minimunPrice/maximunPrice/:maximunPrice/numberOfBedrooms/:numberOfBedrooms',
     loadChildren: () => import("./views/search/search.module").then(m => m.SearchModule)
   },
   {
