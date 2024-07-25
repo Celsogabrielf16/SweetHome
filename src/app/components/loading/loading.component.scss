@@ -2,8 +2,9 @@
 
 main {
   position: fixed;
+  top: 0;
   width: 100vw;
-  height: 100%;
+  height: 100vh;
   background-color: $cultured-color;
   z-index: 100;
   display: flex;
