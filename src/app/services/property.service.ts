@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 
 import { Property } from "../shared/models/Property";
 import { Tag } from '../shared/models/Tag';
-import { Observable } from 'rxjs';
+import { catchError, Observable, tap, throwError } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -14,6 +14,15 @@ export class HomeService {
   private readonly URL = "https://portfolio-api-pink-nine.vercel.app/property";
 
   constructor(private httpClient: HttpClient) { }
+
+  registerProperty(PropertyRegister: Property): Observable<Property> {
+    return this.httpClient.post<Property>(`${this.URL}/register`, PropertyRegister).pipe(
+      catchError((error) => {
+        return throwError(() => error);
+      })
+    );
+  }
+
 
   getAllProperties(): Observable<Property[]> {
     return this.httpClient.get<Property[]>(`${this.URL}`);

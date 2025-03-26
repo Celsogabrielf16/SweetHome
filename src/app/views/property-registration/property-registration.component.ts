@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { HomeService } from 'src/app/services/property.service';
 import icons from 'src/assets/icons';
 import { Property } from 'src/app/shared/models/Property';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-property-registration',
@@ -15,7 +16,7 @@ export class PropertyRegistrationComponent {
   openModal: boolean = false;
   iconsInputs: Object | any = icons;
 
-  constructor(private homeService: HomeService) {
+  constructor(private homeService: HomeService, private router: Router,) {
     homeService.getAllProperties().subscribe((serverProperties) => {
       this.properties = serverProperties;
     });
@@ -54,8 +55,11 @@ export class PropertyRegistrationComponent {
   }
 
   save() {
-/*     this.newProperty.id = this.properties.length + 1;
-    this.homeService.postProperty(this.newProperty); */
+    this.homeService.registerProperty(this.newProperty).subscribe(() => {
+      this.router.navigateByUrl("/");
+    }, (error) => {
+      console.log(error);
+    })
   }
 
   changeModal() {
@@ -63,7 +67,7 @@ export class PropertyRegistrationComponent {
   }
 
   chosenProperty(numberProperty: number) {
-/*     this.newProperty.url = this.properties[numberProperty].url; */
+    this.newProperty.url = this.properties[numberProperty].url;
     this.changeModal();
   }
 }

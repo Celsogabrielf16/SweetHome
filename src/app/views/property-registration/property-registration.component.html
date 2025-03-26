@@ -289,12 +289,12 @@
       <img class="close__button" (click)="changeModal()" [src]="iconsInputs.close" alt="">
       <h1>Escolha a imagem do seu imóvel</h1>
       <div class="grid">
-        <img (click)="chosenProperty(0)" [src]="properties[0].url" [alt]="properties[0].description">
-        <img (click)="chosenProperty(1)" [src]="properties[1].url" [alt]="properties[1].description">
-        <img (click)="chosenProperty(2)" [src]="properties[2].url" [alt]="properties[2].description">
-        <img (click)="chosenProperty(3)" [src]="properties[3].url" [alt]="properties[3].description">
-        <img (click)="chosenProperty(4)" [src]="properties[4].url" [alt]="properties[4].description">
-        <img (click)="chosenProperty(5)" [src]="properties[5].url" [alt]="properties[5].description">
+        <img (click)="chosenProperty(0)" [src]="properties[0].url[0]" [alt]="properties[0].description">
+        <img (click)="chosenProperty(1)" [src]="properties[1].url[0]" [alt]="properties[1].description">
+        <img (click)="chosenProperty(2)" [src]="properties[2].url[0]" [alt]="properties[2].description">
+        <img (click)="chosenProperty(3)" [src]="properties[3].url[0]" [alt]="properties[3].description">
+        <img (click)="chosenProperty(4)" [src]="properties[4].url[0]" [alt]="properties[4].description">
+        <img (click)="chosenProperty(5)" [src]="properties[5].url[0]" [alt]="properties[5].description">
       </div>
     </div>
   </section>
