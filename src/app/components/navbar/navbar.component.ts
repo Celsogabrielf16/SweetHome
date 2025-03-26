@@ -39,6 +39,7 @@ export class NavbarComponent {
   }
 
   logout() {
+    this.statusMenu = false;
     this.userService.logout();
   }
 
