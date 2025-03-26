@@ -56,6 +56,23 @@ form {
   }
 }
 
+.failedLoginErrorEmail {
+  border: 1px solid $scarlet-color;
+}
+
+.failedLoginErrorPassword {
+  border: 1px solid $scarlet-color;
+  margin-bottom: 40px;
+}
+
+.failedLoginErrorPassword::after {
+  content: 'Senha ou email inválido';
+  position: absolute;
+  margin-top: 60px;
+  margin-left: 10px;
+  color: $scarlet-color;
+}
+
 .mandatoryFieldError {
   border: 1px solid $scarlet-color;
   margin-bottom: 40px;

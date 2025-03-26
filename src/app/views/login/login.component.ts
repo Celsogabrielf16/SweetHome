@@ -34,13 +34,17 @@ export class LoginComponent implements OnInit {
     const passwordError = this.checkMandatoryFieldError(this.passwordInputRef.nativeElement);
 
     if (!emailError && !passwordError) {
-      console.log(this.user);
+      this.emailInputRef.nativeElement.parentElement.classList.remove('failedLoginErrorEmail');
+      this.passwordInputRef.nativeElement.parentElement.classList.remove('failedLoginErrorPassword');
 
       this.userService.login({
         email: this.user.email,
         password: this.user.password
       }).subscribe(() => {
         this.router.navigateByUrl(this.returnUrl);
+      }, (error) => {
+        this.emailInputRef.nativeElement.parentElement.classList.add('failedLoginErrorEmail');
+        this.passwordInputRef.nativeElement.parentElement.classList.add('failedLoginErrorPassword');
       });
     }
 
@@ -49,6 +53,14 @@ export class LoginComponent implements OnInit {
   seePassword() {
     this.visiblePassword = !this.visiblePassword;
     this.passwordInputRef.nativeElement.type = !this.visiblePassword ? 'password' : 'text';
+  }
+
+  addFailedLoginErrorClass(element: any) {
+    element.parentElement.classList.add('failedLoginError');
+  }
+
+  removeFailedLoginErrorClass(element: any) {
+    element.parentElement.classList.remove('failedLoginError');
   }
 
   checkMandatoryFieldError(element: any): boolean {

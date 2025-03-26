@@ -5,17 +5,17 @@
     <div class="form__input">
 
       <div class="form__svg">
-        <img [src]="iconsInputs.email" alt="Email de Contato do Anunciante">
+        <img [src]="iconsInputs.email" alt="Email">
       </div>
 
-      <input #emailInputRef [(ngModel)]="user.email" (change)="checkMandatoryFieldError($event.target)" type="text"  placeholder="Email de Contato" name="email"/>
+      <input #emailInputRef [(ngModel)]="user.email" (change)="checkMandatoryFieldError($event.target)" type="text" maxlength="30" placeholder="Email de Contato" name="email"/>
 
     </div>
 
     <div class="form__input password">
 
       <div class="form__svg">
-        <img [src]="iconsInputs.password" alt="Número de Contato do Anunciante">
+        <img [src]="iconsInputs.password" alt="Senha">
       </div>
 
       <input #passwordInputRef [(ngModel)]="user.password" (change)="checkMandatoryFieldError($event.target)" type="password" maxlength="20" placeholder="Senha" name="password"/>
