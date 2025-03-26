@@ -57,6 +57,23 @@ form {
   }
 }
 
+.userAlreadyExistErrorColor {
+  border: 1px solid $scarlet-color;
+}
+
+.userAlreadyExistErrorLabel {
+  border: 1px solid $scarlet-color;
+  margin-bottom: 40px;
+}
+
+.userAlreadyExistErrorLabel::after {
+  content: 'Usuário já existente';
+  position: absolute;
+  margin-top: 60px;
+  margin-left: 10px;
+  color: $scarlet-color;
+}
+
 .mandatoryFieldError {
   border: 1px solid $scarlet-color;
   margin-bottom: 40px;

@@ -8,7 +8,7 @@
         <img [src]="iconsInputs.personBlack" alt="Nome do Anunciante">
       </div>
 
-      <input #nameInputRef (change)="checkMandatoryFieldError($event.target)" [(ngModel)]="newUser.name" type="text"  placeholder="Nome" name="name"/>
+      <input #nameInputRef (change)="checkMandatoryFieldError($event.target)" [(ngModel)]="newUser.name" type="text" maxlength="20" placeholder="Nome" name="name"/>
 
     </div>
 
@@ -18,7 +18,7 @@
         <img [src]="iconsInputs.email" alt="Email de Contato do Anunciante">
       </div>
 
-      <input #emailInputRef (change)="checkMandatoryFieldError($event.target)" [(ngModel)]="newUser.email" type="text"  placeholder="Email de Contato" name="email"/>
+      <input #emailInputRef (change)="checkMandatoryFieldError($event.target)" [(ngModel)]="newUser.email" type="text" maxlength="30" placeholder="Email de Contato" name="email"/>
 
     </div>
 

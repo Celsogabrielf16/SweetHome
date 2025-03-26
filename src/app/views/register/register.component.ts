@@ -44,6 +44,7 @@ export class RegisterComponent implements OnInit {
     this.checkDifferentPasswordsError();
 
     if (!nameError && !emailError && !passwordError && !passwordConfirmationError && !this.differentPasswordsError) {
+      this.removeUserAlreadyExistErrorColorClass();
       const { name, email, password } = this.newUser;
 
       const user: IUserRegister = {
@@ -54,6 +55,13 @@ export class RegisterComponent implements OnInit {
 
       this.userService.register(user).subscribe( _ => {
         this.router.navigateByUrl(this.returnUrl);
+      }, (error) => {
+        if (error.error == "Usuario ja existe!") {
+          this.nameInputRef.nativeElement.parentElement.classList.add('userAlreadyExistErrorColor');
+          this.emailInputRef.nativeElement.parentElement.classList.add('userAlreadyExistErrorColor');
+          this.passwordInputRef.nativeElement.parentElement.classList.add('userAlreadyExistErrorColor');
+          this.passwordConfirmationInputRef.nativeElement.parentElement.classList.add('userAlreadyExistErrorLabel');
+        }
       })
 
     }
@@ -76,7 +84,15 @@ export class RegisterComponent implements OnInit {
       return true;
     } else {
       element.parentElement.classList.remove('mandatoryFieldError');
+      this.removeUserAlreadyExistErrorColorClass();
       return false;
     }
+  }
+
+  removeUserAlreadyExistErrorColorClass() {
+    this.nameInputRef.nativeElement.parentElement.classList.remove('userAlreadyExistErrorColor');
+    this.emailInputRef.nativeElement.parentElement.classList.remove('userAlreadyExistErrorColor');
+    this.passwordInputRef.nativeElement.parentElement.classList.remove('userAlreadyExistErrorColor');
+    this.passwordConfirmationInputRef.nativeElement.parentElement.classList.remove('userAlreadyExistErrorLabel');
   }
 }

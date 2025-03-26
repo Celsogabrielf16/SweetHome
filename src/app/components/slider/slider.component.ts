@@ -63,7 +63,6 @@ export class SliderComponent {
     if (this.slider) this.slider.destroy();
   }
 
-
   properties: Property[] = [];
   update: boolean = false
 

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable, tap } from 'rxjs';
+import { BehaviorSubject, catchError, Observable, tap, throwError } from 'rxjs';
 import { User } from '../shared/models/User';
 import { IUserLogin } from '../shared/interfaces/IUserLogin';
 import { HttpClient } from '@angular/common/http';
@@ -21,12 +21,8 @@ export class UserService {
     return this.httpClient.post<User>(`${this.URL}/login`, userLogin).pipe(
       tap({
         next: (user) => {
-          console.log("Deu bom");
           this.setUserToLocalStorage(user);
           this.userSubject.next(user);
-        },
-        error: (errorResponse) => {
-          console.log("Deu Ruim");
         }
       })
     );
@@ -36,14 +32,12 @@ export class UserService {
     return this.httpClient.post<User>(`${this.URL}/register`, UserRegister).pipe(
       tap({
         next: (user) => {
-          console.log("Deu bom o registro");
           this.setUserToLocalStorage(user);
           this.userSubject.next(user);
-        },
-        error: (errorResponse) => {
-          console.log("Deu Ruim o registro");
-        }
-      })
+        }}),
+        catchError((error) => {
+          return throwError(() => error);
+        })
     )
   }
 

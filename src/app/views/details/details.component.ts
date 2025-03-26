@@ -41,6 +41,7 @@ export class DetailsComponent {
     const locationString = cityName + ", " + countryName
 
     this.geocodingService.getCoordinates(locationString).subscribe(response => {
+
       if (response.status === 'OK') {
         let indexCorreto: number = 0;
 
@@ -50,7 +51,7 @@ export class DetailsComponent {
             break;
           }
         }
-        
+
         const location = response.results[indexCorreto].geometry.location;
         this.latitude = location.lat;
         this.longitude = location.lng;

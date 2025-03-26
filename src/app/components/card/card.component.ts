@@ -15,9 +15,7 @@ export class CardComponent {
 
   @Input() infoCard: Property;
 
-  constructor(private router: Router) {
-
-  }
+  constructor(private router: Router) {}
 
   redirectDetails() {
     this.router.navigate(['details/', this.infoCard.id]);
